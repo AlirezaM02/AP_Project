@@ -44,15 +44,6 @@ QString Player::get_email(){
 void Player::set_email(QString _email){
     email=_email;
 }
-bool isChar(char c)
-{
-    return ((c >= 'a' && c <= 'z')
-            || (c >= 'A' && c <= 'Z'));
-}
-bool isDigit(const char c)
-{
-    return (c >= '0' && c <= '9');
-}
 bool Player::check_email(QString _email){
     QChar c= _email[0];
     if (!c.isLetter())
