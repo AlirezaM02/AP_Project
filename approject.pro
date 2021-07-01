@@ -17,6 +17,7 @@ SOURCES += \
 HEADERS += \
     mainwindow.h \
     map.h \
+    player.h \
     player.h
 
 FORMS += \
