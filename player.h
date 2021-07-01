@@ -2,8 +2,8 @@
 #define PLAYER_H
 #include <iostream>
 #include <QString>
+#include <QRegularExpression>
 #include "map.h"
-
 class Player
 {
 private:
