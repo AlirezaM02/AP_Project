@@ -1,7 +1,20 @@
 #include "player.h"
 
-Player::Player(){}
+Player::Player(){
+    ID=0;
+    coins = 0;
+    XP = 0;
+    level = 0;
+    name ="";
+    username="";
+    password ="";
+    email="";
+    ID++;
+}
 Player::~Player(){}
+int Player::get_ID(){
+    return ID;
+}
 int Player::get_coins(){
     return coins;
 }
