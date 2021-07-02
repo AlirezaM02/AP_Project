@@ -7,6 +7,7 @@
 class Player
 {
 private:
+    static int counter;
     int ID;
     long int coins;
     long int XP;
@@ -20,6 +21,8 @@ private:
 public:
     Player();
     ~Player();
+    int get_counter;
+    int get_ID();
     int get_coins();
     void set_coins(int newCoins);
     int getXP();

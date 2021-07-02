@@ -1,7 +1,8 @@
 #include "player.h"
-
+int Player::counter=0;
 Player::Player(){
-    ID=0;
+    counter++;
+    ID=counter;
     coins = 0;
     XP = 0;
     level = 0;
@@ -9,7 +10,7 @@ Player::Player(){
     username="";
     password ="";
     email="";
-    ID++;
+
 }
 Player::~Player(){}
 int Player::get_ID(){
