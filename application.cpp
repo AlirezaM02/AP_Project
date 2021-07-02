@@ -1,6 +1,8 @@
 #include "application.h"
 
-Application::Application(){}
+Application::Application(){
+    savePlayersData();
+}
 Application::~Application(){}
 void Application::savePlayersData(){}
 void Application::fetchPlayersData(){}
