@@ -13,6 +13,25 @@ Player::Player(){
 
 }
 Player::~Player(){}
+
+Player::Player(long _coins, long _XP, int _level, QString _name, QString _username, QString _password, QString _email, Map _map)
+{
+    counter++;
+    ID= counter;
+    coins= _coins;
+    XP= _XP;
+    level= _level;
+    name= _name;
+    username=_username;
+    password=_password;
+    email= _email;
+    //map = _map;
+}
+
+int Player::get_counter()
+{
+    return counter;
+}
 int Player::get_ID(){
     return ID;
 }
