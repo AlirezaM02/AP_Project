@@ -1,10 +1,11 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
-
+#include <QFile>
+#include <QJsonArray>
+#include<QJsonObject>
 #include <QVector>
 #include <QString>
 #include "player.h"
-
 class Application
 {
 private:

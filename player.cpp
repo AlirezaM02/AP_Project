@@ -1,5 +1,15 @@
 #include "player.h"
 int Player::counter=0;
+const Map &Player::getMap() const
+{
+    return map;
+}
+
+void Player::setMap(const Map &newMap)
+{
+    //map = newMap;
+}
+
 Player::Player(){
     counter++;
     ID=counter;

@@ -20,8 +20,9 @@ private:
 
 public:
     Player();
+    Player(long _coins, long _XP, int _level, QString _name, QString _username, QString _password, QString _email, Map _map);
     ~Player();
-    int get_counter;
+    int get_counter();
     int get_ID();
     int get_coins();
     void set_coins(int newCoins);
@@ -40,6 +41,8 @@ public:
     bool check_email(QString _email);
     bool check_username(QString _username);
     bool check_password(QString _password); //for strength
+    const Map &getMap() const;
+    void setMap(const Map &newMap);
 };
 
 #endif // PLAYER_H
