@@ -108,12 +108,8 @@ bool Application::login(QString username, QString password)
             savePlayersData();
             return true;
         }
-        else
-        {
-            //TODO
-            return false;
-        }
     }
+    return false;
 }
 
 void Application::logout()

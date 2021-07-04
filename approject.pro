@@ -13,17 +13,20 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     map.cpp \
-    player.cpp
+    player.cpp \
+    scoreboard.cpp
 
 HEADERS += \
     application.h \
     mainwindow.h \
     map.h \
-    player.h
+    player.h \
+    scoreboard.h
 
 FORMS += \
     mainwindow.ui \
-    map.ui
+    map.ui \
+    scoreboard.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
