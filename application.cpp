@@ -27,7 +27,7 @@ void Application::savePlayersData(){
     QByteArray byteArray;
     byteArray = QJsonDocument(mainObj).toJson();
     QFile file(":/data/data.json");
-    file.setFileName("file.json");
+    file.setFileName("data.json");
     if(!file.open(QIODevice::WriteOnly)){
            qDebug() << "No write access for json file";
            return;
@@ -41,14 +41,57 @@ void Application::savePlayersData(){
     file.close();
     */
 }
-/*void Application::fetchPlayersData(){
-}*/
-Player* Application::findPlayer(QString playername){
+void Application::fetchPlayersData(){
+}
+Player* Application::findPlayer(QString username){
     for(int i=0;i<playerlist.size();i++)
     {
-         return &playerlist[i];
+        if(playerlist[i].get_username()==username)
+            return &playerlist[i];
     }
 }
-bool Application::login(QString playername, QString password){}
-void Application::logout(){}
-void Application::setCurrentplayer(int accID){}
+
+void Application::refresh(int ID)
+{
+    fetchPlayersData();
+    setCurrentPlayer(ID);
+}
+
+void Application::refresh()
+{
+    fetchPlayersData();
+}
+bool Application::login(QString username, QString password){
+    for(int i=0; i<playerlist.size(); i++)
+    {
+        if(playerlist[i].get_username()==username&&playerlist[i].get_password()==password)
+        {
+            currentPlayer=&playerlist[i];
+            playerID=playerlist[i].get_ID();
+            //TODO
+            savePlayersData();
+            return true;
+        }
+        else
+        {
+            //TODO
+            return false;
+        }
+    }
+}
+void Application::logout(){
+    refresh(getplayerID());
+    savePlayersData();
+}
+void Application::setCurrentPlayer(int ID){
+    for(int i=0; i<playerlist.size(); i++)
+    {
+        if (playerlist[i].get_ID()==ID)
+            currentPlayer=&playerlist[i];
+    }
+}
+
+int Application::getplayerID()
+{
+    return playerID;
+}
