@@ -1,28 +1,6 @@
 #include "player.h"
+
 int Player::counter=0;
-const Map &Player::getMap() const
-{
-    return map;
-}
-
-void Player::setMap(const Map &newMap)
-{
-    //map = newMap;
-}
-
-Player::Player(){
-    counter++;
-    ID=counter;
-    coins = 0;
-    XP = 0;
-    level = 0;
-    name ="";
-    username="";
-    password ="";
-    email="";
-
-}
-Player::~Player(){}
 
 Player::Player(long _coins, long _XP, int _level, QString _name, QString _username, QString _password, QString _email, Map _map)
 {
@@ -42,52 +20,84 @@ int Player::get_counter()
 {
     return counter;
 }
-int Player::get_ID(){
+
+int Player::get_ID()
+{
     return ID;
 }
-int Player::get_coins(){
+
+int Player::get_coins()
+{
     return coins;
 }
-void Player::set_coins(int _coins){
+
+void Player::set_coins(int _coins)
+{
     coins=_coins;
 }
-int Player::getXP(){
+
+int Player::getXP()
+{
     return XP;
 }
-void Player::setXP(int _XP){
+
+void Player::setXP(int _XP)
+{
     XP=_XP;
 }
-int Player::get_level(){
+
+int Player::get_level()
+{
     return level;
 }
-void Player::set_level(int _level){
+
+void Player::set_level(int _level)
+{
     level=_level;
 }
-QString Player::get_name(){
+
+QString Player::get_name()
+{
     return name;
 }
-void Player::set_name(QString _name){
+
+void Player::set_name(QString _name)
+{
     name=_name;
 }
-QString Player::get_username(){
+
+QString Player::get_username()
+{
     return username;
 }
-void Player::set_username(QString _username){
+
+void Player::set_username(QString _username)
+{
     username=_username;
 }
-QString Player::get_password(){
+
+QString Player::get_password()
+{
     return password;
 }
-void Player::set_password(QString _password){
+
+void Player::set_password(QString _password)
+{
     password= _password;
 }
-QString Player::get_email(){
+
+QString Player::get_email()
+{
     return email;
 }
-void Player::set_email(QString _email){
+
+void Player::set_email(QString _email)
+{
     email=_email;
 }
-bool Player::check_email(QString _email){
+
+bool Player::check_email(QString _email)
+{
     QChar c= _email[0];
     if (!c.isLetter())
     {
@@ -108,27 +118,27 @@ bool Player::check_email(QString _email){
         return false;
     return !(dot >= (_email.length() - 1));
 }
-bool Player::check_username(QString _username){
+
+bool Player::check_username(QString _username)
+{
     return true;
 }
-bool Player::check_password(QString _password){
-      int lower;
-      int digit;
-      int symbol;
-      int upper;
-      int passlen = _password.length();
-    for ( const auto& character : _password )
+
+bool Player::check_password(QString _password)
+{
+    int lower = 0, digit = 0, symbol = 0, upper = 0, passlen = _password.length();
+    for (const auto& character : _password)
     {
-        if ( character.isUpper() )
+        if (character.isUpper())
             upper++;
-        else if ( character.isLower() )
+        else if (character.isLower())
             lower++;
-        else if ( character.isDigit() )
+        else if (character.isDigit())
             digit++;
         else
             symbol++;
     }
-    if(upper >= 1 and lower >= 1 and digit >= 1 and symbol >= 1 and passlen >=6)
+    if (upper >= 1 and lower >= 1 and digit >= 1 and symbol >= 1 and passlen >=6)
         return true;
     return false;
 }

@@ -1,16 +1,22 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
-#include <QFile>
-#include <QJsonArray>
-#include<QJsonObject>
+
 #include <QVector>
 #include <QString>
+#include <QFile>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QTextStream>
+#include <QDir>
 #include "player.h"
+
 class Application
 {
 private:
     QVector <Player> playerlist;
-    Player currentPlayer;
+    Player *currentPlayer;
+    int playerID;
 public:
     Application();
     ~Application();
@@ -19,7 +25,10 @@ public:
     Player *findPlayer(QString username);
     bool login(QString username, QString password);
     void logout();
-    void setCurrentUser(int accID);
+    void refresh();
+    void refresh(int ID);
+    int getplayerID();
+    void setCurrentPlayer(int ID);
 };
 
 #endif // APPLICATION_H

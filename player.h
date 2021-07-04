@@ -1,9 +1,12 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+
 #include <iostream>
 #include <QString>
 #include <QRegularExpression>
+#include <QWidget>
 #include "map.h"
+
 class Player
 {
 private:
@@ -19,8 +22,7 @@ private:
     Map map;
 
 public:
-    Player();
-    Player(long _coins, long _XP, int _level, QString _name, QString _username, QString _password, QString _email, Map _map);
+    Player(long _coins = 0, long _XP = 0, int _level = 0, QString _name = "", QString _username = "", QString _password = "", QString _email = "", Map _map = Map());
     ~Player();
     int get_counter();
     int get_ID();

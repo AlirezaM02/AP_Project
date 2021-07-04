@@ -19,7 +19,6 @@ HEADERS += \
     application.h \
     mainwindow.h \
     map.h \
-    player.h \
     player.h
 
 FORMS += \
@@ -33,3 +32,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     data.qrc
+
+DISTFILES += \
+    data.json
