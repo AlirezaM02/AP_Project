@@ -14,6 +14,8 @@
 class Application
 {
 private:
+    static int playerCounter;
+    static int lastID;
     QVector <Player> playerlist;
     Player *currentPlayer;
     int playerID;

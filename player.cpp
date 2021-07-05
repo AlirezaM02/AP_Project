@@ -36,12 +36,12 @@ void Player::set_coins(int _coins)
     coins=_coins;
 }
 
-int Player::getXP()
+int Player::get_XP()
 {
     return XP;
 }
 
-void Player::setXP(int _XP)
+void Player::set_XP(int _XP)
 {
     XP=_XP;
 }

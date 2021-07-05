@@ -28,8 +28,8 @@ public:
     int get_ID();
     int get_coins();
     void set_coins(int newCoins);
-    int getXP();
-    void setXP(int newXP);
+    int get_XP();
+    void set_XP(int newXP);
     int get_level();
     void set_level(int new_level);
     QString get_name();

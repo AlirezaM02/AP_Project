@@ -1,5 +1,8 @@
 #include "application.h"
 
+int Application::playerCounter = 0;
+int Application::lastID = 0;
+
 Application::Application()
 {
     fetchPlayersData();
@@ -22,7 +25,7 @@ void Application::savePlayersData()
         playerObj["username"] = playerlist[i].get_username();
         playerObj["password"] = playerlist[i].get_password();
         playerObj["level"] = playerlist[i].get_level();
-        playerObj["XP"] = playerlist[i].getXP();
+        playerObj["XP"] = playerlist[i].get_XP();
         playerObj["coins"] = playerlist[i].get_coins();
         //playerObj["map"]=playerlist[i].getMap();
         mainArray.append(playerObj);
