@@ -16,6 +16,11 @@ Player::Player(long _coins, long _XP, int _level, QString _name, QString _userna
     //map = _map;
 }
 
+Player::~Player()
+{
+    counter--;
+}
+
 int Player::get_counter()
 {
     return counter;
