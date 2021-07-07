@@ -5,6 +5,43 @@ Scoreboard::Scoreboard(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Scoreboard)
 {
+    players.erase(players.begin(), players.end());
+
+    QTextStream ts(stdout);
+    ts << QDir::currentPath();
+    QFile file("C:\\Users\\Alireza\\My Documents\\GitRepos\\AP_Project\\data\\data.json");
+
+    if (!file.open(QIODevice::ReadOnly))
+    {
+        qDebug() << "Json file couldn't be opened/found";
+        return;
+    }
+
+    QByteArray byteArray;
+    byteArray = file.readAll();
+    file.close();
+
+    QJsonParseError parseError;
+    QJsonDocument jsonDoc;
+    jsonDoc = QJsonDocument::fromJson(byteArray, &parseError);
+
+    if (parseError.error != QJsonParseError::NoError)
+    {
+        qWarning() << "Parse error at " << parseError.offset << ":" << parseError.errorString();
+        exit(0);
+    }
+
+    QJsonObject Obj = jsonDoc.object();
+    QJsonArray Arr = Obj.value("users").toArray();
+    foreach (const QJsonValue &val, Arr)
+    {
+        long int XP = val.toObject().value("XP").toInteger();
+        int level = val.toObject().value("level").toInteger(), ID = val.toObject().value("ID").toInteger();
+        QString username = val.toObject().value("username").toString();
+        //Map _map;
+        players.push_back(showPlayers(ID, username, level, XP));
+    }
+
     std::sort(players.begin(), players.end(), [](showPlayers p1, showPlayers p2)
     {
         if (p1.getLevel() > p2.getLevel()) return true;
@@ -52,12 +89,12 @@ int showPlayers::getLevel() const
     return level;
 }
 
-void showPlayers::setName(const QString &newName)
+void showPlayers::setUsername(const QString &newUsername)
 {
-    name = newName;
+    username = newUsername;
 }
 
-const QString &showPlayers::getName() const
+const QString &showPlayers::getUsername() const
 {
-    return name;
+    return username;
 }

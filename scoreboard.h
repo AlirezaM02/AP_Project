@@ -6,17 +6,25 @@
 #include <algorithm>
 #include <vector>
 #include "player.h"
+#include <QVector>
+#include <QString>
+#include <QFile>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QTextStream>
+#include <QDir>
 using std::vector;
 
 class showPlayers
 {
     int level, XP, ID;
-    QString name;
+    QString username;
 public:
-    showPlayers(int _ID, QString _name, int _level, int _XP)
+    showPlayers(int _ID, QString _username, int _level, int _XP)
     {
         ID = _ID;
-        name = _name;
+        username = _username;
         XP = _XP;
         level = _level;
     }
@@ -26,8 +34,8 @@ public:
     void setID(int newID);
     int getXP() const;
     int getLevel() const;
-    const QString &getName() const;
-    void setName(const QString &newName);
+    const QString &getUsername() const;
+    void setUsername(const QString &newUsername);
 };
 
 namespace Ui {
