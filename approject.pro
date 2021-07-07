@@ -15,7 +15,8 @@ SOURCES += \
     mainwindow.cpp \
     map.cpp \
     player.cpp \
-    scoreboard.cpp
+    scoreboard.cpp \
+    signup.cpp
 
 HEADERS += \
     application.h \
@@ -23,13 +24,15 @@ HEADERS += \
     mainwindow.h \
     map.h \
     player.h \
-    scoreboard.h
+    scoreboard.h \
+    signup.h
 
 FORMS += \
     login.ui \
     mainwindow.ui \
     map.ui \
-    scoreboard.ui
+    scoreboard.ui \
+    signup.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
