@@ -10,6 +10,7 @@
 #include <QTextStream>
 #include <QDir>
 #include "player.h"
+#include "login.h"
 
 class Application
 {
@@ -31,6 +32,7 @@ public:
     void refresh(int ID);
     int getplayerID();
     void setCurrentPlayer(int ID);
+    void log_in();
 };
 
 #endif // APPLICATION_H

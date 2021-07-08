@@ -23,6 +23,7 @@ private:
 
 public:
     Player(long _coins = 0, long _XP = 0, int _level = 0, QString _name = "", QString _username = "", QString _password = "", QString _email = "", Map _map = Map());
+    Player();
     ~Player();
     int get_counter();
     int get_ID();

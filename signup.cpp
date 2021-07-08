@@ -35,6 +35,7 @@ void signup::checkLineEdits()
     {
         validemail= false;
         flag=1;
+        ui->emailerrorlbl->setText("Invalid Email!");
     }
     int at=-1;
     int dot=-1;
@@ -48,26 +49,67 @@ void signup::checkLineEdits()
     if((at==-1 || dot==-1)&&!flag)
     {
         validemail= false;
+        ui->emailerrorlbl->setText("Invalid Email!");
         flag=1;
     }
     if( (dot<at)&& !flag)
     {
         validemail= false;
+        ui->emailerrorlbl->setText("Invalid e-mail!");
         flag=1;
     }
     if (!flag)
     {
         validemail= !(dot>=(ui->emailled->text().length()-1));
     }
+    if (validemail)
+        //ui->errorlbl->setText("");
+        ui->emailerrorlbl->clear();
+    bool strongPassWord;
+    int lower = 0, digit = 0, symbol = 0, upper = 0, passlen = ui->passwordled->text().length();
+    for (const auto& character : ui->passwordled->text())
+    {
+        if (character.isUpper())
+            upper++;
+        else if (character.isLower())
+            lower++;
+        else if (character.isDigit())
+            digit++;
+        else
+            symbol++;
+    }
+    if (upper >= 1 and lower >= 1 and digit >= 1 and symbol >= 1 and passlen >=6)
+    {
+        strongPassWord= true;
+    }
+    else
+    {
+        strongPassWord=false;
+        ui->passworderrorlbl->setText("Your password is not strong enough! (Make sure it contains at least 6 characters and an uppercase letter, a lowercase letter, a number and a special symbol)");
+
+    }
+    bool confirmpass;
+    if(ui->passwordled->text()==ui->rewriteled->text())
+    {
+        confirmpass=true;
+        ui->confirmpasserrorlbl->clear();
+
+    }
+    else
+    {
+        confirmpass=false;
+        ui->confirmpasserrorlbl->setText("Passwords don't match");
+    }
     //all filled? [X]
     //pass==rewritepass? [X]
     //new username?
-    //strong pass?
+    //strong pass? [X]
     //valid name?
     //valid email? [X]
+
     bool ok= !ui->usernameled->text().isEmpty()
             && !ui->passwordled->text().isEmpty()
-            && !ui->rewriteled->text().isEmpty()&&(ui->passwordled->text()==ui->rewriteled->text())
-            &&(validemail);
+            && !ui->rewriteled->text().isEmpty()&&(confirmpass)
+            &&(validemail)&&(strongPassWord);
     ui->signupbtn->setEnabled(ok);
 }

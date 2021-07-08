@@ -6,101 +6,217 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>223</width>
-    <height>192</height>
+    <width>310</width>
+    <height>334</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>201</width>
-     <height>173</height>
+     <width>281</width>
+     <height>301</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MV Boli</family>
+    </font>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_5">
       <item>
        <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
         <property name="text">
-         <string>name                       </string>
+         <string>Complete Name:  </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="nameled"/>
+       <widget class="QLineEdit" name="nameled">
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
+       </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="nameerrorlbl">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
        <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
         <property name="text">
-         <string>user name               </string>
+         <string>User Name:       </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="usernameled"/>
+       <widget class="QLineEdit" name="usernameled">
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
+       </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="usererrorlbl">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
         <property name="text">
-         <string>password                </string>
+         <string>Password:         </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="passwordled"/>
+       <widget class="QLineEdit" name="passwordled">
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
+       </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="passworderrorlbl">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
         <property name="text">
-         <string>rewrite password    </string>
+         <string>Confirm Password:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="rewriteled"/>
+       <widget class="QLineEdit" name="rewriteled">
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
+       </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="confirmpasserrorlbl">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
         <property name="text">
-         <string>Email</string>
+         <string>Email:             </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="emailled"/>
+       <widget class="QLineEdit" name="emailled">
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
     <item>
+     <widget class="QLabel" name="emailerrorlbl">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QPushButton" name="signupbtn">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="font">
+       <font>
+        <family>MV Boli</family>
+       </font>
+      </property>
       <property name="text">
        <string>Signup</string>
       </property>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="errorlbl_2">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>130</y>
+     <width>199</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>

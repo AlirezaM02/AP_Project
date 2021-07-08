@@ -101,6 +101,7 @@ void Application::refresh()
 }
 bool Application::login(QString username, QString password)
 {
+
     for (int i = 0; i < playerlist.size(); i++)
     {
         if (playerlist[i].get_username() == username && playerlist[i].get_password() == password)
@@ -108,7 +109,6 @@ bool Application::login(QString username, QString password)
             currentPlayer = &playerlist[i];
             playerID = playerlist[i].get_ID();
             //TODO
-            savePlayersData();
             return true;
         }
     }
@@ -128,6 +128,11 @@ void Application::setCurrentPlayer(int ID)
         if (playerlist[i].get_ID() == ID)
             currentPlayer = &playerlist[i];
     }
+}
+
+void Application::log_in()
+{
+
 }
 
 int Application::getplayerID()

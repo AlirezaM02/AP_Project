@@ -10,7 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     application.cpp \
-    login.cpp \
+    logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
     map.cpp \
@@ -20,7 +20,7 @@ SOURCES += \
 
 HEADERS += \
     application.h \
-    login.h \
+    logindialog.h \
     mainwindow.h \
     map.h \
     player.h \
@@ -28,7 +28,7 @@ HEADERS += \
     signup.h
 
 FORMS += \
-    login.ui \
+    logindialog.ui \
     mainwindow.ui \
     map.ui \
     scoreboard.ui \
