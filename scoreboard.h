@@ -14,6 +14,9 @@
 #include <QJsonDocument>
 #include <QTextStream>
 #include <QDir>
+#include <QTableWidgetItem>
+#include <iostream>
+
 using std::vector;
 
 class showPlayers
@@ -53,6 +56,7 @@ public:
 private:
     Ui::Scoreboard *ui;
     QVector <showPlayers> players;
+
 };
 
 #endif // SCOREBOARD_H
