@@ -25,7 +25,7 @@ class Scoreboard : public QDialog
     Q_OBJECT
 
 public:
-    explicit Scoreboard(QWidget *parent, QVector<Player>&players);
+    explicit Scoreboard(QWidget *parent, QVector<Player>&players, int ID);
     ~Scoreboard();
 
 private:

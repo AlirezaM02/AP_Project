@@ -37,14 +37,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::showScoreboard()
 {
-    scoreboard=new Scoreboard(NULL, application.getPalayerlistref());
+    scoreboard=new Scoreboard(NULL, application.getPalayerlistref(), application.getplayerID());
     int result=scoreboard->exec();
        while(1)
        {
            if(result==QDialog::Accepted)
             {
-                setscoreboard=application.login(login->getUsername(),login->getPassword());
-                if(loginSeccess)
+                setscoreboard=application.setscoreboard(application.getplayerID());
+                if(setscoreboard)
                  {
                      break;
                  }

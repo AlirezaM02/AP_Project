@@ -1,11 +1,11 @@
 #include "scoreboard.h"
 #include "ui_scoreboard.h"
 
-Scoreboard::Scoreboard(QWidget *parent, QVector<Player>& players) :
+Scoreboard::Scoreboard(QWidget *parent, QVector<Player>& players, int ID) :
     QDialog(parent),
     ui(new Ui::Scoreboard)
 {
-    players.erase(players.begin(), players.end());
+    //players.erase(players.begin(), players.end());
 
     std::sort(players.begin(), players.end(), [](Player p1, Player p2)
     {
@@ -25,6 +25,7 @@ Scoreboard::Scoreboard(QWidget *parent, QVector<Player>& players) :
 
     for (int i = 0; i < rowCount; i ++)
     {
+
         ui->tableWidget->insertRow(i);
         username->setText(players[i].get_username());
         level->setText(QString ::number(players[i].get_level()));
@@ -33,6 +34,12 @@ Scoreboard::Scoreboard(QWidget *parent, QVector<Player>& players) :
         ui->tableWidget->setItem(i, 0, username);
         ui->tableWidget->setItem(i, 1, level);
         ui->tableWidget->setItem(i, 2, xp);
+        if(ID==players[i].get_ID())
+        {
+           ui->tableWidget->item(i,0)->setBackground(Qt::lightGray);
+           ui->tableWidget->item(i,0)->setBackground(Qt::lightGray);
+           ui->tableWidget->item(i,0)->setBackground(Qt::lightGray);
+        }
     }
     ui->setupUi(this);
 }

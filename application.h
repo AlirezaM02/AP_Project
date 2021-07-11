@@ -32,12 +32,11 @@ public:
     void refresh(int ID);
     int getplayerID();
     void setCurrentPlayer(int ID);
-    void log_in();
-    void setscoreboard();
+    bool setscoreboard(int ID);
     Player *getCurrentPlayer() const;
     const QVector<Player> &getPlayerlist() const;
     QVector<Player> &getPalayerlistref()    { return playerlist; }
-    const QVector<Player> &getSalesItems() const { return playerlist; }
+    const QVector<Player> &getPalayerlistref() const { return playerlist; }
 };
 
 #endif // APPLICATION_H
