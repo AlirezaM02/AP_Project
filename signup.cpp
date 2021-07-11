@@ -23,10 +23,15 @@ signup::~signup()
 
 void signup::on_signupbtn_clicked()
 {
-
+    QString name, username, password, email;
+    name = ui->nameled->text().toUtf8();
+    username = ui->usernameled->text().toUtf8();
+    password = ui->passwordled->text().toUtf8();
+    email = ui->emailled->text().toUtf8();
+    emit sendNewUserData(name, username, password, email);
 }
 
-void signup::checkLineEdits()
+void signup::check_line_edits()
 {
     bool validemail;
     int flag=0;
