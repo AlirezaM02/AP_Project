@@ -3,29 +3,29 @@
 
 #include <QDialog>
 
-namespace Ui {
-class LoginDialog;
+namespace Ui
+{
+class loginDialog;
 }
 
-class LoginDialog : public QDialog
+class loginDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit LoginDialog(QWidget *parent = nullptr);
-    ~LoginDialog();
+    explicit loginDialog(QWidget *parent = nullptr);
+    ~loginDialog();
     QString getUsername();
     QString getPassword();
+
 private slots:
     void checkLineEdits();
-
     void on_loginbtn_clicked();
-
     void on_signupbtn_clicked();
 
 
 private:
-    Ui::LoginDialog *ui;
+    Ui::loginDialog *ui;
 };
 
 #endif // LOGINDIALOG_H

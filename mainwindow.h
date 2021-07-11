@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include "application.h"
 #include "logindialog.h"
+#include "signup.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -13,13 +14,21 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow();
     ~MainWindow();
+
+private slots:
+    void saveNewUserData(QString, QString, QString, QString);
+
+signals:
 
 private:
     Ui::MainWindow *ui;
     Application application;
-    LoginDialog* login;
-    bool loginSeccess=false;
+    loginDialog *login;
+    signup *signupPage;
+    bool loginStatus = false;
+    bool signupStatus = false;
+    void showSignupPage();
 };
 #endif // MAINWINDOW_H

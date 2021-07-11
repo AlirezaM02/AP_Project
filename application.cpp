@@ -79,6 +79,18 @@ void Application::fetchPlayersData()
     }
 }
 
+void Application::addPlayer(Player player)
+{
+    playerlist.push_back(player);
+    savePlayersData();
+}
+
+void Application::addPlayer(QString name, QString username, QString password, QString email)
+{
+    playerlist.push_back(Player(20, 0, 1, name, username, password, email));
+    savePlayersData();
+}
+
 Player *Application::findPlayer(QString username)
 {
     for (int i = 0; i < playerlist.size(); i++)
@@ -99,6 +111,7 @@ void Application::refresh()
 {
     fetchPlayersData();
 }
+
 bool Application::login(QString username, QString password)
 {
 
