@@ -3,6 +3,15 @@
 int Application::playerCounter = 0;
 int Application::lastID = 0;
 
+Player *Application::getCurrentPlayer() const
+{
+    return currentPlayer;
+}
+
+const QVector<Player> &Application::getPlayerlist() const
+{
+    return playerlist;
+}
 Application::Application()
 {
     fetchPlayersData();
@@ -129,10 +138,16 @@ void Application::setCurrentPlayer(int ID)
             currentPlayer = &playerlist[i];
     }
 }
-
-void Application::log_in()
+bool Application::setscoreboard(int ID)
 {
-
+    for (int i = 0; i < playerlist.size(); i++)
+    {
+        if (playerlist[i].get_ID() == ID)
+        {
+             return true;
+        }
+    }
+    return false;
 }
 
 int Application::getplayerID()

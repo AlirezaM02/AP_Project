@@ -35,3 +35,31 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::showScoreboard()
+{
+    scoreboard=new Scoreboard(NULL, application.getPalayerlistref());
+    int result=scoreboard->exec();
+       while(1)
+       {
+           if(result==QDialog::Accepted)
+            {
+                setscoreboard=application.login(login->getUsername(),login->getPassword());
+                if(loginSeccess)
+                 {
+                     break;
+                 }
+                 else
+                 {
+                     result=scoreboard->exec();
+                 }
+             }
+             else if(result==QDialog::Rejected)
+             {
+                 scoreboard->close();
+                 //or this?
+                 break;
+             }
+         }
+
+}
+

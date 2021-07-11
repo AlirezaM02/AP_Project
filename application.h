@@ -33,6 +33,11 @@ public:
     int getplayerID();
     void setCurrentPlayer(int ID);
     void log_in();
+    void setscoreboard();
+    Player *getCurrentPlayer() const;
+    const QVector<Player> &getPlayerlist() const;
+    QVector<Player> &getPalayerlistref()    { return playerlist; }
+    const QVector<Player> &getSalesItems() const { return playerlist; }
 };
 
 #endif // APPLICATION_H

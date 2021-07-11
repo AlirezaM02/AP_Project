@@ -16,9 +16,9 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>20</y>
-     <width>291</width>
+     <x>30</x>
+     <y>30</y>
+     <width>383</width>
      <height>161</height>
     </rect>
    </property>
@@ -79,6 +79,13 @@
      </layout>
     </item>
     <item>
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <widget class="QLabel" name="donthaveacclbl">
@@ -105,21 +112,6 @@
        </widget>
       </item>
      </layout>
-    </item>
-    <item>
-     <widget class="QPushButton" name="loginbtn">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="font">
-       <font>
-        <family>MV Boli</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>Log in</string>
-      </property>
-     </widget>
     </item>
    </layout>
   </widget>
