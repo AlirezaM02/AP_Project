@@ -19,7 +19,7 @@ public:
     QString getPassword();
 
 private slots:
-    void checkLineEdits();
+    void check_line_edits();
     void on_loginbtn_clicked();
     void on_signupbtn_clicked();
 

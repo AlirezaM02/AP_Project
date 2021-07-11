@@ -6,6 +6,7 @@ MainWindow::MainWindow()
 {
     application.fetchPlayersData();
     login = new loginDialog();
+    login->show();
     int result = login->exec();
     while(1)
     {

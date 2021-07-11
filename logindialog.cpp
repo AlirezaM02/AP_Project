@@ -26,12 +26,12 @@ QString loginDialog::getPassword()
     return ui->passwordled->text();
 }
 
-void loginDialog::checkLineEdits()
+void loginDialog::check_line_edits()
 {
-bool ok = !ui->usernameled->text().isEmpty()
-&& !ui->passwordled->text().isEmpty();
+    bool ok = !ui->usernameled->text().isEmpty()
+            && !ui->passwordled->text().isEmpty();
 
-ui->loginbtn->setEnabled(ok);
+    ui->loginbtn->setEnabled(ok);
 }
 
 void loginDialog::on_loginbtn_clicked()

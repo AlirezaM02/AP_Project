@@ -5,25 +5,32 @@ int Player::counter=0;
 Player::Player(long _coins, long _XP, int _level, QString _name, QString _username, QString _password, QString _email, Map _map)
 {
     counter++;
-    ID= counter;
-    coins= _coins;
-    XP= _XP;
-    level= _level;
-    name= _name;
-    username=_username;
-    password=_password;
-    email= _email;
+    ID = counter;
+    coins = _coins;
+    XP = _XP;
+    level = _level;
+    name = _name;
+    username =_username;
+    password =_password;
+    email = _email;
     //map = _map;
 }
 
 Player::Player()
 {
-
+    coins = 20;
+    XP = 0;
+    level = 1;
+    name = "";
+    username = "";
+    password = "";
+    email = "";
+    counter ++;
 }
 
 Player::~Player()
 {
-    counter--;
+    counter --;
 }
 
 int Player::get_counter()
@@ -83,7 +90,7 @@ QString Player::get_username()
 
 void Player::set_username(QString _username)
 {
-    username=_username;
+    username = _username;
 }
 
 QString Player::get_password()
@@ -93,7 +100,7 @@ QString Player::get_password()
 
 void Player::set_password(QString _password)
 {
-    password= _password;
+    password = _password;
 }
 
 QString Player::get_email()
@@ -152,4 +159,3 @@ bool Player::check_password(QString _password)
         return true;
     return false;
 }
-
