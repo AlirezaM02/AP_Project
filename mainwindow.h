@@ -22,6 +22,7 @@ private slots:
 
 signals:
 
+
 private:
     Ui::MainWindow *ui;
     Application application;

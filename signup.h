@@ -2,6 +2,8 @@
 #define SIGNUP_H
 
 #include <QWidget>
+#include <iostream>
+using std::string;
 
 namespace Ui {
 class signup;

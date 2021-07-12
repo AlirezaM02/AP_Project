@@ -9,6 +9,7 @@ loginDialog::loginDialog(QWidget *parent) :
     this->setFixedSize(this->geometry().width(),this->geometry().height());
     connect(ui->usernameled, SIGNAL(textChanged()), this, SLOT(checkLineEdits()));
     connect(ui->passwordled, SIGNAL(textChanged()), this, SLOT(checkLineEdits()));
+    //connect(ui->signupbtn, SIGNAL(pressed()), this, SLOT())
 }
 
 loginDialog::~loginDialog()
@@ -38,7 +39,6 @@ void loginDialog::on_loginbtn_clicked()
 {
 
 }
-
 
 void loginDialog::on_signupbtn_clicked()
 {

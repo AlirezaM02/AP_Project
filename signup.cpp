@@ -33,88 +33,107 @@ void signup::on_signupbtn_clicked()
 
 void signup::check_line_edits()
 {
+    QChar c;
     bool validemail;
     int flag=0;
-    QChar c= ui->emailled->text()[0];
-    if (!c.isLetter()&&!flag)
+
+    c = ui->emailled->text()[0];
+    if (!c.isLetter() && !flag)
     {
-        validemail= false;
-        flag=1;
+        validemail = false;
+        flag = 1;
         ui->emailerrorlbl->setText("Invalid Email!");
     }
-    int at=-1;
-    int dot=-1;
-    for(int i=0; i<ui->emailled->text().length(); i++)
+
+    int at = -1;
+    int dot = -1;
+
+    for (int i = 0; i < ui->emailled->text().length(); i++)
     {
-        if (ui->emailled->text()[i]=='@')
+        if (ui->emailled->text()[i] == '@')
             at=i;
         else if (ui->emailled->text()[i]=='.')
             dot=i;
     }
-    if((at==-1 || dot==-1)&&!flag)
+
+    if ((at == -1 || dot == -1) && !flag)
     {
-        validemail= false;
+        validemail = false;
         ui->emailerrorlbl->setText("Invalid Email!");
-        flag=1;
+        flag = 1;
     }
-    if( (dot<at)&& !flag)
+
+    if ((dot < at) && !flag)
     {
-        validemail= false;
+        validemail = false;
         ui->emailerrorlbl->setText("Invalid e-mail!");
-        flag=1;
+        flag = 1;
     }
+
     if (!flag)
     {
-        validemail= !(dot>=(ui->emailled->text().length()-1));
+        validemail = !(dot>=(ui->emailled->text().length() - 1));
     }
+
     if (validemail)
         //ui->errorlbl->setText("");
         ui->emailerrorlbl->clear();
-    bool strongPassWord;
+
+    bool strongPassword;
     int lower = 0, digit = 0, symbol = 0, upper = 0, passlen = ui->passwordled->text().length();
-    for (const auto& character : ui->passwordled->text())
+
+    for (int i = 0; i < passlen; i++)
     {
-        if (character.isUpper())
+        c = ui->passwordled->text()[i];
+        if (c.isUpper())
             upper++;
-        else if (character.isLower())
+        else if (c.isLower())
             lower++;
-        else if (character.isDigit())
+        else if (c.isDigit())
             digit++;
         else
             symbol++;
     }
+
     if (upper >= 1 and lower >= 1 and digit >= 1 and symbol >= 1 and passlen >=6)
-    {
-        strongPassWord= true;
-    }
+        strongPassword = true;
+
     else
     {
-        strongPassWord=false;
+        strongPassword = false;
         ui->passworderrorlbl->setText("Your password is not strong enough! (Make sure it contains at least 6 characters and an uppercase letter, a lowercase letter, a number and a special symbol)");
 
     }
+
     bool confirmpass;
-    if(ui->passwordled->text()==ui->rewriteled->text())
+
+    if (ui->passwordled->text().toUtf8() == ui->rewriteled->text().toUtf8())
     {
         confirmpass=true;
         ui->confirmpasserrorlbl->clear();
-
     }
+
     else
     {
         confirmpass=false;
         ui->confirmpasserrorlbl->setText("Passwords don't match");
     }
+
+    bool validName = false;
+    for (int i = 0; i < ui->nameled->text().length(); i++)
+    {
+        c = ui->nameled->text()[i];
+        if (c.isDigit() && (!(c.isDigit() || c.isLetter()))) // If its a digit or not a letter or a digit (meaning its a symbol)
+            break;
+        validName = true;
+    }
     //all filled? [X]
     //pass==rewritepass? [X]
     //new username?
     //strong pass? [X]
-    //valid name?
+    //valid name? [X]
     //valid email? [X]
 
-    bool ok= !ui->usernameled->text().isEmpty()
-            && !ui->passwordled->text().isEmpty()
-            && !ui->rewriteled->text().isEmpty()&&(confirmpass)
-            &&(validemail)&&(strongPassWord);
+    bool ok = !(ui->usernameled->text().isEmpty() || ui->passwordled->text().isEmpty() || ui->rewriteled->text().isEmpty() || (!confirmpass) || (!validemail) || (!strongPassword) || (!validName));
     ui->signupbtn->setEnabled(ok);
 }
