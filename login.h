@@ -19,6 +19,7 @@ private slots:
     void on_loginbtn_clicked();
 
 public:
+    bool ok;
     explicit Login(QWidget *parent = nullptr);
     ~Login();
     QString getUsername();
