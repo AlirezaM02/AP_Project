@@ -24,10 +24,10 @@ Signup::~Signup()
 void Signup::on_signupbtn_clicked()
 {
     QString name, username, password, email;
-    name = ui->nameled->text().toUtf8();
-    username = ui->usernameled->text().toUtf8();
-    password = ui->passwordled->text().toUtf8();
-    email = ui->emailled->text().toUtf8();
+    name = ui->nameled->text();
+    username = ui->usernameled->text();
+    password = ui->passwordled->text();
+    email = ui->emailled->text();
     emit sendNewUserData(name, username, password, email);
 }
 
@@ -124,8 +124,16 @@ void Signup::check_line_edits()
     {
         c = ui->nameled->text()[i];
         if (c.isDigit() && (!(c.isDigit() || c.isLetter()))) // If its a digit or not a letter or a digit (meaning its a symbol)
-            break;
-        validName = true;
+          {
+            validName=false;
+            ui->nameerrorlbl->setText("Inavalid name!");
+          }
+        else
+        {
+           validName = true;
+           ui->nameerrorlbl->clear();
+        }
+
     }
     //all filled? [X]
     //pass==rewritepass? [X]

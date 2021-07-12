@@ -1,3 +1,4 @@
+
 #ifndef LOGINDIALOG_H
 #define LOGINDIALOG_H
 
@@ -12,8 +13,6 @@ class Login : public QDialog
 
 private:
     Ui::Login *ui;
-
-
 private slots:
     void check_line_edits();
     void on_signupbtn_clicked();

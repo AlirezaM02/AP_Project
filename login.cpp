@@ -10,7 +10,7 @@ Login::Login(QWidget *parent) :
     this->setFixedSize(this->geometry().width(),this->geometry().height());
     connect(ui->usernameled, SIGNAL(textChanged()), this, SLOT(checkLineEdits()));
     connect(ui->passwordled, SIGNAL(textChanged()), this, SLOT(checkLineEdits()));
-    //connect(ui->signupbtn, SIGNAL(pressed()), this, SLOT())
+    connect(ui->signupbtn, SIGNAL(clicked()), this, SLOT(on_signupbtn_clicked()));
 }
 
 Login::~Login()
@@ -39,4 +39,8 @@ void Login::check_line_edits()
 
 void Login::on_loginbtn_clicked() {}
 
-void Login::on_signupbtn_clicked() {}
+void Login::on_signupbtn_clicked() {
+    Signup* signup;
+    signup= new Signup(this);
+    signup->show();
+}
