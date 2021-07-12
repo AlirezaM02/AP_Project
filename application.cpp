@@ -157,7 +157,7 @@ bool Application::setscoreboard(int ID)
     {
         if (playerlist[i].get_ID() == ID)
         {
-             return true;
+            return true;
         }
     }
     return false;

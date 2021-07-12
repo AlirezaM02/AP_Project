@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>login</class>
- <widget class="QWidget" name="login">
+ <class>Login</class>
+ <widget class="QDialog" name="Login">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>231</width>
-    <height>142</height>
+    <width>443</width>
+    <height>228</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Dialog</string>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>211</width>
-     <height>122</height>
+     <x>30</x>
+     <y>30</y>
+     <width>383</width>
+     <height>161</height>
     </rect>
    </property>
    <property name="font">
@@ -38,7 +38,7 @@
          </font>
         </property>
         <property name="text">
-         <string>username</string>
+         <string>Username  </string>
         </property>
        </widget>
       </item>
@@ -63,7 +63,7 @@
          </font>
         </property>
         <property name="text">
-         <string>password</string>
+         <string>Password  </string>
         </property>
        </widget>
       </item>
@@ -77,6 +77,13 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -105,21 +112,6 @@
        </widget>
       </item>
      </layout>
-    </item>
-    <item>
-     <widget class="QPushButton" name="loginbtn">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="font">
-       <font>
-        <family>MV Boli</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>Log in</string>
-      </property>
-     </widget>
     </item>
    </layout>
   </widget>

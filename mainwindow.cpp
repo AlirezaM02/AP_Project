@@ -5,7 +5,7 @@ MainWindow::MainWindow()
     : ui(new Ui::MainWindow)
 {
     application.fetchPlayersData();
-    login = new loginDialog();
+    login = new Login();
     login->show();
     int result = login->exec();
     while (1)
@@ -28,13 +28,6 @@ MainWindow::MainWindow()
         }
     }
     ui->setupUi(this);
-}
-
-void MainWindow::showSignupPage()
-{
-    signupPage = new signup(this);
-    signupPage->show();
-    connect(signupPage, SIGNAL(sendNewUserData(QString, QString, QString, QString)), this, SLOT(saveNewUserData(QString, QString, QString, QString)));
 }
 
 MainWindow::~MainWindow()

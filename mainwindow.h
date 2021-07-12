@@ -1,7 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "application.h"
-#include "logindialog.h"
+#include "login.h"
+#include "signup.h"
 #include "scoreboard.h"
 #include <QMainWindow>
 
@@ -29,12 +30,10 @@ signals:
 private:
     Ui::MainWindow *ui;
     Application application;
-    LoginDialog *login;
+    Login *login;
     Scoreboard *scoreboard;
     bool setscoreboard = false;
     bool loginStatus = false;
     bool signupStatus = false;
-    loginDialog *login;
-    void showSignupPage();
 };
 #endif // MAINWINDOW_H

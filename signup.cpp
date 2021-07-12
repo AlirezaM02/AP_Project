@@ -1,9 +1,9 @@
 #include "signup.h"
 #include "ui_signup.h"
 
-signup::signup(QWidget *parent) :
+Signup::Signup(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::signup)
+    ui(new Ui::Signup)
 {
     ui->setupUi(this);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
@@ -16,12 +16,12 @@ signup::signup(QWidget *parent) :
     connect(this, SIGNAL(passmatch), this, SLOT(checkLineEdits()));
 }
 
-signup::~signup()
+Signup::~Signup()
 {
     delete ui;
 }
 
-void signup::on_signupbtn_clicked()
+void Signup::on_signupbtn_clicked()
 {
     QString name, username, password, email;
     name = ui->nameled->text().toUtf8();
@@ -31,7 +31,7 @@ void signup::on_signupbtn_clicked()
     emit sendNewUserData(name, username, password, email);
 }
 
-void signup::check_line_edits()
+void Signup::check_line_edits()
 {
     QChar c;
     bool validemail;

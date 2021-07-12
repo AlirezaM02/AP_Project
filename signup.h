@@ -6,16 +6,16 @@
 using std::string;
 
 namespace Ui {
-class signup;
+class Signup;
 }
 
-class signup : public QWidget
+class Signup : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit signup(QWidget *parent = nullptr);
-    ~signup();
+    explicit Signup(QWidget *parent = nullptr);
+    ~Signup();
 
 signals:
     void sendNewUserData(QString, QString, QString, QString);
@@ -25,7 +25,7 @@ private slots:
     void check_line_edits();
 
 private:
-    Ui::signup *ui;
+    Ui::Signup *ui;
 };
 
 #endif // SIGNUP_H
