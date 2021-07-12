@@ -18,9 +18,7 @@
 
 using std::vector;
 
-namespace Ui {
-class Scoreboard;
-}
+namespace Ui { class Scoreboard; }
 
 class Scoreboard : public QDialog
 {

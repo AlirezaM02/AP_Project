@@ -151,6 +151,7 @@ void Application::setCurrentPlayer(int ID)
             currentPlayer = &playerlist[i];
     }
 }
+
 bool Application::setscoreboard(int ID)
 {
     for (int i = 0; i < playerlist.size(); i++)

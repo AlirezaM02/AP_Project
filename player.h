@@ -6,6 +6,7 @@
 #include <QRegularExpression>
 #include <QWidget>
 #include "map.h"
+
 class Player
 {
 private:

@@ -3,9 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui {
-class Map;
-}
+namespace Ui { class Map; }
 
 class Map : public QWidget
 {
