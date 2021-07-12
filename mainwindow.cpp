@@ -1,35 +1,42 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow()
+    : ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
     application.fetchPlayersData();
-    login=new LoginDialog();
-    int result=login->exec();
-       while(1)
-       {
-           if(result==QDialog::Accepted)
-            {
-                loginSeccess=application.login(login->getUsername(),login->getPassword());
-                if(loginSeccess)
-                 {
-                     break;
-                 }
-                 else
-                 {
-                     result=login->exec();
-                 }
-             }
-             else if(result==QDialog::Rejected)
-             {
-                 this->close();
-                 break;
-             }
-         }
+    login = new loginDialog();
+    login->show();
+    int result = login->exec();
+    while (1)
+    {
+        if (result == QDialog::Accepted)
+        {
+            loginStatus = application.login(login->getUsername(), login->getPassword());
+
+            if (loginStatus)
+                break;
+
+            else
+                result = login->exec();
+        }
+
+        else if (result == QDialog::Rejected)
+        {
+            this->close();
+            break;
+        }
+    }
+    ui->setupUi(this);
 }
+
+void MainWindow::showSignupPage()
+{
+    signupPage = new signup(this);
+    signupPage->show();
+    connect(signupPage, SIGNAL(sendNewUserData(QString, QString, QString, QString)), this, SLOT(saveNewUserData(QString, QString, QString, QString)));
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -37,29 +44,32 @@ MainWindow::~MainWindow()
 
 void MainWindow::showScoreboard()
 {
-    scoreboard=new Scoreboard(NULL, application.getPalayerlistref(), application.getplayerID());
-    int result=scoreboard->exec();
-       while(1)
-       {
-           if(result==QDialog::Accepted)
+    scoreboard = new Scoreboard(NULL, application.getPalayerlistref(), application.getplayerID());
+    int result = scoreboard->exec();
+    while (1)
+    {
+        if (result == QDialog::Accepted)
+        {
+            setscoreboard = application.setscoreboard(application.getplayerID());
+            if (setscoreboard)
             {
-                setscoreboard=application.setscoreboard(application.getplayerID());
-                if(setscoreboard)
-                 {
-                     break;
-                 }
-                 else
-                 {
-                     result=scoreboard->exec();
-                 }
-             }
-             else if(result==QDialog::Rejected)
-             {
-                 scoreboard->close();
-                 //or this?
-                 break;
-             }
-         }
-
+                break;
+            }
+            else
+            {
+                result = scoreboard->exec();
+            }
+        }
+        else if (result == QDialog::Rejected)
+        {
+            scoreboard->close();
+            //or this?
+            break;
+        }
+    }
 }
 
+void MainWindow::saveNewUserData(QString name, QString username, QString password, QString email)
+{
+    application.addPlayer(Player(20, 0, 1, name, username, password, email)); // Saves to json automatically too
+}

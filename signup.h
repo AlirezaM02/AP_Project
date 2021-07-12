@@ -2,6 +2,8 @@
 #define SIGNUP_H
 
 #include <QWidget>
+#include <iostream>
+using std::string;
 
 namespace Ui {
 class signup;
@@ -15,9 +17,12 @@ public:
     explicit signup(QWidget *parent = nullptr);
     ~signup();
 
+signals:
+    void sendNewUserData(QString, QString, QString, QString);
+
 private slots:
     void on_signupbtn_clicked();
-    void checkLineEdits();
+    void check_line_edits();
 
 private:
     Ui::signup *ui;

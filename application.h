@@ -37,6 +37,9 @@ public:
     const QVector<Player> &getPlayerlist() const;
     QVector<Player> &getPalayerlistref()    { return playerlist; }
     const QVector<Player> &getPalayerlistref() const { return playerlist; }
+    void log_in();
+    void addPlayer(Player player); // Preferred
+    void addPlayer(QString name, QString username, QString password, QString email);
 };
 
 #endif // APPLICATION_H

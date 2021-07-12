@@ -16,6 +16,8 @@
 #include <iostream>
 #include "player.h"
 
+using std::vector;
+
 namespace Ui {
 class Scoreboard;
 }
@@ -30,7 +32,7 @@ public:
 
 private:
     Ui::Scoreboard *ui;
-
+    QVector <Player> players;
 };
 
 #endif // SCOREBOARD_H
