@@ -1,11 +1,12 @@
 #ifndef SIGNUP_H
 #define SIGNUP_H
 
-#include <QWidget>
+
+#include <QDialog>
 
 namespace Ui { class Signup; }
 
-class Signup : public QWidget
+class Signup : public QDialog
 {
     Q_OBJECT
 

@@ -44,5 +44,6 @@ void Login::on_loginbtn_clicked() {
 void Login::on_signupbtn_clicked() {
     Signup* signup;
     signup= new Signup(this);
+    //connect(this, &QDialog::destroyed, signup, &QDialog::deleteLater);
     signup->show();
 }

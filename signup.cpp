@@ -2,7 +2,7 @@
 #include "ui_signup.h"
 
 Signup::Signup(QWidget *parent) :
-    QWidget(parent),
+    QDialog(parent),
     ui(new Ui::Signup)
 {
     ui->setupUi(this);
