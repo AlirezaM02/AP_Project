@@ -8,11 +8,11 @@ Signup::Signup(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
     ui->signupbtn->setDisabled(true);
-    connect(ui->nameled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits()));
-    connect(ui->usernameled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits()));
-    connect(ui->passwordled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits()));
-    connect(ui->rewriteled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits()));
-    connect(ui->emailled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits()));
+    connect(ui->nameled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
+    connect(ui->usernameled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
+    connect(ui->passwordled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
+    connect(ui->rewriteled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
+    connect(ui->emailled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
     connect(this, SIGNAL(passmatch()), this, SLOT(check_line_edits()));
 }
 

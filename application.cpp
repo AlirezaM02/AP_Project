@@ -154,12 +154,8 @@ void Application::setCurrentPlayer(int ID)
 bool Application::setScoreboard(int ID)
 {
     for (int i = 0; i < playerlist.size(); i++)
-    {
         if (playerlist[i].get_ID() == ID)
-        {
             return true;
-        }
-    }
     return false;
 }
 

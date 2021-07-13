@@ -25,8 +25,7 @@ public:
     QString getUsername();
     QString getPassword();
 
-    bool un_Ok;
-    bool pass_Ok;
+    bool ok;
 };
 
 #endif // LOGINDIALOG_H

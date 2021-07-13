@@ -31,7 +31,7 @@ private:
     Application application;
     Login *login;
     Scoreboard *scoreboard;
-    bool setscoreboard = false;
+    bool ssb = false;
     bool loginStatus = false;
     bool signupStatus = false;
 };
