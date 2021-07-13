@@ -10,23 +10,20 @@ class Login : public QDialog
 {
     Q_OBJECT
 
-private:
-    Ui::Login *ui;
+public:
+    explicit Login(QWidget *parent = nullptr);
+    ~Login();
+    QString getUsername();
+    QString getPassword();
 
 private slots:
     void check_line_edits();
     void on_signupbtn_clicked();
     void on_loginbtn_clicked();
 
-public:
-    explicit Login(QWidget *parent = nullptr);
-    ~Login();
-
-    QString getUsername();
-    QString getPassword();
-
-    bool un_Ok;
-    bool pass_Ok;
+private:
+    Ui::Login *ui;
+    bool ok;
 };
 
 #endif // LOGINDIALOG_H
