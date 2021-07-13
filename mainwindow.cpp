@@ -16,6 +16,7 @@ MainWindow::MainWindow()
 
             if (loginStatus)
                 break;
+
             else
                 result = login->exec();
         }
@@ -42,14 +43,16 @@ void MainWindow::showScoreboard()
     {
         if (result == QDialog::Accepted)
         {
-            bool setsb = application.setScoreboard(application.getplayerID());
-
-            if (setsb)
+            setscoreboard = application.setscoreboard(application.getplayerID());
+            if (setscoreboard)
+            {
                 break;
+            }
             else
+            {
                 result = scoreboard->exec();
+            }
         }
-
         else if (result == QDialog::Rejected)
         {
             scoreboard->close();
@@ -61,5 +64,5 @@ void MainWindow::showScoreboard()
 
 void MainWindow::saveNewUserData(QString name, QString username, QString password, QString email)
 {
-    application.addPlayer(Player(name, username, password, email)); // Saves to json automatically too
+    application.addPlayer(Player(20, 0, 1, name, username, password, email)); // Saves to json automatically too
 }
