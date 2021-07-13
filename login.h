@@ -1,4 +1,3 @@
-
 #ifndef LOGINDIALOG_H
 #define LOGINDIALOG_H
 
@@ -13,17 +12,21 @@ class Login : public QDialog
 
 private:
     Ui::Login *ui;
+
 private slots:
     void check_line_edits();
     void on_signupbtn_clicked();
     void on_loginbtn_clicked();
 
 public:
-    bool ok;
     explicit Login(QWidget *parent = nullptr);
     ~Login();
+
     QString getUsername();
     QString getPassword();
+
+    bool un_Ok;
+    bool pass_Ok;
 };
 
 #endif // LOGINDIALOG_H

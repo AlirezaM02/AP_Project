@@ -12,6 +12,7 @@ const QVector<Player> &Application::getPlayerlist() const
 {
     return playerlist;
 }
+
 Application::Application()
 {
     fetchPlayersData();
@@ -42,7 +43,7 @@ void Application::savePlayersData()
     mainObj["users"] = mainArray;
     QByteArray byteArray;
     byteArray = QJsonDocument(mainObj).toJson();
-    QFile file("C:\\Users\\Alireza\\My Documents\\GitRepos\\AP_Project\\data\\data.json");
+    QFile file("C:\\data.json");
     if (!file.open(QIODevice::WriteOnly))
     {
         qDebug() << "No write access for json file";
@@ -55,9 +56,7 @@ void Application::savePlayersData()
 void Application::fetchPlayersData()
 {
     playerlist.erase(playerlist.begin(), playerlist.end());
-    QTextStream ts(stdout);
-    ts << QDir::currentPath();
-    QFile file("C:\\Users\\Alireza\\My Documents\\GitRepos\\AP_Project\\data\\data.json");
+    QFile file("C:\\data.json");
     if (!file.open(QIODevice::ReadOnly))
     {
         qDebug() << "Json file couldn't be opened/found";
@@ -84,7 +83,7 @@ void Application::fetchPlayersData()
         QString name = val.toObject().value("name").toString(), username = val.toObject().value("username").toString(),
                 password = val.toObject().value("password").toString(), email = val.toObject().value("email").toString();
         //Map _map;
-        playerlist.push_back(Player(coins, XP, level, name, username, password, email));
+        playerlist.push_back(Player(name, username, password, email, coins, XP, level));
     }
 }
 
@@ -96,7 +95,7 @@ void Application::addPlayer(Player player)
 
 void Application::addPlayer(QString name, QString username, QString password, QString email)
 {
-    playerlist.push_back(Player(20, 0, 1, name, username, password, email));
+    playerlist.push_back(Player(name, username, password, email));
     savePlayersData();
 }
 
@@ -152,7 +151,7 @@ void Application::setCurrentPlayer(int ID)
     }
 }
 
-bool Application::setscoreboard(int ID)
+bool Application::setScoreboard(int ID)
 {
     for (int i = 0; i < playerlist.size(); i++)
     {

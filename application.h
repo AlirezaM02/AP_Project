@@ -7,8 +7,6 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonDocument>
-#include <QTextStream>
-#include <QDir>
 #include "player.h"
 #include "login.h"
 
@@ -20,24 +18,29 @@ private:
     QVector <Player> playerlist;
     Player *currentPlayer;
     int playerID;
+
 public:
     Application();
     ~Application();
+
     void savePlayersData();
     void fetchPlayersData();
-    Player *findPlayer(QString username);
+
     bool login(QString username, QString password);
     void logout();
     void refresh();
     void refresh(int ID);
-    int getplayerID();
+
+    bool setScoreboard(int ID);
     void setCurrentPlayer(int ID);
-    bool setscoreboard(int ID);
-    Player *getCurrentPlayer() const;
+
+    int getplayerID();
     const QVector<Player> &getPlayerlist() const;
-    QVector<Player> &getPalayerlistref()    { return playerlist; }
-    const QVector<Player> &getPalayerlistref() const { return playerlist; }
-    void log_in();
+    QVector<Player> &getPlayerlistref()    { return playerlist; }
+    const QVector<Player> &getPlayerlistref() const { return playerlist; }
+    Player *getCurrentPlayer() const;
+    Player *findPlayer(QString username);
+
     void addPlayer(Player player); // Preferred
     void addPlayer(QString name, QString username, QString password, QString email);
 };

@@ -2,7 +2,7 @@
 
 int Player::counter=0;
 
-Player::Player(long _coins, long _XP, int _level, QString _name, QString _username, QString _password, QString _email, Map _map)
+Player::Player(QString _name, QString _username, QString _password, QString _email, long _coins, long _XP, int _level)
 {
     counter++;
     ID = counter;
@@ -16,19 +16,6 @@ Player::Player(long _coins, long _XP, int _level, QString _name, QString _userna
     //map = _map;
 }
 
-Player::Player(long _coins, long _XP, int _level, QString _name, QString _username, QString _password, QString _email)
-{
-    counter++;
-    ID = counter;
-    coins = _coins;
-    XP = _XP;
-    level = _level;
-    name = _name;
-    username =_username;
-    password =_password;
-    email = _email;
-}
-
 Player::Player()
 {
     coins = 20;
@@ -39,15 +26,6 @@ Player::Player()
     password = "";
     email = "";
     counter ++;
-}
-
-Player::Player(const Player & pl)
-{
-    this->ID=pl.ID;
-    this->XP=pl.XP;
-    this->coins=pl.coins;
-    this->email=pl.email;
-    //...
 }
 
 Player::~Player()
@@ -72,7 +50,7 @@ int Player::get_coins()
 
 void Player::set_coins(int _coins)
 {
-    coins=_coins;
+    coins = _coins;
 }
 
 int Player::get_XP()
@@ -82,7 +60,7 @@ int Player::get_XP()
 
 void Player::set_XP(int _XP)
 {
-    XP=_XP;
+    XP = _XP;
 }
 
 int Player::get_level()
@@ -92,7 +70,7 @@ int Player::get_level()
 
 void Player::set_level(int _level)
 {
-    level=_level;
+    level = _level;
 }
 
 QString Player::get_name()
@@ -102,7 +80,7 @@ QString Player::get_name()
 
 void Player::set_name(QString _name)
 {
-    name=_name;
+    name = _name;
 }
 
 QString Player::get_username()
@@ -132,7 +110,7 @@ QString Player::get_email()
 
 void Player::set_email(QString _email)
 {
-    email=_email;
+    email = _email;
 }
 
 bool Player::check_email(QString _email)
@@ -142,18 +120,18 @@ bool Player::check_email(QString _email)
     {
         return false;
     }
-    int at=-1;
-    int dot=-1;
-    for(int i=0; i<_email.length(); i++)
+    int at = -1;
+    int dot = -1;
+    for(int i = 0; i < _email.length(); i++)
     {
-        if (_email[i]=='@')
-            at=i;
-        else if (_email[i]=='.')
-            dot=i;
+        if (_email[i] == '@')
+            at = i;
+        else if (_email[i] == '.')
+            dot = i;
     }
     if (at==-1 || dot==-1)
         return false;
-    if (dot<at)
+    if (dot < at)
         return false;
     return !(dot >= (_email.length() - 1));
 }

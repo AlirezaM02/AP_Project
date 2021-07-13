@@ -37,7 +37,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::showScoreboard()
 {
-    scoreboard = new Scoreboard(NULL, application.getPalayerlistref(), application.getplayerID());
+    scoreboard = new Scoreboard(NULL, application.getPlayerlistref(), application.getplayerID());
     int result = scoreboard->exec();
     while (1)
     {

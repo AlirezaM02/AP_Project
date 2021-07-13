@@ -5,11 +5,12 @@ Login::Login(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Login)
 {
+    ui->
     ui->setupUi(this);
     ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(true);
     this->setFixedSize(this->geometry().width(),this->geometry().height());
-    connect(ui->usernameled, SIGNAL(textChanged()), this, SLOT(checkLineEdits()));
-    connect(ui->passwordled, SIGNAL(textChanged()), this, SLOT(checkLineEdits()));
+    connect(ui->usernameled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
+    connect(ui->passwordled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
     connect(ui->signupbtn, SIGNAL(clicked()), this, SLOT(on_signupbtn_clicked()));
 }
 
@@ -30,15 +31,15 @@ QString Login::getPassword()
 
 void Login::check_line_edits()
 {
-    bool ok = !ui->usernameled->text().isEmpty() && !ui->passwordled->text().isEmpty();
-
-    ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(ok);
-    ui->buttonBox->button(QDialogButtonBox::Ok)->setText("Login");
-    ui->buttonBox->button(QDialogButtonBox::Cancel)->setText("Exit");
+    if (ui->usernameled->text().length() != 0 && )
+    {
+        un_Ok = true;
+    }
 }
 
-void Login::on_loginbtn_clicked() {
-    ok=true;
+void Login::on_loginbtn_clicked()
+{
+    un_Ok = true;
 }
 
 void Login::on_signupbtn_clicked() {

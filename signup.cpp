@@ -8,12 +8,12 @@ Signup::Signup(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
     ui->signupbtn->setDisabled(true);
-    connect(ui->nameled, SIGNAL(textChanged(const QString &)), this, SLOT(checkLineEdits()));
-    connect(ui->usernameled, SIGNAL(textChanged(const QString &)), this, SLOT(checkLineEdits()));
-    connect(ui->passwordled, SIGNAL(textChanged(const QString &)), this, SLOT(checkLineEdits()));
-    connect(ui->rewriteled, SIGNAL(textChanged(const QString &)), this, SLOT(checkLineEdits()));
-    connect(ui->emailled, SIGNAL(textChanged(const QString &)), this, SLOT(checkLineEdits()));
-    connect(this, SIGNAL(passmatch), this, SLOT(checkLineEdits()));
+    connect(ui->nameled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits()));
+    connect(ui->usernameled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits()));
+    connect(ui->passwordled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits()));
+    connect(ui->rewriteled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits()));
+    connect(ui->emailled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits()));
+    connect(this, SIGNAL(passmatch()), this, SLOT(check_line_edits()));
 }
 
 Signup::~Signup()
@@ -34,6 +34,7 @@ void Signup::on_signupbtn_clicked()
 void Signup::check_line_edits()
 {
     QChar c;
+
     bool validemail;
     int flag=0;
 
@@ -101,8 +102,7 @@ void Signup::check_line_edits()
     else
     {
         strongPassword = false;
-        ui->passworderrorlbl->setText("Your password is not strong enough! (Make sure it contains at least 6 characters and an uppercase letter, a lowercase letter, a number and a special symbol)");
-
+        ui->passworderrorlbl->setText("Your password is not strong enough! \n(Make sure it contains at least 6 characters and an uppercase letter, a lowercase letter,\n a number and a special symbol)");
     }
 
     bool confirmpass;
@@ -124,24 +124,53 @@ void Signup::check_line_edits()
     {
         c = ui->nameled->text()[i];
         if (c.isDigit() && (!(c.isDigit() || c.isLetter()))) // If its a digit or not a letter or a digit (meaning its a symbol)
-          {
-            validName=false;
-            ui->nameerrorlbl->setText("Inavalid name!");
-          }
+        {
+            validName = false;
+            ui->nameerrorlbl->setText("Invalid name!");
+        }
         else
         {
-           validName = true;
-           ui->nameerrorlbl->clear();
+            validName = true;
+            ui->nameerrorlbl->clear();
         }
-
     }
+
+    int username_counter = 0;
+    QFile file("C:\\data.json");
+    if (!file.open(QIODevice::ReadOnly))
+    {
+        qDebug() << "Json file couldn't be opened/found";
+        return;
+    }
+    QByteArray byteArray;
+    byteArray = file.readAll();
+    file.close();
+
+    QJsonParseError parseError;
+    QJsonDocument jsonDoc;
+    jsonDoc = QJsonDocument::fromJson(byteArray, &parseError);
+    if (parseError.error != QJsonParseError::NoError)
+    {
+        qWarning() << "Parse error at " << parseError.offset << ":" << parseError.errorString();
+        exit(0);
+    }
+    QJsonObject Obj = jsonDoc.object();
+    QJsonArray Arr = Obj.value("users").toArray();
+    foreach (const QJsonValue &val, Arr)
+    {
+        if (val.toObject().value("username").toString().toStdString() == ui->usernameled->text().toStdString())
+            username_counter ++;
+    }
+
     //all filled? [X]
     //pass==rewritepass? [X]
-    //new username?
+    //new username? [X]
     //strong pass? [X]
     //valid name? [X]
     //valid email? [X]
 
-    bool ok = !(ui->usernameled->text().isEmpty() || ui->passwordled->text().isEmpty() || ui->rewriteled->text().isEmpty() || (!confirmpass) || (!validemail) || (!strongPassword) || (!validName));
+    bool ok = !(ui->usernameled->text().isEmpty() || ui->passwordled->text().isEmpty()
+                || ui->rewriteled->text().isEmpty() || (!confirmpass) || (!validemail)
+                || (!strongPassword) || (!validName) || (username_counter != 0));
     ui->signupbtn->setEnabled(ok);
 }

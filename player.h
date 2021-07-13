@@ -22,33 +22,41 @@ private:
    // Map map;
 
 public:
-    //Player(int ID, long coins, long XP, int level, const QString &name, const QString &username, const QString &password, const QString &email, const Map &map);
-    Player(long _coins, long _XP, int _level, QString _name, QString _username, QString _password, QString _email, Map _map);
-    Player(long _coins, long _XP, int _level, QString _name, QString _username, QString _password, QString _email);
+    Player(QString _name, QString _username, QString _password, QString _email, long _coins = 20, long _XP = 0, int _level = 1);
     Player();
-    Player(const Player &);
     ~Player();
+
     int get_counter();
+
     int get_ID();
+
     int get_coins();
     void set_coins(int newCoins);
+
     int get_XP();
     void set_XP(int newXP);
+
     int get_level();
     void set_level(int new_level);
+
     QString get_name();
     void set_name(QString new_name);
+
     QString get_username();
     void set_username(QString new_username);
+
     QString get_password();
     void set_password(QString new_password);
+
     QString get_email();
     void set_email(QString new_email);
+
+    //Map &get_map();
+    //void set_map(Map &newMap);
+
     bool check_email(QString _email);
     bool check_username(QString _username);
     bool check_password(QString _password); //for strength
-    //Map &get_map();
-    //void set_map(Map &newMap);
 };
 
 #endif // PLAYER_H
