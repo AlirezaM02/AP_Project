@@ -37,7 +37,9 @@ void Login::check_line_edits()
     ui->buttonBox->button(QDialogButtonBox::Cancel)->setText("Exit");
 }
 
-void Login::on_loginbtn_clicked() {}
+void Login::on_loginbtn_clicked() {
+    ok=true;
+}
 
 void Login::on_signupbtn_clicked() {
     Signup* signup;

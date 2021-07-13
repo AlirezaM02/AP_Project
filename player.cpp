@@ -16,6 +16,19 @@ Player::Player(long _coins, long _XP, int _level, QString _name, QString _userna
     //map = _map;
 }
 
+Player::Player(long _coins, long _XP, int _level, QString _name, QString _username, QString _password, QString _email)
+{
+    counter++;
+    ID = counter;
+    coins = _coins;
+    XP = _XP;
+    level = _level;
+    name = _name;
+    username =_username;
+    password =_password;
+    email = _email;
+}
+
 Player::Player()
 {
     coins = 20;
@@ -26,6 +39,15 @@ Player::Player()
     password = "";
     email = "";
     counter ++;
+}
+
+Player::Player(const Player & pl)
+{
+    this->ID=pl.ID;
+    this->XP=pl.XP;
+    this->coins=pl.coins;
+    this->email=pl.email;
+    //...
 }
 
 Player::~Player()
