@@ -27,12 +27,12 @@ MainWindow::MainWindow()
             break;
         }
     }
-    ui->setupUi(this);
+    //ui->setupUi(this);
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+    //delete ui;
 }
 
 void MainWindow::showScoreboard()

@@ -6,6 +6,7 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
+    signup= new Signup(this);
     connect(ui->usernameled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
     connect(ui->passwordled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
     connect(ui->signupbtn, SIGNAL(clicked()), this, SLOT(on_signupbtn_clicked()));
@@ -45,9 +46,8 @@ void Login::on_loginbtn_clicked()
 }
 
 void Login::on_signupbtn_clicked() {
-    Signup *signup;
-    signup = new Signup(this);
-    //connect(this, &QDialog::destroyed, signup, &QDialog::deleteLater);
-    this->close();
+
+    connect(this, SIGNAL(destroyed()), signup, SLOT(close()));
+    //this->close();
     signup->show();
 }

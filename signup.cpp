@@ -94,10 +94,14 @@ void Signup::check_line_edits()
             digit++;
         else
             symbol++;
+        qDebug()<<upper<<lower<<digit<<symbol<<passlen;
     }
 
     if (upper >= 1 and lower >= 1 and digit >= 1 and symbol >= 1 and passlen >=6)
+    {
         strongPassword = true;
+        ui->passworderrorlbl->clear();
+    }
 
     else
     {

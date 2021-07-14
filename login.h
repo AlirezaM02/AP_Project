@@ -12,7 +12,7 @@ class Login : public QDialog
 
 private:
     Ui::Login *ui;
-
+    Signup *signup;
 private slots:
     void check_line_edits();
     void on_signupbtn_clicked();
