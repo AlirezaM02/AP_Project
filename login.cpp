@@ -10,11 +10,12 @@ Login::Login(QWidget *parent) :
     connect(ui->usernameled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
     connect(ui->passwordled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
     connect(ui->signupbtn, SIGNAL(clicked()), this, SLOT(on_signupbtn_clicked()));
+    connect(ui->buttonBox, SIGNAL(accepted()),this, SLOT(on_loginbtn_clicked()));
+    connect(ui->buttonBox,SIGNAL(rejected()),this, SLOT(on_buttonBox_rejected()));
     this->setFixedSize(this->geometry().width(),this->geometry().height());
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
     ui->buttonBox->button(QDialogButtonBox::Ok)->setText("Login");
     ui->buttonBox->button(QDialogButtonBox::Cancel)->setText("Exit");
-
 }
 
 Login::~Login()
@@ -41,7 +42,6 @@ void Login::on_loginbtn_clicked()
 
 void Login::check_line_edits(const QString &a_strString)
 {
-    qDebug()<<"in slot!";
     if (ui->usernameled->text().isEmpty() || ui->passwordled->text().isEmpty())
     {
         ok = true;
@@ -59,3 +59,9 @@ void Login::on_signupbtn_clicked() {
     //this->close();
     signup->show();
 }
+
+void Login::on_buttonBox_rejected()
+{
+    this->close();
+}
+

@@ -18,6 +18,8 @@ private slots:
     void on_signupbtn_clicked();
     void on_loginbtn_clicked();
 
+    void on_buttonBox_rejected();
+
 public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
