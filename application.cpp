@@ -56,7 +56,7 @@ void Application::savePlayersData()
 void Application::fetchPlayersData()
 {
     playerlist.erase(playerlist.begin(), playerlist.end());
-    QFile file("C:\\data.json");
+    QFile file("D:\\data.json");
     if (!file.open(QIODevice::ReadOnly))
     {
         qDebug() << "Json file couldn't be opened/found";
@@ -122,7 +122,7 @@ void Application::refresh()
 
 bool Application::login(QString username, QString password)
 {
-
+qDebug()<<"in application.login.";
     for (int i = 0; i < playerlist.size(); i++)
     {
         if (playerlist[i].get_username() == username && playerlist[i].get_password() == password)
@@ -130,10 +130,22 @@ bool Application::login(QString username, QString password)
             currentPlayer = &playerlist[i];
             playerID = playerlist[i].get_ID();
             //TODO
-            return true;
+            message.setText("login successfull");
+            message.setStandardButtons(QMessageBox::Ok);
+            loginstatus=true;
+            savePlayersData();
+            if(message.exec()==QMessageBox::Ok)
+                return loginstatus;
+
         }
     }
-    return false;
+    if(loginstatus==false)
+    {
+        message.setText("username or password is incorrect!");
+        message.setStandardButtons(QMessageBox::Ok);
+        if(message.exec()==QMessageBox::Ok)
+            return loginstatus;
+    }
 }
 
 void Application::logout()

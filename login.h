@@ -14,7 +14,7 @@ private:
     Ui::Login *ui;
     Signup *signup;
 private slots:
-    void check_line_edits();
+    void check_line_edits(const QString &a_strString);
     void on_signupbtn_clicked();
     void on_loginbtn_clicked();
 

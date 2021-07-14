@@ -13,7 +13,7 @@ MainWindow::MainWindow()
         if (result == QDialog::Accepted)
         {
             loginStatus = application.login(login->getUsername(), login->getPassword());
-
+            qDebug()<<"un"<<login->getUsername()<<"ps"<<login->getPassword();
             if (loginStatus)
                 break;
 

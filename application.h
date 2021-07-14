@@ -7,6 +7,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QMessageBox>
 #include "player.h"
 #include "login.h"
 
@@ -18,6 +19,8 @@ private:
     QVector <Player> playerlist;
     Player *currentPlayer;
     int playerID;
+    QMessageBox message;
+    bool loginstatus= false;
 
 public:
     Application();
