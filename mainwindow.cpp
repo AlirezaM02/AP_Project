@@ -8,6 +8,8 @@ MainWindow::MainWindow()
     login = new Login();
     login->show();
     int result = login->exec();
+    qDebug()<<result;
+    qDebug()<<"hello there!";
     while (1)
     {
         if (result == QDialog::Accepted)
@@ -27,12 +29,12 @@ MainWindow::MainWindow()
             break;
         }
     }
-    //ui->setupUi(this);
+    ui->setupUi(this);
 }
 
 MainWindow::~MainWindow()
 {
-    //delete ui;
+    delete ui;
 }
 
 void MainWindow::showScoreboard()

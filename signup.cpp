@@ -8,11 +8,11 @@ Signup::Signup(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
     ui->signupbtn->setDisabled(true);
-    connect(ui->nameled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
-    connect(ui->usernameled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
-    connect(ui->passwordled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
-    connect(ui->rewriteled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
-    connect(ui->emailled, SIGNAL(editingFinished()), this, SLOT(check_line_edits()));
+    connect(ui->nameled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
+    connect(ui->usernameled,SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
+    connect(ui->passwordled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
+    connect(ui->rewriteled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
+    connect(ui->emailled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
     connect(this, SIGNAL(passmatch()), this, SLOT(check_line_edits()));
 }
 
@@ -31,10 +31,9 @@ void Signup::on_signupbtn_clicked()
     emit sendNewUserData(name, username, password, email);
 }
 
-void Signup::check_line_edits()
+void Signup::check_line_edits(const QString& a_strString)
 {
     QChar c;
-
     bool validemail;
     int flag=0;
 
@@ -67,7 +66,7 @@ void Signup::check_line_edits()
     if ((dot < at) && !flag)
     {
         validemail = false;
-        ui->emailerrorlbl->setText("Invalid e-mail!");
+        ui->emailerrorlbl->setText("Invalid Email!");
         flag = 1;
     }
 
@@ -77,20 +76,19 @@ void Signup::check_line_edits()
     }
 
     if (validemail)
-        //ui->errorlbl->setText("");
         ui->emailerrorlbl->clear();
 
     bool strongPassword;
     int lower = 0, digit = 0, symbol = 0, upper = 0, passlen = ui->passwordled->text().length();
-
+        QChar d;
     for (int i = 0; i < passlen; i++)
     {
-        c = ui->passwordled->text()[i];
-        if (c.isUpper())
+        d = ui->passwordled->text()[i];
+        if (d.isUpper())
             upper++;
-        else if (c.isLower())
+        else if (d.isLower())
             lower++;
-        else if (c.isDigit())
+        else if (d.isDigit())
             digit++;
         else
             symbol++;
@@ -101,12 +99,16 @@ void Signup::check_line_edits()
     {
         strongPassword = true;
         ui->passworderrorlbl->clear();
+        ui->passworderrorlbl_2->clear();
+        ui->passworderrorlbl_3->clear();
     }
 
     else
     {
         strongPassword = false;
-        ui->passworderrorlbl->setText("Your password is not strong enough! \n(Make sure it contains at least 6 characters and an uppercase letter, a lowercase letter,\n a number and a special symbol)");
+        ui->passworderrorlbl->setText("Your password is not strong enough!");
+        ui->passworderrorlbl_2->setText("(Make sure it contains at least 6 characters and an uppercase letter, a lowercase letter,");
+        ui->passworderrorlbl_3->setText(" a number and a special symbol)");
     }
 
     bool confirmpass;
@@ -140,7 +142,7 @@ void Signup::check_line_edits()
     }
 
     int username_counter = 0;
-    QFile file("C:\\data.json");
+    QFile file("D:\\data.json");
     if (!file.open(QIODevice::ReadOnly))
     {
         qDebug() << "Json file couldn't be opened/found";
@@ -165,7 +167,11 @@ void Signup::check_line_edits()
         if (val.toObject().value("username").toString().toStdString() == ui->usernameled->text().toStdString())
             username_counter ++;
     }
-
+    if (username_counter)
+        ui->usererrorlbl->setText("that username already exists");
+    else
+        ui->usererrorlbl->clear();
+    qDebug()<<"username counter is:"<<username_counter;
     //all filled? [X]
     //pass==rewritepass? [X]
     //new username? [X]

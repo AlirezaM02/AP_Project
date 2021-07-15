@@ -43,7 +43,7 @@ void Application::savePlayersData()
     mainObj["users"] = mainArray;
     QByteArray byteArray;
     byteArray = QJsonDocument(mainObj).toJson();
-    QFile file("C:\\data.json");
+    QFile file("D:\\data.json");
     if (!file.open(QIODevice::WriteOnly))
     {
         qDebug() << "No write access for json file";

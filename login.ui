@@ -74,6 +74,9 @@
           <family>MV Boli</family>
          </font>
         </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Normal</enum>
+        </property>
        </widget>
       </item>
      </layout>

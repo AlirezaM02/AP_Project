@@ -18,7 +18,7 @@ private:
 
 private slots:
     void on_signupbtn_clicked();
-    void check_line_edits();
+    void check_line_edits(const QString& a_strString);
 
 public:
     explicit Signup(QWidget *parent = nullptr);

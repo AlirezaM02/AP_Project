@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>458</width>
-    <height>431</height>
+    <width>398</width>
+    <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>80</x>
      <y>40</y>
      <width>281</width>
-     <height>318</height>
+     <height>362</height>
     </rect>
    </property>
    <property name="font">
@@ -55,6 +55,11 @@
     </item>
     <item>
      <widget class="QLabel" name="nameerrorlbl">
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+       </font>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -87,6 +92,11 @@
     </item>
     <item>
      <widget class="QLabel" name="usererrorlbl">
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+       </font>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -119,6 +129,35 @@
     </item>
     <item>
      <widget class="QLabel" name="passworderrorlbl">
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="passworderrorlbl_2">
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="passworderrorlbl_3">
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+       </font>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -151,6 +190,11 @@
     </item>
     <item>
      <widget class="QLabel" name="confirmpasserrorlbl">
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+       </font>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -183,6 +227,11 @@
     </item>
     <item>
      <widget class="QLabel" name="emailerrorlbl">
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+       </font>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -204,19 +253,6 @@
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QLabel" name="errorlbl_2">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>130</y>
-     <width>199</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
   </widget>
  </widget>
  <resources/>
