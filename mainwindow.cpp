@@ -61,6 +61,30 @@ void MainWindow::showScoreboard()
     }
 }
 
+void MainWindow::showMap()
+{
+    map= new Map(NULL,application.getCurrentPlayer(),application.getplayerID(),application.getPlayerlistref());
+    int result = map->exec();
+    while (1)
+    {
+        if (result == QDialog::Accepted)
+        {
+            smap = application.setMap(application.getplayerID());
+            if (smap)
+                break;
+            else
+                result = scoreboard->exec();
+        }
+
+        else if (result == QDialog::Rejected)
+        {
+            map->close();
+            break;
+        }
+    }
+
+}
+
 void MainWindow::saveNewUserData(QString name, QString username, QString password, QString email)
 {
     application.addPlayer(Player(name, username, password, email)); // Saves to json automatically too

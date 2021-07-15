@@ -9,43 +9,28 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    application.cpp \
-    building.cpp \
-    login.cpp \
+    cattle.cpp \
     main.cpp \
-    mainwindow.cpp \
-    map.cpp \
-    player.cpp \
-    scoreboard.cpp \
-    signup.cpp \
-    silo.cpp
+    building.cpp \
+    poultry.cpp \
+    sheep_farm.cpp \
+    shop.cpp \
+    silo.cpp \
+    warehouse.cpp
 
 HEADERS += \
-    application.h \
     building.h \
-    login.h \
-    mainwindow.h \
-    map.h \
-    player.h \
-    scoreboard.h \
-    signup.h \
-    silo.h
+    cattle.h \
+    poultry.h \
+    sheep_farm.h \
+    shop.h \
+    silo.h \
+    warehouse.h
 
 FORMS += \
-    login.ui \
-    mainwindow.ui \
-    map.ui \
-    scoreboard.ui \
-    signup.ui \
-    silo.ui
+    building.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    data.qrc
-
-DISTFILES += \
-    data.json

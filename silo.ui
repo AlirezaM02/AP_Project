@@ -1,6 +1,6 @@
 <ui version="4.0">
- <class>Map</class>
- <widget class="QDialog" name="Map">
+ <class>Silo</class>
+ <widget class="QDialog" name="Silo">
   <property name="geometry">
    <rect>
     <x>0</x>

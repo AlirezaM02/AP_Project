@@ -1,11 +1,13 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include <QWidget>
+#include <QDialog>
 
-namespace Ui { class Map; }
+namespace Ui {
+class Map;
+}
 
-class Map : public QWidget
+class Map : public QDialog
 {
     Q_OBJECT
 
