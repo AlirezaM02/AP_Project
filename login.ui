@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Login Page</string>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
@@ -38,7 +38,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Username  </string>
+         <string>Username</string>
         </property>
        </widget>
       </item>
@@ -63,7 +63,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Password  </string>
+         <string>Password</string>
         </property>
        </widget>
       </item>

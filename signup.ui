@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Signup Page</string>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>40</y>
+     <x>60</x>
+     <y>30</y>
      <width>281</width>
      <height>362</height>
     </rect>
