@@ -19,7 +19,7 @@
      <x>60</x>
      <y>30</y>
      <width>281</width>
-     <height>362</height>
+     <height>368</height>
     </rect>
    </property>
    <property name="font">
@@ -123,6 +123,9 @@
           <family>MV Boli</family>
          </font>
         </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
        </widget>
       </item>
      </layout>
@@ -184,6 +187,9 @@
           <family>MV Boli</family>
          </font>
         </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
        </widget>
       </item>
      </layout>
@@ -238,19 +244,30 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="signupbtn">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="font">
-       <font>
-        <family>MV Boli</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>Signup</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QPushButton" name="signupbtn">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>Signup</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="exitBtn">
+        <property name="text">
+         <string>Exit</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

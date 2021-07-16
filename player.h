@@ -11,18 +11,17 @@ class Player
 {
 private:
     static int counter;
-    int ID;
-    long int coins;
-    long int XP;
-    int level;
+    int ID, level;
+    long int coins, XP, wheat, wool, milk, egg, hay, shovel, nail;
     QString name;
     QString username;
     QString password;
     QString email;
-   // Map map;
+    // Map map;
 
 public:
-    Player(QString _name, QString _username, QString _password, QString _email, long _coins = 20, long _XP = 0, int _level = 1);
+    Player(QString _name, QString _username, QString _password, QString _email, long _coins = 20, long _XP = 0,
+           int _level = 1, long int _nail = 1, long int _shovel = 0, long int _hay = 1, long int _egg = 0, long int _milk = 0, long int _wool = 0);
     Player();
     ~Player();
 
@@ -54,9 +53,31 @@ public:
     //Map &get_map();
     //void set_map(Map &newMap);
 
+    long getNail() const { return nail; }
+    void setNail(long newNail) { nail = newNail; }
+
+    long getShovel() const { return shovel; }
+    void setShovel(long newShovel) { shovel = newShovel; }
+
+    long getHay() const { return hay; }
+    void setHay(long newHay) { hay = newHay; }
+
+    long getEgg() const { return egg; }
+    void setEgg(long newEgg) { egg = newEgg; }
+
+    long getMilk() const { return milk; }
+    void setMilk(long newMilk) { milk = newMilk; }
+
+    long getWool() const { return wool; }
+    void setWool(long newWool) { wool = newWool; }
+
+    long getWheat() const { return wheat; }
+    void setWheat(long newWheat) { wheat = newWheat; }
+
     bool check_email(QString _email);
     bool check_username(QString _username);
     bool check_password(QString _password); //for strength
+
 };
 
 #endif // PLAYER_H

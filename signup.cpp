@@ -6,14 +6,18 @@ Signup::Signup(QWidget *parent) :
     ui(new Ui::Signup)
 {
     ui->setupUi(this);
+
+    setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
+
     ui->signupbtn->setDisabled(true);
+
     connect(ui->nameled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
     connect(ui->usernameled,SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
     connect(ui->passwordled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
     connect(ui->rewriteled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
     connect(ui->emailled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
-    connect(this, SIGNAL(passmatch()), this, SLOT(check_line_edits()));
+    connect(ui->exitBtn, SIGNAL(pressed()), this, SLOT(on_exitBtn_clicked()));
 }
 
 Signup::~Signup()
@@ -76,12 +80,11 @@ void Signup::check_line_edits(const QString& a_strString)
         }
 
         if (!flag)
-        {
             validEmail = !(dot>=(ui->emailled->text().length() - 1));
-        }
 
         if (validEmail)
             ui->emailerrorlbl->clear();
+
     }
 
     if (!ui->passwordled->text().isEmpty())
@@ -107,11 +110,16 @@ void Signup::check_line_edits(const QString& a_strString)
             ui->passworderrorlbl->clear();
             ui->passworderrorlbl_2->clear();
             ui->passworderrorlbl_3->clear();
+            ui->passworderrorlbl->hide();
+            ui->passworderrorlbl_2->hide();
         }
 
         else
         {
             strongPassword = false;
+            ui->passworderrorlbl->show();
+            ui->passworderrorlbl_2->show();
+            ui->passworderrorlbl_3->show();
             ui->passworderrorlbl->setText("Your password is not strong enough!");
             ui->passworderrorlbl_2->setText("(Make sure it contains at least 6 characters and an uppercase letter, a lowercase letter,");
             ui->passworderrorlbl_3->setText(" a number and a special symbol)");
@@ -153,7 +161,8 @@ void Signup::check_line_edits(const QString& a_strString)
 
     if (!ui->usernameled->text().isEmpty())
     {
-        QFile file("C:\\data.json");
+        QDir d;
+        QFile file(d.currentPath() + "\\..\\AP_Project\\data.json");
 
         if (!file.open(QIODevice::ReadOnly))
         {
@@ -202,4 +211,9 @@ void Signup::check_line_edits(const QString& a_strString)
                 || ui->rewriteled->text().isEmpty() || (!confirmPass) || (!validEmail)
                 || (!strongPassword) || (!validName) || (username_counter != 0));
     ui->signupbtn->setEnabled(ok);
+}
+
+void Signup::on_exitBtn_clicked()
+{
+    emit exitBtn_clicked();
 }

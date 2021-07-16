@@ -1,8 +1,10 @@
 #include "player.h"
 
-int Player::counter=0;
+int Player::counter = 0;
 
-Player::Player(QString _name, QString _username, QString _password, QString _email, long _coins, long _XP, int _level)
+
+Player::Player(QString _name, QString _username, QString _password, QString _email,
+               long _coins, long _XP, int _level, long _nail, long _shovel, long _hay, long _egg, long _milk, long _wool)
 {
     counter++;
     ID = counter;
@@ -13,6 +15,12 @@ Player::Player(QString _name, QString _username, QString _password, QString _ema
     username =_username;
     password =_password;
     email = _email;
+    nail = _nail;
+    shovel = _shovel;
+    hay = _hay;
+    egg = _egg;
+    milk = _milk;
+    wool = _wool;
     //map = _map;
 }
 

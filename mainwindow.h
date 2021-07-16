@@ -24,8 +24,6 @@ public:
 private slots:
     void saveNewUserData(QString, QString, QString, QString);
 
-signals:
-
 private:
     Ui::MainWindow *ui;
     Application application;

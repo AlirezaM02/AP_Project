@@ -4,32 +4,34 @@
 MainWindow::MainWindow()
     : ui(new Ui::MainWindow)
 {
+    ui->setupUi(this);
+    setEnabled(false);
     application.fetchPlayersData();
+
     login = new Login();
     login->show();
+
     int result = login->exec();
-    qDebug()<<result;
-    qDebug()<<"hello there!";
-    while (1)
-    {
-        if (result == QDialog::Accepted)
-        {
-            loginStatus = application.login(login->getUsername(), login->getPassword());
-            qDebug()<<"un"<<login->getUsername()<<"ps"<<login->getPassword();
-            if (loginStatus)
-                break;
 
-            else
-                result = login->exec();
-        }
+//    while (1)
+//    {
+//        if (result == QDialog::Accepted)
+//        {
+//            loginStatus = login->log_in(login->getUsername(), login->getPassword());
+//            qDebug() << "un" << login->getUsername() << "ps" << login->getPassword();
+//            if (loginStatus)
+//                break;
 
-        else if (result == QDialog::Rejected)
-        {
-            this->close();
-            break;
-        }
-    }
-    ui->setupUi(this);
+//            else
+//                result = login->exec();
+//        }
+
+//        else if (result == QDialog::Rejected)
+//        {
+//            this->close();
+//            break;
+//        }
+//    }
 }
 
 MainWindow::~MainWindow()
