@@ -4,6 +4,7 @@
 #include "login.h"
 #include "signup.h"
 #include "scoreboard.h"
+#include "map.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -20,6 +21,7 @@ public:
     MainWindow();
     ~MainWindow();
     void showScoreboard();
+    void showMap();
 
 private slots:
     void saveNewUserData(QString, QString, QString, QString);
@@ -31,7 +33,9 @@ private:
     Application application;
     Login *login;
     Scoreboard *scoreboard;
+    Map *map;
     bool ssb = false;
+    bool smap = false;
     bool loginStatus = false;
     bool signupStatus = false;
 };

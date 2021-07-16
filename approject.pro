@@ -11,33 +11,45 @@ CONFIG += c++11
 SOURCES += \
     application.cpp \
     building.cpp \
+    cattle.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
     map.cpp \
     player.cpp \
+    poultry.cpp \
     scoreboard.cpp \
+    sheep_farm.cpp \
     signup.cpp \
-    silo.cpp
+    silo.cpp \
+    warehouse.cpp
 
 HEADERS += \
     application.h \
     building.h \
+    cattle.h \
     login.h \
     mainwindow.h \
     map.h \
     player.h \
+    poultry.h \
     scoreboard.h \
+    sheep_farm.h \
     signup.h \
-    silo.h
+    silo.h \
+    warehouse.h
 
 FORMS += \
+    cattle.ui \
     login.ui \
     mainwindow.ui \
     map.ui \
+    poultry.ui \
     scoreboard.ui \
+    sheep_farm.ui \
     signup.ui \
-    silo.ui
+    silo.ui \
+    warehouse.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

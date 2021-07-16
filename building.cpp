@@ -4,3 +4,8 @@ Building::Building()
 {
 
 }
+
+Building::~Building()
+{
+
+}
