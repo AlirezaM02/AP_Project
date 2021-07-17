@@ -41,14 +41,15 @@ void Application::savePlayersData()
         mainArray.append(playerObj);
     }
     mainObj["users"] = mainArray;
+
     QByteArray byteArray;
     byteArray = QJsonDocument(mainObj).toJson();
-    QFile file("D:\\data.json");
-    if (!file.open(QIODevice::WriteOnly))
-    {
-        qDebug() << "No write access for json file";
-        return;
-    }
+
+    QDir d;
+    qDebug() << d.currentPath() + "\\data.json";
+    QFile file(d.currentPath() + "\\..\\AP_Project\\data.json");
+    file.setFileName(d.currentPath() + "\\..\\AP_Project\\data.json");
+    file.open(QIODevice::WriteOnly);
     file.write(byteArray);
     file.close();
 }
@@ -56,12 +57,12 @@ void Application::savePlayersData()
 void Application::fetchPlayersData()
 {
     playerlist.erase(playerlist.begin(), playerlist.end());
-    QFile file("D:\\data.json");
-    if (!file.open(QIODevice::ReadOnly))
-    {
-        qDebug() << "Json file couldn't be opened/found";
-        return;
-    }
+
+    QDir d;
+    QFile file(d.currentPath() + "\\..\\AP_Project\\data.json");
+    file.setFileName(d.currentPath() + "\\..\\AP_Project\\data.json");
+    file.open(QIODevice::ReadOnly);
+
     QByteArray byteArray;
     byteArray = file.readAll();
     file.close();
@@ -122,7 +123,7 @@ void Application::refresh()
 
 bool Application::login(QString username, QString password)
 {
-qDebug()<<"in application.login.";
+    qDebug()<<"in application.login.";
     for (int i = 0; i < playerlist.size(); i++)
     {
         if (playerlist[i].get_username() == username && playerlist[i].get_password() == password)
@@ -132,9 +133,9 @@ qDebug()<<"in application.login.";
             //TODO
             message.setText("login successfull");
             message.setStandardButtons(QMessageBox::Ok);
-            loginstatus=true;
-            savePlayersData();
-            if(message.exec()==QMessageBox::Ok)
+            loginstatus = true;
+
+            if(message.exec() == QMessageBox::Ok)
                 return loginstatus;
 
         }
@@ -143,7 +144,7 @@ qDebug()<<"in application.login.";
     {
         message.setText("username or password is incorrect!");
         message.setStandardButtons(QMessageBox::Ok);
-        if(message.exec()==QMessageBox::Ok)
+        if(message.exec() == QMessageBox::Ok)
             return loginstatus;
     }
 }

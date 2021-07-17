@@ -4,6 +4,7 @@
 #include <QVector>
 #include <QString>
 #include <QFile>
+#include <QDir>
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonDocument>

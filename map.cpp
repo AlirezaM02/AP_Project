@@ -1,8 +1,8 @@
 #include "map.h"
 #include "ui_map.h"
 
-Map::Map(QWidget *parent, Player* current_player, int ID , QVector<Player> &players ):
-    QDialog(parent),
+Map::Map(QWidget *parent, Player &currentPlayer, int playerID, QVector<Player> &players) :
+    QWidget(parent),
     ui(new Ui::Map)
 {
     silo= new Silo(this, current_player->getNailref(), current_player->getcoinsref(), current_player->getWheatref());
