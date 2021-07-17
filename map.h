@@ -1,3 +1,4 @@
+
 #ifndef MAP_H
 #define MAP_H
 
@@ -5,20 +6,21 @@
 #include "player.h"
 #include "silo.h"
 #include "warehouse.h"
-
-namespace Ui { class Map; }
+namespace Ui {
+class Map;
+}
 
 class Map : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Map(QWidget *parent, Player &currentPlayer, int playerID, QVector <Player> &players);
+    explicit Map(QWidget *parent, Player& current_player, int ID , QVector<Player>&players );
     ~Map();
 
 private:
-    Silo *silo;
-    Warehouse *warehouse;
+    Silo* silo;
+    Warehouse* warehouse;
     Ui::Map *ui;
 };
 

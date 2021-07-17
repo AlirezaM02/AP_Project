@@ -45,6 +45,8 @@ public:
     QVector<Player> &getPlayerlistref()    { return playerlist; }
     const QVector<Player> &getPlayerlistref() const { return playerlist; }
     Player *getCurrentPlayer() const;
+    Player &getCurrentPlayerref()    { return *currentPlayer; }
+    const Player &getCurrentPlayerref() const { return *currentPlayer; }
     Player *findPlayer(QString username);
 
     void addPlayer(Player player); // Preferred
