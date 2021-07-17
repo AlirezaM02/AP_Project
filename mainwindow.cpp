@@ -46,7 +46,7 @@ void MainWindow::showScoreboard()
 void MainWindow::showMap()
 {
     //map= new Map(NULL,application.getCurrentPlayer(),application.getplayerID(),application.getPlayerlistref());
-    map= new Map(NULL, application.getCurrentPlayer(), application.getplayerID(), application.getPlayerlistref());
+    map = new Map(NULL, *application.getCurrentPlayer(), application.getplayerID(), application.getPlayerlistref());
     //map= new Map ()
     int result = map->exec();
     while (1)

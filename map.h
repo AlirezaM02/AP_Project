@@ -5,6 +5,7 @@
 #include "player.h"
 #include "silo.h"
 #include "warehouse.h"
+
 namespace Ui { class Map; }
 
 class Map : public QDialog
@@ -16,8 +17,8 @@ public:
     ~Map();
 
 private:
-    Silo* silo;
-    Warehouse* warehouse;
+    Silo *silo;
+    Warehouse *warehouse;
     Ui::Map *ui;
 };
 
