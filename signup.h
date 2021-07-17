@@ -20,12 +20,12 @@ private:
     Ui::Signup *ui;
 
 private slots:
-    void on_signupbtn_clicked();
     void check_line_edits(const QString& a_strString);
 
 public slots:
     void on_signupBtn_clicked();
     void on_exitBtn_clicked();
+    void close_and_clear();
 
 public:
     explicit Signup(QWidget *parent = nullptr);

@@ -26,7 +26,7 @@ Signup::~Signup()
     delete ui;
 }
 
-void Signup::on_signupbtn_clicked()
+void Signup::on_signupBtn_clicked()
 {
     QString name, username, password, email;
     name = ui->nameled->text();
@@ -34,6 +34,8 @@ void Signup::on_signupbtn_clicked()
     password = ui->passwordled->text();
     email = ui->emailled->text();
     emit sendNewUserData(name, username, password, email);
+    ui->signupStat->setText("Signup Successful, press exit button");
+    ui->signupbtn->setDisabled(true);
 }
 
 void Signup::check_line_edits(const QString& a_strString)
@@ -219,8 +221,15 @@ void Signup::on_exitBtn_clicked()
     emit exitBtn_clicked();
 }
 
-void Signup::on_signupBtn_clicked()
+void Signup::close_and_clear()
 {
-    ui->signupStat->setText("Signup Successful, press exit button");
-    ui->signupbtn->setDisabled(true);
+    ui->nameled->clear();
+    ui->usernameled->clear();
+    ui->passwordled->clear();
+    ui->rewriteled->clear();
+    ui->emailled->clear();
+    ui->signupbtn->setDisabled(false);
+    ui->signupStat->setText("");
+    this->close();
 }
+
