@@ -5,7 +5,12 @@ Map::Map(QWidget *parent, Player &currentPlayer, int playerID, QVector<Player> &
     QWidget(parent),
     ui(new Ui::Map)
 {
-    ui->setupUi(this);
+    silo= new Silo(this, current_player->getNailref(), current_player->getcoinsref(), current_player->getWheatref());
+    warehouse= new Warehouse(this, current_player->getcoinsref(), current_player->getNailref(), current_player->getShovelref(), current_player->getHayref(), current_player->getEggref(), current_player->getMilkref(), current_player->getWoolref());
+    if (current_player->get_level()>=4)
+    {
+
+    }
 }
 
 Map::~Map()

@@ -10,8 +10,19 @@ class Player
 {
 private:
     static int counter;
-    int ID, level;
-    long int coins, XP, wheat, wool, milk, egg, hay, shovel, nail;
+    int ID;
+    int cow;
+    int level;
+    long int coins;
+    long int XP;
+    long int nail;
+    long int shovel;
+    long int hay;
+    long int egg;
+    long int milk;
+    long int wool;
+    long int wheat;
+  
     QString name;
     QString username;
     QString password;
@@ -28,7 +39,9 @@ public:
 
     int get_ID();
 
-    int get_coins();
+     int get_coins();
+    const long& getcoinsref() const {return coins;}
+    long& getcoinsref()       {return coins;}
     void set_coins(int newCoins);
 
     int get_XP();
@@ -52,26 +65,26 @@ public:
     //Map &get_map();
     //void set_map(Map &newMap);
 
-    long getNail() const { return nail; }
-    void setNail(long newNail) { nail = newNail; }
+    long getNail() const;
+    void setNail(long newNail);
 
-    long getShovel() const { return shovel; }
-    void setShovel(long newShovel) { shovel = newShovel; }
+    long getShovel() const;
+    void setShovel(long newShovel);
 
-    long getHay() const { return hay; }
-    void setHay(long newHay) { hay = newHay; }
+    long getHay() const;
+    void setHay(long newHay);
 
-    long getEgg() const { return egg; }
-    void setEgg(long newEgg) { egg = newEgg; }
+    long getEgg() const;
+    void setEgg(long newEgg);
 
-    long getMilk() const { return milk; }
-    void setMilk(long newMilk) { milk = newMilk; }
+    long getMilk() const;
+    void setMilk(long newMilk);
 
-    long getWool() const { return wool; }
-    void setWool(long newWool) { wool = newWool; }
+    long getWool() const;
+    void setWool(long newWool);
 
-    long getWheat() const { return wheat; }
-    void setWheat(long newWheat) { wheat = newWheat; }
+    long getWheat() const;
+    void setWheat(long newWheat);
 
     bool check_email(QString _email);
     bool check_username(QString _username);

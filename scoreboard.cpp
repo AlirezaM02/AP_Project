@@ -36,8 +36,8 @@ Scoreboard::Scoreboard(QWidget *parent, QVector<Player> &players, int ID) : QDia
         if (ID == players[i].get_ID())
         {
             ui->tableWidget->item(i, 0)->setBackground(Qt::lightGray);
-            ui->tableWidget->item(i, 0)->setBackground(Qt::lightGray);
-            ui->tableWidget->item(i, 0)->setBackground(Qt::lightGray);
+            ui->tableWidget->item(i, 1)->setBackground(Qt::lightGray);
+            ui->tableWidget->item(i, 2)->setBackground(Qt::lightGray);
         }
     }
     ui->setupUi(this);

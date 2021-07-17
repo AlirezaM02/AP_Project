@@ -36,6 +36,8 @@ public:
     void refresh(int ID);
 
     bool setScoreboard(int ID);
+    bool setMap(int ID);
+    //bool setMap(Player player);
     void setCurrentPlayer(int ID);
 
     int getplayerID();

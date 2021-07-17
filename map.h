@@ -1,12 +1,13 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include <QWidget>
+#include <QDialog>
 #include "player.h"
-
+#include "silo.h"
+#include "warehouse.h"
 namespace Ui { class Map; }
 
-class Map : public QWidget
+class Map : public QDialog
 {
     Q_OBJECT
 
@@ -15,6 +16,8 @@ public:
     ~Map();
 
 private:
+    Silo* silo;
+    Warehouse* warehouse;
     Ui::Map *ui;
 };
 

@@ -172,6 +172,14 @@ bool Application::setScoreboard(int ID)
     return false;
 }
 
+bool Application::setMap(int ID)
+{
+    for (int i = 0; i < playerlist.size(); i++)
+        if (playerlist[i].get_ID() == ID)
+            return true;
+    return false;
+}
+
 int Application::getplayerID()
 {
     return playerID;

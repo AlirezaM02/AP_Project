@@ -3,9 +3,7 @@
 
 int Player::counter = 0;
 
-
-Player::Player(QString _name, QString _username, QString _password, QString _email,
-               long _coins, long _XP, int _level, long _nail, long _shovel, long _hay, long _egg, long _milk, long _wool)
+Player::Player(QString _name, QString _username, QString _password, QString _email, long _coins, long _XP, int _level, long _nail , long _shovel, long _hay, long _egg ,long _milk , long _wool )
 {
     counter++;
     ID = counter;
@@ -34,6 +32,12 @@ Player::Player()
     username = "";
     password = "";
     email = "";
+    nail= 1;
+    shovel=0;
+    hay=1;
+    egg=0;
+    milk=0;
+    wool=0;
     counter ++;
 }
 
@@ -120,6 +124,86 @@ QString Player::get_email()
 void Player::set_email(QString _email)
 {
     email = _email;
+}
+
+long Player::getNail() const
+{
+    return nail;
+}
+
+void Player::setNail(long newNail)
+{
+    nail = newNail;
+}
+
+long Player::getShovel() const
+{
+    return shovel;
+}
+
+void Player::setShovel(long newShovel)
+{
+    shovel = newShovel;
+}
+
+long Player::getHay() const
+{
+    return hay;
+}
+
+void Player::setHay(long newHay)
+{
+    hay = newHay;
+}
+
+long Player::getEgg() const
+{
+    return egg;
+}
+
+void Player::setEgg(long newEgg)
+{
+    egg = newEgg;
+}
+
+long Player::getMilk() const
+{
+    return milk;
+}
+
+void Player::setMilk(long newMilk)
+{
+    milk = newMilk;
+}
+
+long Player::getWool() const
+{
+    return wool;
+}
+
+void Player::setWool(long newWool)
+{
+    wool = newWool;
+}
+
+long Player::getWheat() const
+{
+    return wheat;
+}
+
+void Player::setWheat(long newWheat)
+{
+    wheat = newWheat;
+}
+
+int Player::getCow() const
+{
+    return cow;
+}
+
+void Player::setCow(int newCow)
+{
+    cow = newCow;
 }
 
 bool Player::check_email(QString _email)
