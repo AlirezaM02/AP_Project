@@ -18,6 +18,7 @@ Login::Login(QWidget *parent) :
     connect(ui->buttonBox,SIGNAL(rejected()),this, SLOT(on_buttonBox_rejected()));
     connect(signup, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
     connect(signup, SIGNAL(exitBtn_clicked()), signup, SLOT(close()));
+    connect(signup, SIGNAL(signupBtn_clicked()), signup, SLOT(showSignupStat()));
     connect(signup, SIGNAL(sendNewUserData(QString, QString, QString, QString)), this, SLOT(saveNewUserData(QString, QString, QString, QString)));
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
@@ -61,16 +62,6 @@ Login::~Login()
 {
     delete ui;
 }
-
-//QString Login::getUsername()
-//{
-//    return ui->usernameled->text();
-//}
-
-//QString Login::getPassword()
-//{
-//    return ui->passwordled->text();
-//}
 
 void Login::addPlayer(Player p)
 {
@@ -116,7 +107,10 @@ void Login::on_loginbtn_clicked()
         if ((ui->usernameled->text() == players[i].get_username()) && (ui->passwordled->text() == players[i].get_password()))
         {
             currentPlayer = &players[i];
-            playerMap = new Map()
+            playerMap = new Map(this, *currentPlayer, currentPlayer->get_ID(), players);
+            playerMap->show();
+            loginStat = true;
+            this->hide();
         }
 }
 
@@ -146,5 +140,8 @@ void Login::on_buttonBox_rejected()
 
 void Login::saveNewUserData(QString name, QString username, QString password, QString email)
 {
-    addPlayer(Player(name, username, password, email)); // Saves to json
+    Player *p = new Player(name, username, password, email);
+    players.push_back(*p);
+    addPlayer(*p); // Saves to json
+    signupStat = true;
 }

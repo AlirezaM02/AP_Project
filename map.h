@@ -2,6 +2,7 @@
 #define MAP_H
 
 #include <QWidget>
+#include "player.h"
 
 namespace Ui { class Map; }
 
@@ -10,7 +11,7 @@ class Map : public QWidget
     Q_OBJECT
 
 public:
-    explicit Map(QWidget *parent = nullptr);
+    explicit Map(QWidget *parent, Player &currentPlayer, int playerID, QVector <Player> &players);
     ~Map();
 
 private:

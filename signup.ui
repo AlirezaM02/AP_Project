@@ -19,7 +19,7 @@
      <x>60</x>
      <y>30</y>
      <width>281</width>
-     <height>368</height>
+     <height>393</height>
     </rect>
    </property>
    <property name="font">
@@ -238,6 +238,13 @@
         <family>MS Shell Dlg 2</family>
        </font>
       </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="signupStat">
       <property name="text">
        <string/>
       </property>

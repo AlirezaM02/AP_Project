@@ -1,4 +1,5 @@
 #include "player.h"
+#include "map.h"
 
 int Player::counter = 0;
 

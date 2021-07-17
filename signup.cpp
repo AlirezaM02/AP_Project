@@ -17,6 +17,7 @@ Signup::Signup(QWidget *parent) :
     connect(ui->passwordled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
     connect(ui->rewriteled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
     connect(ui->emailled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
+    connect(ui->signupbtn, SIGNAL(pressed()), this, SLOT(on_signupBtn_clicked()));
     connect(ui->exitBtn, SIGNAL(pressed()), this, SLOT(on_exitBtn_clicked()));
 }
 
@@ -216,4 +217,10 @@ void Signup::check_line_edits(const QString& a_strString)
 void Signup::on_exitBtn_clicked()
 {
     emit exitBtn_clicked();
+}
+
+void Signup::on_signupBtn_clicked()
+{
+    ui->signupStat->setText("Signup Successful, press exit button");
+    ui->signupbtn->setDisabled(true);
 }

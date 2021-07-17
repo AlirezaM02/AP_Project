@@ -24,6 +24,7 @@ private slots:
     void check_line_edits(const QString& a_strString);
 
 public slots:
+    void on_signupBtn_clicked();
     void on_exitBtn_clicked();
 
 public:
