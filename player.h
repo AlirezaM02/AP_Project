@@ -86,6 +86,9 @@ public:
     long getWheat() const;
     void setWheat(long newWheat);
 
+    int getCow() const;
+    void setCow(int newCow);
+
     bool check_email(QString _email);
     bool check_username(QString _username);
     bool check_password(QString _password); //for strength
