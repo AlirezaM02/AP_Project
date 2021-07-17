@@ -6,9 +6,7 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
-
     signup = new Signup(this);
-
     setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
 
     connect(ui->usernameled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
@@ -17,7 +15,7 @@ Login::Login(QWidget *parent) :
     connect(ui->buttonBox, SIGNAL(accepted()),this, SLOT(on_loginbtn_clicked()));
     connect(ui->buttonBox,SIGNAL(rejected()),this, SLOT(on_buttonBox_rejected()));
     connect(signup, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
-    connect(signup, SIGNAL(exitBtn_clicked()), signup, SLOT(close()));
+    connect(signup, SIGNAL(exitBtn_clicked()), signup, SLOT(close_and_clear()));
     connect(signup, SIGNAL(sendNewUserData(QString, QString, QString, QString)), this, SLOT(saveNewUserData(QString, QString, QString, QString)));
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
@@ -112,10 +110,13 @@ void Login::on_loginbtn_clicked()
             loginStat = true;
             this->hide();
         }
+        else
+            ui->loginStat->setText("Wrong username or password");
 }
 
 void Login::check_line_edits(const QString &a_strString)
 {
+    ui->loginStat->clear();
     if (ui->usernameled->text().isEmpty() || ui->passwordled->text().isEmpty())
     {
         ok = true;

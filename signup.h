@@ -25,6 +25,7 @@ private slots:
 public slots:
     void on_signupBtn_clicked();
     void on_exitBtn_clicked();
+    void close_and_clear();
 
 public:
     explicit Signup(QWidget *parent = nullptr);

@@ -20,6 +20,7 @@ Application::Application()
 
 Application::~Application()
 {
+    fetchPlayersData();
     savePlayersData();
 }
 
