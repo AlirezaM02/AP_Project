@@ -18,7 +18,6 @@ Login::Login(QWidget *parent) :
     connect(ui->buttonBox,SIGNAL(rejected()),this, SLOT(on_buttonBox_rejected()));
     connect(signup, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
     connect(signup, SIGNAL(exitBtn_clicked()), signup, SLOT(close()));
-    connect(signup, SIGNAL(signupBtn_clicked()), signup, SLOT(showSignupStat()));
     connect(signup, SIGNAL(sendNewUserData(QString, QString, QString, QString)), this, SLOT(saveNewUserData(QString, QString, QString, QString)));
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
@@ -103,6 +102,7 @@ void Login::addPlayer(QString name, QString username, QString password, QString 
 
 void Login::on_loginbtn_clicked()
 {
+    qDebug()<<"in login onloginbtn clicked";
     for (int i = 0; i < players.size(); i++)
         if ((ui->usernameled->text() == players[i].get_username()) && (ui->passwordled->text() == players[i].get_password()))
         {
@@ -140,6 +140,7 @@ void Login::on_buttonBox_rejected()
 
 void Login::saveNewUserData(QString name, QString username, QString password, QString email)
 {
+    qDebug()<<"in save new player data";
     Player *p = new Player(name, username, password, email);
     players.push_back(*p);
     addPlayer(*p); // Saves to json

@@ -20,7 +20,6 @@ private:
     Ui::Signup *ui;
 
 private slots:
-    void on_signupbtn_clicked();
     void check_line_edits(const QString& a_strString);
 
 public slots:
