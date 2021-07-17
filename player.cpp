@@ -61,10 +61,7 @@ Player::Player()
     counter ++;
 }
 
-Player::~Player()
-{
-    counter --;
-}
+Player::~Player() {}
 
 int Player::get_counter()
 {

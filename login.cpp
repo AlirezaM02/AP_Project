@@ -109,10 +109,13 @@ void Login::on_loginbtn_clicked()
             loginStat = true;
             this->hide();
         }
+        else
+            ui->loginStat->setText("Wrong username or password");
 }
 
 void Login::check_line_edits(const QString &a_strString)
 {
+    ui->loginStat->clear();
     if (ui->usernameled->text().isEmpty() || ui->passwordled->text().isEmpty())
     {
         ok = true;
