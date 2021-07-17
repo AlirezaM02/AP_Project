@@ -2,12 +2,12 @@
 #define POULTRY_H
 
 #include <QDialog>
-
+#include "building.h"
 namespace Ui {
 class Poultry;
 }
 
-class Poultry : public QDialog
+class Poultry : public QDialog, public Building
 {
     Q_OBJECT
 

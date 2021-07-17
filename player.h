@@ -22,6 +22,7 @@ private:
     long int milk;
     long int wool;
     long int wheat;
+    int cow;
     QString name;
     QString username;
     QString password;
@@ -101,6 +102,8 @@ public:
     const long& getWheatref() const {return wheat;}
     long& getWheatref()       {return wheat;}
     void setWheat(long newWheat);
+    int getCow() const;
+    void setCow(int newCow);
 };
 
 #endif // PLAYER_H
