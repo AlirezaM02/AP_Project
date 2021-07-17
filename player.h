@@ -11,7 +11,6 @@ class Player
 private:
     static int counter;
     int ID;
-    int cow;
     int level;
     long int coins;
     long int XP;
@@ -22,6 +21,9 @@ private:
     long int milk;
     long int wool;
     long int wheat;
+    int cow;
+    int sheep;
+
   
     QString name;
     QString username;
@@ -90,6 +92,10 @@ public:
     bool check_username(QString _username);
     bool check_password(QString _password); //for strength
 
+    int getCow() const;
+    void setCow(int newCow);
+    int getSheep() const;
+    void setSheep(int newSheep);
 };
 
 #endif // PLAYER_H

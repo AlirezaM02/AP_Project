@@ -3,6 +3,26 @@
 
 int Player::counter = 0;
 
+int Player::getCow() const
+{
+    return cow;
+}
+
+void Player::setCow(int newCow)
+{
+    cow = newCow;
+}
+
+int Player::getSheep() const
+{
+    return sheep;
+}
+
+void Player::setSheep(int newSheep)
+{
+    sheep = newSheep;
+}
+
 Player::Player(QString _name, QString _username, QString _password, QString _email, long _coins, long _XP, int _level, long _nail , long _shovel, long _hay, long _egg ,long _milk , long _wool )
 {
     counter++;
@@ -194,16 +214,6 @@ long Player::getWheat() const
 void Player::setWheat(long newWheat)
 {
     wheat = newWheat;
-}
-
-int Player::getCow() const
-{
-    return cow;
-}
-
-void Player::setCow(int newCow)
-{
-    cow = newCow;
 }
 
 bool Player::check_email(QString _email)
