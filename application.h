@@ -1,6 +1,6 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
-
+// hello //
 #include <QVector>
 #include <QString>
 #include <QFile>
