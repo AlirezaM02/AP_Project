@@ -23,6 +23,7 @@ private:
     long int wheat;
     int cow;
     int sheep;
+    int day;
 
   
     QString name;
@@ -117,6 +118,10 @@ public:
     bool check_password(QString _password); //for strength
 
 
+    int getDay() const;
+    const int& getDayref() const {return day;}
+    int& getDayref()       {return day;}
+    void setDay(int newDay);
 };
 
 #endif // PLAYER_H

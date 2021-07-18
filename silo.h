@@ -12,13 +12,11 @@ class Silo : public QDialog, public Building
     Q_OBJECT
 
 public:
-    explicit Silo(QWidget *parent, long int& nails, long int& coins, long int &wheat);  //non default constructor
+    explicit Silo(QWidget *parent, Player& current_player);  //non default constructor
     ~Silo();
     void set_capacity();
     void levelup();
-    void levelup(long int &coins);
-    void levelup(long int &coins ,long int &nails);
-    void levelup(long int &coins,long int& nails ,long int &shovel);
+    void levelup(Player& current_player);
     void rise_experience();
     void check_buildings_level();
 

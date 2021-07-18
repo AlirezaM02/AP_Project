@@ -2,7 +2,7 @@
 #include "ui_silo.h"
 
 
-Silo::Silo(QWidget *parent, long &nails, long &coins, long &wheat) :
+Silo::Silo(QWidget *parent, Player& current_player) :
     QDialog(parent),
     ui(new Ui::Silo)
 {
@@ -25,30 +25,25 @@ void Silo::levelup()
 
 }
 
-void Silo::levelup(long &cois)
+void Silo::levelup(Player &current_player)
 {
-
-}
-void Silo::levelup(long int &coins , long int& nails)
-{
-    if((coins >= 100*(2^(2*level)))&& (nails>=(level*2)))
+    int _coins= current_player.get_coins();
+    int _nails= current_player.getNail();
+    if(( _coins >= 100*(2^(2*level)))&& (_nails >=(level*2)))
     {
 
-        coins -= 100*(2^(2*level));
-        nails-= (level*2);
+        _coins -= 100*(2^(2*level));
+        _nails-= (level*2);
         capacity*=2;
         level++;
+        current_player.set_coins(_coins);
+        current_player.setNail(_nails);
 
     }
     else
     {
         //message!
     }
-}
-
-void Silo::levelup(long &coins, long int &nails, long int &shovel)
-{
-
 }
 
 void Silo::rise_experience()

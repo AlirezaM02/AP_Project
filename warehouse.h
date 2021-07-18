@@ -17,9 +17,7 @@ public:
 
     void set_capacity();
     void levelup();
-    void levelup(long int &coins);
-    void levelup(long int &coins, long int& nails);
-    void levelup(long int &coins, long int& nails , long int &shovel);
+    void levelup(Player& current_player);
     void rise_experience();
     void check_buildings_level();
 

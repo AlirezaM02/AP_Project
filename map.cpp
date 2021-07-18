@@ -6,7 +6,7 @@ Map::Map(QWidget *parent, Player& current_player, int ID , QVector<Player> &play
     QDialog(parent),
     ui(new Ui::Map)
 {
-    silo= new Silo(this, current_player.getNailref(), current_player.getcoinsref(), current_player.getWheatref());
+    silo= new Silo(this, current_player);
     warehouse= new Warehouse(this, current_player.getcoinsref(), current_player.getNailref(), current_player.getShovelref(), current_player.getHayref(), current_player.getEggref(), current_player.getMilkref(), current_player.getWoolref());
     ui->setupUi(this);
     if (current_player.get_level()>=4)

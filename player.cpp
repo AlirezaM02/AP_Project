@@ -23,6 +23,16 @@ void Player::setSheep(int newSheep)
     sheep = newSheep;
 }
 
+int Player::getDay() const
+{
+    return day;
+}
+
+void Player::setDay(int newDay)
+{
+    day = newDay;
+}
+
 Player::Player(QString _name, QString _username, QString _password, QString _email, long _coins, long _XP, int _level, long _nail , long _shovel, long _hay, long _egg ,long _milk , long _wool )
 {
     counter++;
