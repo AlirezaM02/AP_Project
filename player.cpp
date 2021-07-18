@@ -33,7 +33,7 @@ void Player::setDay(int newDay)
     day = newDay;
 }
 
-Player::Player(QString _name, QString _username, QString _password, QString _email, long _coins, long _XP, int _level, long _nail , long _shovel, long _hay, long _egg ,long _milk , long _wool )
+Player::Player(QString _name, QString _username, QString _password, QString _email, long _coins, long _XP, int _level, long _nail , long _shovel, long _hay, long _egg ,long _milk , long _wool , int _day)
 {
     counter++;
     ID = counter;
@@ -50,7 +50,7 @@ Player::Player(QString _name, QString _username, QString _password, QString _ema
     egg = _egg;
     milk = _milk;
     wool = _wool;
-    //map = _map;
+    day=_day;
 }
 
 Player::Player()
@@ -68,6 +68,7 @@ Player::Player()
     egg=0;
     milk=0;
     wool=0;
+    day=1;
     counter ++;
 }
 

@@ -1,7 +1,7 @@
 #include "warehouse.h"
 #include "ui_warehouse.h"
 
-Warehouse::Warehouse(QWidget *parent, long &coins, long &nail, long &shovel, long &hay, long &egg, long &milk, long &wool):
+Warehouse::Warehouse(QWidget *parent,Player& current_player):
     QDialog(parent),
     ui(new Ui::Warehouse)
 {

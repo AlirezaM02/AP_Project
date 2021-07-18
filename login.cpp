@@ -100,6 +100,7 @@ void Login::addPlayer(QString name, QString username, QString password, QString 
 
 void Login::on_loginbtn_clicked()
 {
+
     for (int i = 0; i < players.size(); i++)
         if ((ui->usernameled->text() == players[i].get_username()) && (ui->passwordled->text() == players[i].get_password()))
         {
@@ -141,7 +142,7 @@ void Login::on_buttonBox_rejected()
 void Login::saveNewUserData(QString name, QString username, QString password, QString email)
 {
     Player *p = new Player(name, username, password, email);
-    players.push_back(*p);
+    //players.push_back(*p);
     addPlayer(*p); // Saves to json
     signupStat = true;
 }

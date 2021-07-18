@@ -34,7 +34,7 @@ private:
 
 public:
     Player(QString _name, QString _username, QString _password, QString _email, long _coins = 20, long _XP = 0,
-           int _level = 1, long int _nail = 1, long int _shovel = 0, long int _hay = 1, long int _egg = 0, long int _milk = 0, long int _wool = 0);
+           int _level = 1, long int _nail = 1, long int _shovel = 0, long int _hay = 1, long int _egg = 0, long int _milk = 0, long int _wool = 0, int _day=1);
     Player();
     ~Player();
 

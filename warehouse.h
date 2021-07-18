@@ -12,9 +12,8 @@ class Warehouse : public QDialog, public Building
     Q_OBJECT
 
 public:
-    explicit Warehouse(QWidget *parent , long int & coins, long int &nail , long int &shovel, long int &hay, long int &egg, long int &milk , long int &wool);
+    explicit Warehouse(QWidget *parent , Player& current_player);
     ~Warehouse();
-
     void set_capacity();
     void levelup();
     void levelup(Player& current_player);

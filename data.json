@@ -1,7 +1,7 @@
 {
     "users": [
         {
-            "ID": 16,
+            "ID": 7,
             "XP": 0,
             "coins": 20,
             "level": 1,
@@ -10,40 +10,13 @@
             "username": "AlirezaM02"
         },
         {
-            "ID": 17,
+            "ID": 8,
             "XP": 0,
             "coins": 20,
             "level": 1,
-            "name": "Alireza",
-            "password": "AlirezaM03!",
-            "username": "AlirezaM03"
-        },
-        {
-            "ID": 18,
-            "XP": 0,
-            "coins": 20,
-            "level": 1,
-            "name": "Alireza",
-            "password": "AlirezaM03!",
-            "username": "AlirezaM03"
-        },
-        {
-            "ID": 19,
-            "XP": 0,
-            "coins": 20,
-            "level": 1,
-            "name": "Alireza",
-            "password": "AlirezaM04!",
-            "username": "AlirezaM04"
-        },
-        {
-            "ID": 20,
-            "XP": 0,
-            "coins": 20,
-            "level": 1,
-            "name": "Alireza",
-            "password": "AlirezaM04!",
-            "username": "AlirezaM04"
+            "name": "Jack",
+            "password": "Jack01%",
+            "username": "Jack01"
         }
     ]
 }

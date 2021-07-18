@@ -6,16 +6,29 @@ Map::Map(QWidget *parent, Player& current_player, int ID , QVector<Player> &play
     QDialog(parent),
     ui(new Ui::Map)
 {
+    emit send_Player(current_player);
+    connect(this, SIGNAL(send_Player(Player&)), this , SLOT(on_nextdaybtn_clicked(Player&)));
     silo= new Silo(this, current_player);
-    warehouse= new Warehouse(this, current_player.getcoinsref(), current_player.getNailref(), current_player.getShovelref(), current_player.getHayref(), current_player.getEggref(), current_player.getMilkref(), current_player.getWoolref());
-    ui->setupUi(this);
+    warehouse= new Warehouse(this, current_player);
     if (current_player.get_level()>=4)
     {
 
     }
+    ui->setupUi(this);
+    ui->daylbl->setText(QString::number(current_player.getDay()));
+    ui->userlbl->setText(current_player.get_username());
 }
 
 Map::~Map()
 {
     delete ui;
 }
+
+void Map::on_nextdaybtn_clicked(Player& current_player)
+{
+    qDebug()<<"on next btn clicked!";
+    int DAY= current_player.getDay();
+    DAY++;
+    current_player.setDay(DAY);
+}
+

@@ -18,6 +18,10 @@ public:
     explicit Map(QWidget *parent, Player& current_player, int ID , QVector<Player>&players );
     ~Map();
 
+private slots:
+    void on_nextdaybtn_clicked( Player& current_player);
+signals:
+    void send_Player(Player&);
 private:
     Silo* silo;
     Warehouse* warehouse;
