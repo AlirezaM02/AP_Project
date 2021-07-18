@@ -35,8 +35,14 @@ void Application::savePlayersData()
         playerObj["name"] = playerlist[i].get_name();
         playerObj["username"] = playerlist[i].get_username();
         playerObj["password"] = playerlist[i].get_password();
+        playerObj["email"] = playerlist[i].get_email();
         playerObj["level"] = playerlist[i].get_level();
         playerObj["XP"] = playerlist[i].get_XP();
+        playerObj["coins"] = playerlist[i].get_coins();
+        playerObj["nails"] = playerlist[i].getNail();
+        playerObj["coins"] = playerlist[i].get_coins();
+        playerObj["coins"] = playerlist[i].get_coins();
+        playerObj["coins"] = playerlist[i].get_coins();
         playerObj["coins"] = playerlist[i].get_coins();
         //playerObj["map"]=playerlist[i].getMap();
         mainArray.append(playerObj);

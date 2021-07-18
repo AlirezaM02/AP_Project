@@ -2,11 +2,11 @@
 #include "ui_map.h"
 #include "map.h"
 #include "ui_map.h"
-Map::Map(QWidget *parent, Player& current_player, int ID , QVector<Player> &players ):
-    QDialog(parent),
+Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &players ):
+    QDialog(parent), current_player(_current_player),
     ui(new Ui::Map)
 {
-    emit send_Player(current_player);
+    current_player=_current_player;
     connect(this, SIGNAL(send_Player(Player&)), this , SLOT(on_nextdaybtn_clicked(Player&)));
     silo= new Silo(this, current_player);
     warehouse= new Warehouse(this, current_player);
@@ -24,11 +24,13 @@ Map::~Map()
     delete ui;
 }
 
-void Map::on_nextdaybtn_clicked(Player& current_player)
+void Map::on_nextdaybtn_clicked()
 {
+
     qDebug()<<"on next btn clicked!";
     int DAY= current_player.getDay();
     DAY++;
     current_player.setDay(DAY);
+    ui->daylbl->setText(QString::number(current_player.getDay()));
 }
 

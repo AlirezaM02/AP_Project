@@ -11,30 +11,31 @@ class Player
 private:
     static int counter;
     int ID;
-    int level;
-    long int coins;
-    long int XP;
-    long int nail;
-    long int shovel;
-    long int hay;
-    long int egg;
-    long int milk;
-    long int wool;
-    long int wheat;
-    int cow;
-    int sheep;
-    int day;
-
-  
     QString name;
     QString username;
     QString password;
     QString email;
+    int level;
+    int XP;
+    int coins;
+    int nail;
+    int shovel;
+    int hay;
+    int egg;
+    int milk;
+    int wool;
+    int wheat;
+    int cow;
+    int sheep;
+    int hen;
+    int day;
+
+
     // Map map;
 
 public:
-    Player(QString _name, QString _username, QString _password, QString _email, long _coins = 20, long _XP = 0,
-           int _level = 1, long int _nail = 1, long int _shovel = 0, long int _hay = 1, long int _egg = 0, long int _milk = 0, long int _wool = 0, int _day=1);
+    Player(QString _name, QString _username, QString _password, QString _email, int  _coins = 20, int  _XP = 0,
+           int _level = 1,   int _nail = 1,   int _shovel = 0,   int _hay = 1,   int _egg = 0,   int _milk = 0,   int _wool = 0, int _day=1);
     Player();
     ~Player();
 
@@ -42,9 +43,9 @@ public:
 
     int get_ID();
 
-     int get_coins();
-    const long& getcoinsref() const {return coins;}
-    long& getcoinsref()       {return coins;}
+    int get_coins();
+    const  int& getcoinsref() const {return coins;}
+    int& getcoinsref()       {return coins;}
     void set_coins(int newCoins);
 
     int get_XP();
@@ -68,40 +69,40 @@ public:
     //Map &get_map();
     //void set_map(Map &newMap);
 
-    long getNail() const;
-    const long& getNailref() const {return nail;}
-    long& getNailref()       {return nail;}
-    void setNail(long newNail);
+     int getNail() const;
+    const  int& getNailref() const {return nail;}
+     int& getNailref()       {return nail;}
+    void setNail( int newNail);
 
-    long getShovel() const;
-    const long& getShovelref() const {return shovel;}
-    long& getShovelref()       {return shovel;}
-    void setShovel(long newShovel);
+    int getShovel() const;
+    const  int& getShovelref() const {return shovel;}
+    int& getShovelref()       {return shovel;}
+    void setShovel( int newShovel);
 
-    long getHay() const;
-    const long& getHayref() const {return hay;}
-    long& getHayref()       {return hay;}
-    void setHay(long newHay);
+    int getHay() const;
+    const  int& getHayref() const {return hay;}
+    int& getHayref()       {return hay;}
+    void setHay( int newHay);
 
-    long getEgg() const;
-    const long& getEggref() const {return nail;}
-    long& getEggref()       {return nail;}
-    void setEgg(long newEgg);
+    int getEgg() const;
+    const  int& getEggref() const {return nail;}
+    int& getEggref()       {return nail;}
+    void setEgg( int newEgg);
 
-    long getMilk() const;
-    const long& getMilkref() const {return milk;}
-    long& getMilkref()       {return milk;}
-    void setMilk(long newMilk);
+    int getMilk() const;
+    const  int& getMilkref() const {return milk;}
+    int& getMilkref()       {return milk;}
+    void setMilk( int newMilk);
 
-    long getWool() const;
-    const long& getWoolref() const {return wool;}
-    long& getWoolref()       {return wool;}
-    void setWool(long newWool);
+    int getWool() const;
+    const  int& getWoolref() const {return wool;}
+    int& getWoolref()       {return wool;}
+    void setWool( int newWool);
 
-    long getWheat() const;
-    const long& getWheatref() const {return wheat;}
-    long& getWheatref()       {return wheat;}
-    void setWheat(long newWheat);
+    int getWheat() const;
+    const  int& getWheatref() const {return wheat;}
+    int& getWheatref()       {return wheat;}
+    void setWheat( int newWheat);
 
     int getCow() const;
     const int& getCowref() const {return cow;}
@@ -122,6 +123,8 @@ public:
     const int& getDayref() const {return day;}
     int& getDayref()       {return day;}
     void setDay(int newDay);
+    int getHen() const;
+    void setHen(int newHen);
 };
 
 #endif // PLAYER_H

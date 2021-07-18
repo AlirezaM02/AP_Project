@@ -4,7 +4,9 @@
             "ID": 7,
             "XP": 0,
             "coins": 20,
+            "email": "",
             "level": 1,
+            "nails": 1,
             "name": "Alireza",
             "password": "AlirezaM02#",
             "username": "AlirezaM02"
@@ -13,7 +15,9 @@
             "ID": 8,
             "XP": 0,
             "coins": 20,
+            "email": "",
             "level": 1,
+            "nails": 1,
             "name": "Jack",
             "password": "Jack01%",
             "username": "Jack01"
