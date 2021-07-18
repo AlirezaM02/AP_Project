@@ -13,6 +13,12 @@ Map::Map(QWidget *parent, Player& current_player, int ID , QVector<Player> &play
     {
 
     }
+    if(current_player.get_level()>=4 && current_player.getNail() >= 3 && current_player.getShovel()>=1 && current_player.get_coins()>=20 ){
+        cattle = new Cattle(this,current_player);
+        int _xp=current_player.get_XP();
+        _xp+=10;
+        current_player.set_XP(_xp);
+    }
 }
 
 Map::~Map()

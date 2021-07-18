@@ -1,7 +1,7 @@
 
 #ifndef MAP_H
 #define MAP_H
-
+#include "cattle.h"
 #include <QDialog>
 #include "player.h"
 #include "silo.h"
@@ -21,6 +21,7 @@ public:
 private:
     Silo* silo;
     Warehouse* warehouse;
+    Cattle* cattle;
     Ui::Map *ui;
 };
 
