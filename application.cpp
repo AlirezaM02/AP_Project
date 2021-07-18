@@ -104,6 +104,7 @@ void Application::fetchPlayersData()
         int shovel = val.toObject().value("shovel").toInteger();
         int hay = val.toObject().value("hay").toInteger();
         int egg = val.toObject().value("egg").toInteger();
+        int milk = val.toObject().value("milk").toInteger();
         int wool = val.toObject().value("wool").toInteger();
         int wheat = val.toObject().value("wheat").toInteger();
         int cow = val.toObject().value("cow").toInteger();
@@ -111,7 +112,8 @@ void Application::fetchPlayersData()
         int hen = val.toObject().value("hen").toInteger();
         int day = val.toObject().value("day").toInteger();
         //Map _map;
-        playerlist.push_back(Player(name, username, password, email, coins, XP, level));
+        playerlist.push_back(Player(name, username, password, email, coins, XP, level,
+                                    nails , shovel, hay , egg ,milk,wool, wheat , cow , sheep,  hen , day));
     }
 }
 

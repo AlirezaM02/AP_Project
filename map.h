@@ -6,6 +6,7 @@
 #include "player.h"
 #include "silo.h"
 #include "warehouse.h"
+#include "cattle.h"
 namespace Ui {
 class Map;
 }

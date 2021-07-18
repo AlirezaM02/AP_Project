@@ -20,10 +20,7 @@ void Silo::set_capacity()
 {
 
 }
-void Silo::levelup()
-{
 
-}
 
 void Silo::levelup(Player &current_player)
 {
@@ -44,14 +41,4 @@ void Silo::levelup(Player &current_player)
     {
         //message!
     }
-}
-
-void Silo::rise_experience()
-{
-
-}
-
-void Silo::check_buildings_level()
-{
-
 }

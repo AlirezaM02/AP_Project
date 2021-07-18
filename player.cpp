@@ -43,7 +43,8 @@ void Player::setHen(int newHen)
     hen = newHen;
 }
 
-Player::Player(QString _name, QString _username, QString _password, QString _email,  int _coins,  int _XP, int _level,  int _nail ,  int _shovel,  int _hay,  int _egg , int _milk ,  int _wool , int _day)
+
+Player::Player(QString _name, QString _username, QString _password, QString _email, int _coins, int _XP, int _level, int _nail, int _shovel, int _hay, int _egg, int _milk, int _wool, int _wheat, int _cow, int _sheep, int _hen, int _day)
 {
     counter++;
     ID = counter;
@@ -60,6 +61,10 @@ Player::Player(QString _name, QString _username, QString _password, QString _ema
     egg = _egg;
     milk = _milk;
     wool = _wool;
+    wheat= _wheat;
+    cow =_cow;
+    sheep= _sheep;
+    hen= _hen;
     day=_day;
 }
 

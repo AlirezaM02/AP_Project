@@ -21,10 +21,6 @@ void Warehouse::set_capacity()
 
 }
 
-void Warehouse::levelup()
-{
-
-}
 
 void Warehouse::levelup(Player &current_player)
 {
@@ -50,13 +46,3 @@ void Warehouse::levelup(Player &current_player)
 }
 
 
-
-void Warehouse::rise_experience()
-{
-
-}
-
-void Warehouse::check_buildings_level()
-{
-
-}
