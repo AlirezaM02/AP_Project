@@ -4,23 +4,43 @@
             "ID": 7,
             "XP": 0,
             "coins": 20,
+            "cow": -858993460,
+            "day": 1,
+            "egg": 0,
             "email": "",
+            "hay": 1,
+            "hen": -858993460,
             "level": 1,
+            "milk": 0,
             "nails": 1,
             "name": "Alireza",
             "password": "AlirezaM02#",
-            "username": "AlirezaM02"
+            "sheep": -858993460,
+            "shovel": 0,
+            "username": "AlirezaM02",
+            "wheat": -858993460,
+            "wool": 0
         },
         {
             "ID": 8,
             "XP": 0,
             "coins": 20,
+            "cow": -858993460,
+            "day": 1,
+            "egg": 0,
             "email": "",
+            "hay": 1,
+            "hen": -858993460,
             "level": 1,
+            "milk": 0,
             "nails": 1,
             "name": "Jack",
             "password": "Jack01%",
-            "username": "Jack01"
+            "sheep": -858993460,
+            "shovel": 0,
+            "username": "Jack01",
+            "wheat": -858993460,
+            "wool": 0
         }
     ]
 }

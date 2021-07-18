@@ -40,11 +40,17 @@ void Application::savePlayersData()
         playerObj["XP"] = playerlist[i].get_XP();
         playerObj["coins"] = playerlist[i].get_coins();
         playerObj["nails"] = playerlist[i].getNail();
-        playerObj["coins"] = playerlist[i].get_coins();
-        playerObj["coins"] = playerlist[i].get_coins();
-        playerObj["coins"] = playerlist[i].get_coins();
-        playerObj["coins"] = playerlist[i].get_coins();
-        //playerObj["map"]=playerlist[i].getMap();
+        playerObj["shovel"] = playerlist[i].getShovel();
+        playerObj["hay"] = playerlist[i].getHay();
+        playerObj["egg"] = playerlist[i].getEgg();
+        playerObj["milk"] = playerlist[i].getMilk();
+        playerObj["wool"] = playerlist[i].getWool();
+        playerObj["wheat"] = playerlist[i].getWheat();
+        playerObj["cow"] = playerlist[i].getCow();
+        playerObj["sheep"] = playerlist[i].getSheep();
+        playerObj["hen"] = playerlist[i].getHen();
+        playerObj["day"] = playerlist[i].getDay();
+
         mainArray.append(playerObj);
     }
     mainObj["users"] = mainArray;
@@ -86,10 +92,24 @@ void Application::fetchPlayersData()
     QJsonArray Arr = Obj.value("users").toArray();
     foreach (const QJsonValue &val, Arr)
     {
-        long int coins = val.toObject().value("coins").toInteger(), XP = val.toObject().value("XP").toInteger();
+        int ID= val.toObject().value("ID").toInteger();
+        QString name = val.toObject().value("name").toString();
+        QString username = val.toObject().value("username").toString();
+        QString password = val.toObject().value("password").toString();
+        QString email = val.toObject().value("email").toString();
         int level = val.toObject().value("level").toInteger();
-        QString name = val.toObject().value("name").toString(), username = val.toObject().value("username").toString(),
-                password = val.toObject().value("password").toString(), email = val.toObject().value("email").toString();
+        int XP = val.toObject().value("XP").toInteger();
+        int coins = val.toObject().value("coins").toInteger();
+        int nails = val.toObject().value("nails").toInteger();
+        int shovel = val.toObject().value("shovel").toInteger();
+        int hay = val.toObject().value("hay").toInteger();
+        int egg = val.toObject().value("egg").toInteger();
+        int wool = val.toObject().value("wool").toInteger();
+        int wheat = val.toObject().value("wheat").toInteger();
+        int cow = val.toObject().value("cow").toInteger();
+        int sheep = val.toObject().value("sheep").toInteger();
+        int hen = val.toObject().value("hen").toInteger();
+        int day = val.toObject().value("day").toInteger();
         //Map _map;
         playerlist.push_back(Player(name, username, password, email, coins, XP, level));
     }

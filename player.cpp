@@ -33,6 +33,16 @@ void Player::setDay(int newDay)
     day = newDay;
 }
 
+int Player::getHen() const
+{
+    return hen;
+}
+
+void Player::setHen(int newHen)
+{
+    hen = newHen;
+}
+
 Player::Player(QString _name, QString _username, QString _password, QString _email,  int _coins,  int _XP, int _level,  int _nail ,  int _shovel,  int _hay,  int _egg , int _milk ,  int _wool , int _day)
 {
     counter++;
