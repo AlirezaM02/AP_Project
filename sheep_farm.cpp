@@ -17,6 +17,11 @@ Sheep_Farm::~Sheep_Farm()
     delete ui;
 }
 
+void Sheep_Farm::set_capacity()
+{
+
+}
+
 void Sheep_Farm::levelup(Player &current_player)
 {
     int _nail=current_player.getNail();

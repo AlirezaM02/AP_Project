@@ -17,6 +17,11 @@ Poultry::~Poultry()
     delete ui;
 }
 
+void Poultry::set_capacity()
+{
+
+}
+
 void Poultry::levelup(Player &current_player)
 {
     int _nail=current_player.getNail();

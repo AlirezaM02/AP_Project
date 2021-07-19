@@ -2,10 +2,10 @@
 #define CATTLE_H
 
 #include <QDialog>
-
+#include "building.h"
 namespace Ui { class Cattle; }
 
-class Cattle : public QDialog
+class Cattle : public QDialog , public Building
 {
     Q_OBJECT
 
