@@ -22,6 +22,7 @@ SOURCES += \
     poultry.cpp \
     scoreboard.cpp \
     sheep_farm.cpp \
+    shop.cpp \
     signup.cpp \
     silo.cpp \
     warehouse.cpp \
@@ -40,6 +41,7 @@ HEADERS += \
     poultry.h \
     scoreboard.h \
     sheep_farm.h \
+    shop.h \
     signup.h \
     silo.h \
     warehouse.h \
@@ -54,6 +56,7 @@ FORMS += \
     poultry.ui \
     scoreboard.ui \
     sheep_farm.ui \
+    shop.ui \
     signup.ui \
     silo.ui \
     warehouse.ui \
