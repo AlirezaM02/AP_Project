@@ -14,6 +14,8 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
 
     wheatfarm = new Wheat_Farm(this,current_player);
 
+    shop=new Shop(this,current_player);
+
     if(current_player.get_level()>=4 && current_player.getNail() >= 3 && current_player.getShovel()>=1 && current_player.get_coins()>=20 )
     {
         int _nail=current_player.getNail();

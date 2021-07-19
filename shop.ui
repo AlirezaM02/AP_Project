@@ -263,7 +263,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>110</y>
      <width>55</width>
      <height>16</height>
@@ -276,7 +276,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>160</y>
      <width>55</width>
      <height>16</height>
@@ -289,7 +289,7 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>210</y>
      <width>55</width>
      <height>16</height>
@@ -302,7 +302,7 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>260</y>
      <width>55</width>
      <height>16</height>
@@ -315,7 +315,7 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>310</y>
      <width>55</width>
      <height>16</height>
@@ -328,7 +328,7 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>360</y>
      <width>55</width>
      <height>16</height>
@@ -341,7 +341,7 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>410</y>
      <width>55</width>
      <height>16</height>
@@ -354,7 +354,7 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>460</y>
      <width>55</width>
      <height>16</height>
@@ -367,7 +367,7 @@
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>510</y>
      <width>55</width>
      <height>16</height>
@@ -380,7 +380,7 @@
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>560</y>
      <width>55</width>
      <height>16</height>
@@ -393,7 +393,7 @@
   <widget class="QLabel" name="mywheatlbl">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>220</x>
      <y>110</y>
      <width>55</width>
      <height>16</height>
@@ -406,7 +406,7 @@
   <widget class="QLabel" name="myhaylbl">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>220</x>
      <y>160</y>
      <width>55</width>
      <height>16</height>
@@ -419,7 +419,7 @@
   <widget class="QLabel" name="myhenlbl">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>220</x>
      <y>210</y>
      <width>55</width>
      <height>16</height>
@@ -432,7 +432,7 @@
   <widget class="QLabel" name="mycowlbl">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>220</x>
      <y>260</y>
      <width>55</width>
      <height>16</height>
@@ -445,7 +445,7 @@
   <widget class="QLabel" name="mysheeplbl">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>220</x>
      <y>310</y>
      <width>55</width>
      <height>16</height>
@@ -458,7 +458,7 @@
   <widget class="QLabel" name="mynaillbl">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>220</x>
      <y>360</y>
      <width>55</width>
      <height>16</height>
@@ -471,7 +471,7 @@
   <widget class="QLabel" name="myshovellbl">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>220</x>
      <y>410</y>
      <width>55</width>
      <height>16</height>
@@ -484,7 +484,7 @@
   <widget class="QLabel" name="mymilklbl">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>220</x>
      <y>460</y>
      <width>55</width>
      <height>16</height>
@@ -497,7 +497,7 @@
   <widget class="QLabel" name="myegglbl">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>220</x>
      <y>510</y>
      <width>55</width>
      <height>16</height>
@@ -510,7 +510,7 @@
   <widget class="QLabel" name="mywoollbl">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>220</x>
      <y>560</y>
      <width>55</width>
      <height>16</height>
@@ -778,6 +778,205 @@
    </property>
    <property name="text">
     <string>3</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="numberwheatlbl">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>100</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="numberhaylbl">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>150</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_30">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>60</y>
+     <width>55</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>number</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="infolbl">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>30</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;MV Boli&quot;;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hennumber">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>200</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="cownumber">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>250</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="sheepnumber">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>300</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="nailnumber">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>350</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="shovelnumber">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>400</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="milknum">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>450</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="eggnum">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>500</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="woolnum">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>550</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="wheatnumb">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>100</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="haynumb">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>150</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="hennumb">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>200</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="cownumb">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>250</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="sheepnumb">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>300</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="nailnumb">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>350</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="shovelnumb">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>400</y>
+     <width>113</width>
+     <height>22</height>
+    </rect>
    </property>
   </widget>
  </widget>

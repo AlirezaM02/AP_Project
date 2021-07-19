@@ -12,6 +12,7 @@
 #include <farm.h>
 #include <wheat_farm.h>
 #include <hay_farm.h>
+#include <shop.h>
 namespace Ui {
 class Map;
 }
@@ -36,6 +37,7 @@ private:
     Sheep_Farm* sheepfarm;
     Wheat_Farm* wheatfarm;
     Hay_Farm* hayfarm;
+    Shop* shop;
     Ui::Map *ui;
     Player& current_player;
 };
