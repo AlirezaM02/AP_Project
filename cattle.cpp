@@ -8,6 +8,7 @@ Cattle::Cattle(QWidget *parent,Player &current_player) :
     ui->setupUi(this);
     capacity=2;
     level=1;
+    feed_check=false;
 
 }
 
@@ -50,5 +51,8 @@ void Cattle::feed(Player &current_player)
         feed_check = true;
         _hay -= needed_hay;
         current_player.setHay(_hay);
+    }
+    else{
+        //Message
     }
 }

@@ -7,6 +7,8 @@
 #include "silo.h"
 #include "warehouse.h"
 #include "cattle.h"
+#include <poultry.h>
+#include "sheep_farm.h"
 namespace Ui {
 class Map;
 }
@@ -27,6 +29,8 @@ private:
     Silo* silo;
     Warehouse* warehouse;
     Cattle* cattle;
+    Poultry* poultry;
+    Sheep_Farm* sheepfarm;
     Ui::Map *ui;
     Player& current_player;
 };

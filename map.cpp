@@ -12,10 +12,45 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
     warehouse= new Warehouse(this, current_player);
     if(current_player.get_level()>=4 && current_player.getNail() >= 3 && current_player.getShovel()>=1 && current_player.get_coins()>=20 )
     {
-        cattle = new Cattle(this, current_player);
+        int _nail=current_player.getNail();
+        int _shovel=current_player.getShovel();
+        int _coins=current_player.get_coins();
+        cattle = new Cattle(this, current_player);// check first time
+
         int _xp=current_player.get_XP();
         _xp+=10;
+        _nail-=3;
+        _shovel-=1;
+        _coins-=20;
         current_player.set_XP(_xp);
+        current_player.set_coins(_coins);
+        current_player.setShovel(_shovel);
+        current_player.setNail(_nail);
+    }
+    if(current_player.getNail()>=2 && current_player.get_coins()>=10 && current_player.get_level()>=2){
+        poultry =new Poultry(this,current_player); // check first time
+        int _xp=current_player.get_XP();
+        int _nail=current_player.getNail();
+        int _coins=current_player.get_coins();
+        _nail-=2;
+        _coins-=10;
+        _xp+=5;
+        current_player.set_XP(_xp);
+        current_player.set_coins(_coins);
+        current_player.setNail(_nail);
+
+    }
+    if(current_player.get_level()>=6 && current_player.getNail()>=4 && current_player.getShovel()>=2 && current_player.get_coins()>=50){
+        sheepfarm =new Sheep_Farm(this,current_player);// check first time
+        int _xp=current_player.get_XP();
+        int _nail=current_player.getNail();
+        int _coins=current_player.get_coins();
+        _nail-=4;
+        _coins-=50;
+        _xp+=20;
+        current_player.set_XP(_xp);
+        current_player.set_coins(_coins);
+        current_player.setNail(_nail);
     }
     ui->setupUi(this);
     ui->daylbl->setText(QString::number(current_player.getDay()));
