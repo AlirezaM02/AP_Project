@@ -24,7 +24,7 @@ public:
     explicit Map(QWidget *parent, Player &current_player, int ID , QVector<Player> &players);
     ~Map();
 
-private slots:
+public slots:
     void on_nextdaybtn_clicked();
     void on_exitBtn_clicked();
 

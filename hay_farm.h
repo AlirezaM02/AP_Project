@@ -1,8 +1,8 @@
 #ifndef HAY_FARM_H
 #define HAY_FARM_H
-#include <farm.h>
 #include <QDialog>
 #include <player.h>
+#include"farm.h"
 namespace Ui {
 class Hay_Farm;
 }

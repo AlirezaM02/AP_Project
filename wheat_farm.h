@@ -2,12 +2,12 @@
 #define WHEAT_FARM_H
 #include <building.h>
 #include <QDialog>
-#include <farm.h>
+#include "farm.h"
 namespace Ui {
 class Wheat_Farm;
 }
 
-class Wheat_Farm : public QDialog,public Farm
+class Wheat_Farm : public QDialog, public Farm
 {
     Q_OBJECT
 

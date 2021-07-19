@@ -4,8 +4,10 @@
 MainWindow::MainWindow()
     : ui(new Ui::MainWindow)
 {
-//    ui->setupUi(this);
+
+    ui->setupUi(this);
     setEnabled(false);
+
     application.fetchPlayersData();
 
     login = new Login();

@@ -17,8 +17,8 @@ Login::Login(QWidget *parent) :
     connect(signup, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
     connect(signup, SIGNAL(exitBtn_clicked()), signup, SLOT(close_and_clear()));
     connect(signup, SIGNAL(sendNewUserData(QString, QString, QString, QString)), this, SLOT(saveNewUserData(QString, QString, QString, QString)));
-    connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(mapClosed()));
-    connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
+    //connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(mapClosed()));
+    //connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
@@ -145,7 +145,6 @@ void Login::saveNewUserData(QString name, QString username, QString password, QS
 {
     qDebug()<<"in save new player data";
     Player *p = new Player(name, username, password, email);
-    //players.push_back(*p);
     addPlayer(*p); // Saves to json
     signupStat = true;
 }
