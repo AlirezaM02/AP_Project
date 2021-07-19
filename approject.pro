@@ -12,6 +12,8 @@ SOURCES += \
     application.cpp \
     building.cpp \
     cattle.cpp \
+    farm.cpp \
+    hay_farm.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -22,12 +24,15 @@ SOURCES += \
     sheep_farm.cpp \
     signup.cpp \
     silo.cpp \
-    warehouse.cpp
+    warehouse.cpp \
+    wheat_farm.cpp
 
 HEADERS += \
     application.h \
     building.h \
     cattle.h \
+    farm.h \
+    hay_farm.h \
     login.h \
     mainwindow.h \
     map.h \
@@ -37,10 +42,12 @@ HEADERS += \
     sheep_farm.h \
     signup.h \
     silo.h \
-    warehouse.h
+    warehouse.h \
+    wheat_farm.h
 
 FORMS += \
     cattle.ui \
+    hay_farm.ui \
     login.ui \
     mainwindow.ui \
     map.ui \
@@ -49,7 +56,8 @@ FORMS += \
     sheep_farm.ui \
     signup.ui \
     silo.ui \
-    warehouse.ui
+    warehouse.ui \
+    wheat_farm.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

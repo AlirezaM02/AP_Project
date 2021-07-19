@@ -9,7 +9,11 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
     current_player=_current_player;
     connect(this, SIGNAL(send_Player(Player&)), this , SLOT(on_nextdaybtn_clicked(Player&)));
     silo= new Silo(this, current_player);
+
     warehouse= new Warehouse(this, current_player);
+
+    wheatfarm = new Wheat_Farm(this,current_player);
+
     if(current_player.get_level()>=4 && current_player.getNail() >= 3 && current_player.getShovel()>=1 && current_player.get_coins()>=20 )
     {
         int _nail=current_player.getNail();
@@ -52,6 +56,22 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
         current_player.set_coins(_coins);
         current_player.setNail(_nail);
     }
+    if(current_player.get_level()>=3 && current_player.getNail()>=1 && current_player.getShovel()>=1 && current_player.get_coins()>=15){
+        hayfarm=new Hay_Farm(this,current_player);
+        int _xp=current_player.get_XP();
+        int _nail=current_player.getNail();
+        int _coins=current_player.get_coins();
+        int _shovel=current_player.getShovel();
+        _xp+=6;
+        _nail-=1;
+        _coins-=15;
+        _shovel-=1;
+        current_player.set_coins(_coins);
+        current_player.setNail(_nail);
+        current_player.setShovel(_shovel);
+        current_player.set_XP(_xp);
+    }
+
     ui->setupUi(this);
     ui->daylbl->setText(QString::number(current_player.getDay()));
     ui->userlbl->setText(current_player.get_username());
