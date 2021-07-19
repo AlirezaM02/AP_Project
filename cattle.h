@@ -3,9 +3,7 @@
 #include "building.h"
 #include <QDialog>
 
-namespace Ui {
-class Cattle;
-}
+namespace Ui { class Cattle; }
 
 class Cattle : public QDialog, public Building
 {
@@ -15,7 +13,7 @@ public:
     explicit Cattle(QWidget *parent,Player& current_player);
     ~Cattle();
     void set_capacity();
-    void levelup(Player& current_player);
+    void levelup(Player &current_player);
     void feed(Player &current_player);
     bool feed_check;
 

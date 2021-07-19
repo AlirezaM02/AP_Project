@@ -17,6 +17,8 @@ Login::Login(QWidget *parent) :
     connect(signup, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
     connect(signup, SIGNAL(exitBtn_clicked()), signup, SLOT(close_and_clear()));
     connect(signup, SIGNAL(sendNewUserData(QString, QString, QString, QString)), this, SLOT(saveNewUserData(QString, QString, QString, QString)));
+    connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(mapClosed()));
+    connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
@@ -145,4 +147,41 @@ void Login::saveNewUserData(QString name, QString username, QString password, QS
     //players.push_back(*p);
     addPlayer(*p); // Saves to json
     signupStat = true;
+}
+
+void Login::mapClosed()
+{
+    playerMap->close();
+    saveUsersData();
+}
+
+void Login::saveUsersData()
+{
+    QJsonObject mainObj;
+    QJsonArray mainArray;
+    for (int i = 0; i < players.size(); i++)
+    {
+        QJsonObject playerObj;
+        playerObj["ID"] = players[i].get_ID();
+        playerObj["name"] = players[i].get_name();
+        playerObj["username"] = players[i].get_username();
+        playerObj["password"] = players[i].get_password();
+        playerObj["level"] = players[i].get_level();
+        playerObj["XP"] = players[i].get_XP();
+        playerObj["coins"] = players[i].get_coins();
+        //playerObj["map"]=players[i].getMap();
+        mainArray.append(playerObj);
+    }
+    mainObj["users"] = mainArray;
+
+    QByteArray byteArray;
+    byteArray = QJsonDocument(mainObj).toJson();
+
+    QDir d;
+    qDebug() << d.currentPath() + "\\data.json";
+    QFile file(d.currentPath() + "\\..\\AP_Project\\data.json");
+    file.setFileName(d.currentPath() + "\\..\\AP_Project\\data.json");
+    file.open(QIODevice::WriteOnly);
+    file.write(byteArray);
+    file.close();
 }

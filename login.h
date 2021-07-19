@@ -20,6 +20,7 @@ private:
     bool signupStat;
     QVector <Player> players;
     Player *currentPlayer;
+    void saveUsersData();
 
 public slots:
     void saveNewUserData(QString, QString, QString, QString);
@@ -27,6 +28,7 @@ public slots:
     void on_signupbtn_clicked();
     void on_loginbtn_clicked();
     void on_buttonBox_rejected();
+    void mapClosed();
 
 public:
     explicit Login(QWidget *parent = nullptr);

@@ -1,11 +1,12 @@
 #ifndef BUILDING_H
 #define BUILDING_H
+
 #include <QDate>
 #include <QMainWindow>
 #include "player.h"
+
 class Building
 {
-
 public:
     Building();
     ~Building();

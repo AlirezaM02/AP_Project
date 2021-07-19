@@ -3,9 +3,8 @@
 
 #include <QDialog>
 #include <player.h>
-namespace Ui {
-class Farm;
-}
+
+namespace Ui { class Farm; }
 
 class Farm : public QDialog
 {
@@ -17,12 +16,13 @@ public:
     ~Farm();
     virtual void levelup(Player& current_player)= 0;
     void set_area(int _area);
+
 private:
     Ui::Farm *ui;
+
 protected:
     int area;
     int planting_area;
-
 };
 
 #endif // FARM_H
