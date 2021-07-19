@@ -1,13 +1,13 @@
 #ifndef CATTLE_H
 #define CATTLE_H
-#include "building.h"
+
 #include <QDialog>
 
 namespace Ui {
 class Cattle;
 }
 
-class Cattle : public QDialog, public Building
+class Cattle : public QDialog
 {
     Q_OBJECT
 

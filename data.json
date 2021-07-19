@@ -1,14 +1,13 @@
 {
-    "users":
-    [
+    "users": [
         {
-        "ID": 1,
-        "XP": 0,
-        "coins": 20,
-        "level": 1,
-        "name": "Alireza",
-        "password": "AlirezaM02#",
-        "username": "AlirezaM02"
+            "ID": 4,
+            "XP": 0,
+            "coins": 20,
+            "level": 1,
+            "name": "Alireza",
+            "password": "AlirezaM02#",
+            "username": "AlirezaM02"
         }
     ]
 }
