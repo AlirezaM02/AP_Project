@@ -28,6 +28,9 @@
    <property name="text">
     <string/>
    </property>
+   <property name="pixmap">
+    <pixmap resource="uimd.qrc">:/pngg/mikh.png</pixmap>
+   </property>
   </widget>
   <widget class="QLabel" name="label_12">
    <property name="geometry">
@@ -45,8 +48,8 @@
   <widget class="QLabel" name="label_16">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>110</y>
+     <x>110</x>
+     <y>140</y>
      <width>91</width>
      <height>16</height>
     </rect>
@@ -70,6 +73,9 @@
    <property name="text">
     <string/>
    </property>
+   <property name="pixmap">
+    <pixmap resource="uimd.qrc">:/pngg/029-spade.png</pixmap>
+   </property>
   </widget>
   <widget class="QLabel" name="label_15">
    <property name="geometry">
@@ -87,7 +93,7 @@
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>400</x>
      <y>420</y>
      <width>71</width>
      <height>31</height>
@@ -113,14 +119,17 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>0</x>
      <y>110</y>
-     <width>55</width>
-     <height>16</height>
+     <width>81</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
-    <string>Capacity :</string>
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="uimd.qrc">:/pngg/capacity.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_10">
@@ -164,6 +173,9 @@
    <property name="text">
     <string/>
    </property>
+   <property name="pixmap">
+    <pixmap resource="uimd.qrc">:/pngg/016-sheep.png</pixmap>
+   </property>
   </widget>
   <widget class="QLabel" name="label_14">
    <property name="geometry">
@@ -193,18 +205,34 @@
    <property name="text">
     <string/>
    </property>
+   <property name="pixmap">
+    <pixmap resource="uimd.qrc">:/pngg/099-milking.png</pixmap>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>520</y>
+     <x>580</x>
+     <y>500</y>
      <width>301</width>
      <height>51</height>
     </rect>
    </property>
    <property name="text">
-    <string>Go to Farm</string>
+    <string>return</string>
+   </property>
+   <property name="icon">
+    <iconset resource="uimd.qrc">
+     <normaloff>:/pngg/goback.png</normaloff>:/pngg/goback.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -222,12 +250,15 @@
    <property name="text">
     <string/>
    </property>
+   <property name="pixmap">
+    <pixmap resource="uimd.qrc">:/pngg/023-eggs.png</pixmap>
+   </property>
   </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>390</y>
+     <x>20</x>
+     <y>350</y>
      <width>111</width>
      <height>91</height>
     </rect>
@@ -238,34 +269,90 @@
    <property name="text">
     <string/>
    </property>
+   <property name="pixmap">
+    <pixmap resource="uimd.qrc">:/pngg/043-hay.png</pixmap>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>1010</x>
-     <y>50</y>
-     <width>93</width>
-     <height>28</height>
+     <x>990</x>
+     <y>40</y>
+     <width>131</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>Level up</string>
+    <string>upgrade</string>
+   </property>
+   <property name="icon">
+    <iconset resource="uimd.qrc">
+     <normaloff>:/pngg/levelup2.png</normaloff>:/pngg/levelup2.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>60</y>
-     <width>71</width>
-     <height>20</height>
+     <x>0</x>
+     <y>30</y>
+     <width>81</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="text">
-    <string>Level :</string>
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="uimd.qrc">:/pngg/level.png</pixmap>
    </property>
   </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1161</width>
+     <height>664</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="uimd.qrc">:/pngg/gandom khone.png</pixmap>
+   </property>
+  </widget>
+  <zorder>label_17</zorder>
+  <zorder>label_8</zorder>
+  <zorder>label_12</zorder>
+  <zorder>label_16</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_15</zorder>
+  <zorder>label_11</zorder>
+  <zorder>label_13</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_9</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label_14</zorder>
+  <zorder>label_6</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>label</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="uimd.qrc"/>
+ </resources>
  <connections/>
 </ui>

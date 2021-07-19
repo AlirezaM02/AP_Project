@@ -26,7 +26,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/pngg/map (1).png</pixmap>
+    <pixmap resource="uimd.qrc">:/pngg/map (1).png</pixmap>
    </property>
   </widget>
   <widget class="QPushButton" name="sheepfarmbtn">
@@ -42,7 +42,7 @@
     <string>sheep form</string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/016-sheep.png</normaloff>:/pngg/016-sheep.png</iconset>
    </property>
    <property name="iconSize">
@@ -58,8 +58,8 @@
   <widget class="QPushButton" name="cattlebtn">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>560</y>
+     <x>760</x>
+     <y>450</y>
      <width>201</width>
      <height>81</height>
     </rect>
@@ -68,7 +68,7 @@
     <string>cattle</string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/012-barn.png</normaloff>:/pngg/012-barn.png</iconset>
    </property>
    <property name="iconSize">
@@ -85,7 +85,7 @@
    <property name="geometry">
     <rect>
      <x>930</x>
-     <y>360</y>
+     <y>470</y>
      <width>161</width>
      <height>61</height>
     </rect>
@@ -94,7 +94,7 @@
     <string>warehouse</string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/008-warehouse.png</normaloff>:/pngg/008-warehouse.png</iconset>
    </property>
    <property name="iconSize">
@@ -111,7 +111,7 @@
    <property name="geometry">
     <rect>
      <x>630</x>
-     <y>390</y>
+     <y>440</y>
      <width>131</width>
      <height>91</height>
     </rect>
@@ -120,7 +120,7 @@
     <string>sillo</string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/017-silo.png</normaloff>:/pngg/017-silo.png</iconset>
    </property>
    <property name="iconSize">
@@ -149,7 +149,7 @@
     <string>poultery</string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/hen.png</normaloff>:/pngg/hen.png</iconset>
    </property>
    <property name="iconSize">
@@ -165,8 +165,8 @@
   <widget class="QPushButton" name="shoptbn">
    <property name="geometry">
     <rect>
-     <x>900</x>
-     <y>470</y>
+     <x>920</x>
+     <y>540</y>
      <width>151</width>
      <height>81</height>
     </rect>
@@ -175,7 +175,7 @@
     <string>shop</string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/buy.png</normaloff>:/pngg/buy.png</iconset>
    </property>
    <property name="iconSize">
@@ -191,8 +191,8 @@
   <widget class="QPushButton" name="wheatfarmbtn">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>390</y>
+     <x>420</x>
+     <y>460</y>
      <width>161</width>
      <height>71</height>
     </rect>
@@ -201,7 +201,7 @@
     <string>wheat farm</string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/002-corn.png</normaloff>:/pngg/002-corn.png</iconset>
    </property>
    <property name="iconSize">
@@ -220,8 +220,8 @@
   <widget class="QPushButton" name="hayfarmbtn">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>530</y>
+     <x>410</x>
+     <y>560</y>
      <width>151</width>
      <height>71</height>
     </rect>
@@ -230,7 +230,7 @@
     <string>hay farm</string>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/100-hay bale.png</normaloff>:/pngg/100-hay bale.png</iconset>
    </property>
    <property name="iconSize">
@@ -256,7 +256,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/next.png</normaloff>:/pngg/next.png</iconset>
    </property>
    <property name="iconSize">
@@ -285,7 +285,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/006-farmer.png</normaloff>:/pngg/006-farmer.png</iconset>
    </property>
    <property name="iconSize">
@@ -314,7 +314,7 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="uimd.qrc">
      <normaloff>:/pngg/experience.png</normaloff>:/pngg/experience.png</iconset>
    </property>
    <property name="iconSize">
@@ -343,7 +343,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/pngg/calendet.png</pixmap>
+    <pixmap resource="uimd.qrc">:/pngg/calendet.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -359,7 +359,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/pngg/coin.png</pixmap>
+    <pixmap resource="uimd.qrc">:/pngg/coin.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="daylbl">
@@ -467,6 +467,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="uimd.qrc"/>
+ </resources>
  <connections/>
 </ui>

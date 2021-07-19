@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/">
+        <file>../porje ui/main page.png</file>
+        <file>../porje ui/prim page.png</file>
+        <file>../porje ui/cattle.png</file>
+        <file>../porje ui/goback.png</file>
+        <file>../porje ui/levelup.png</file>
+        <file>../porje ui/aghol.png</file>
+        <file>../porje ui/gandom22.png</file>
+        <file>../porje ui/sheep page.png</file>
+        <file>../png/003-trailer.png</file>
+        <file>../png/016-sheep.png</file>
+        <file>../png/010-cow.png</file>
+        <file>../png1/024-tractor.png</file>
+        <file>../png1/031-scarecrow.png</file>
+        <file>../png1/036-rake.png</file>
+        <file>../png1/038-shears.png</file>
+        <file>../png1/042-planting.png</file>
+        <file>../png1/043-hay.png</file>
+        <file>../png1/063-hay bale.png</file>
+        <file>../png1/099-milking.png</file>
+        <file>../png1/100-hay bale.png</file>
+    </qresource>
+</RCC>

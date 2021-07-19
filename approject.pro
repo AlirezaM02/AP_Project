@@ -68,7 +68,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    data.qrc
+    data.qrc \
+    uimd.qrc
 
 DISTFILES += \
+    ../../png/003-trailer.png \
     data.json

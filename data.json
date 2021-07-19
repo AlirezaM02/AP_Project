@@ -20,27 +20,6 @@
             "username": "AlirezaM02",
             "wheat": 0,
             "wool": 0
-        },
-        {
-            "ID": 8,
-            "XP": 0,
-            "coins": 20,
-            "cow": 0,
-            "day": 0,
-            "egg": 0,
-            "email": "",
-            "hay": 0,
-            "hen": 0,
-            "level": 1,
-            "milk": 0,
-            "nails": 1,
-            "name": "Jack",
-            "password": "Jack01%",
-            "sheep": 0,
-            "shovel": 0,
-            "username": "Jack01",
-            "wheat": 0,
-            "wool": 0
         }
     ]
 }

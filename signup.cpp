@@ -223,6 +223,15 @@ void Signup::on_exitBtn_clicked()
 
 void Signup::close_and_clear()
 {
+    ui->signupStat->setText("Signup Successful, press exit button");
+    ui->signupbtn->setDisabled(true);
+    qDebug()<<"on signupbtn clicked!";
+    QString name, username, password, email;
+    name = ui->nameled->text();
+    username = ui->usernameled->text();
+    password = ui->passwordled->text();
+    email = ui->emailled->text();
+    emit sendNewUserData(name, username, password, email);
     ui->nameled->clear();
     ui->usernameled->clear();
     ui->passwordled->clear();
