@@ -1,18 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Hay_Farm</class>
- <widget name="Hay_Farm" class="QDialog">
+ <widget class="QDialog" name="Hay_Farm">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>614</width>
+    <height>308</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>160</y>
+     <width>111</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>upgrade</string>
+   </property>
+   <property name="icon">
+    <iconset resource="imigi.qrc">
+     <normaloff>:/pht/mdd/levelup.png</normaloff>:/pht/mdd/levelup.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>-20</y>
+     <width>731</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="imigi.qrc">:/pht/mdd/sheep page.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_6">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>240</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>surface</string>
+   </property>
+   <property name="icon">
+    <iconset resource="imigi.qrc">
+     <normaloff>:/pht/mdd/031-scarecrow.png</normaloff>:/pht/mdd/031-scarecrow.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>160</y>
+     <width>111</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>pick up</string>
+   </property>
+   <property name="icon">
+    <iconset resource="imigi.qrc">
+     <normaloff>:/pht/mdd/063-hay bale.png</normaloff>:/pht/mdd/063-hay bale.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>80</y>
+     <width>161</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>plant</string>
+   </property>
+   <property name="icon">
+    <iconset resource="imigi.qrc">
+     <normaloff>:/pht/mdd/042-planting.png</normaloff>:/pht/mdd/042-planting.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>141</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>return</string>
+   </property>
+   <property name="icon">
+    <iconset resource="uimd.qrc">
+     <normaloff>:/pngg/goback.png</normaloff>:/pngg/goback.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>70</y>
+     <width>141</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>plow</string>
+   </property>
+   <property name="icon">
+    <iconset resource="imigi.qrc">
+     <normaloff>:/pht/mdd/036-rake.png</normaloff>:/pht/mdd/036-rake.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>pushButton_6</zorder>
+  <zorder>pushButton_5</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>pushButton_4</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="imigi.qrc"/>
+  <include location="uimd.qrc"/>
+ </resources>
  <connections/>
 </ui>

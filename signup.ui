@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>398</width>
-    <height>438</height>
+    <width>664</width>
+    <height>348</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>30</y>
-     <width>281</width>
-     <height>393</height>
+     <x>110</x>
+     <y>10</y>
+     <width>421</width>
+     <height>291</height>
     </rect>
    </property>
    <property name="font">
@@ -31,7 +31,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_5">
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_2">
         <property name="font">
          <font>
           <family>MV Boli</family>
@@ -68,7 +68,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="label_3">
         <property name="font">
          <font>
           <family>MV Boli</family>
@@ -105,7 +105,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="label_4">
         <property name="font">
          <font>
           <family>MV Boli</family>
@@ -169,7 +169,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="label_5">
         <property name="font">
          <font>
           <family>MV Boli</family>
@@ -209,7 +209,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="label_6">
         <property name="font">
          <font>
           <family>MV Boli</family>
@@ -278,7 +278,27 @@
     </item>
    </layout>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>651</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="imigi.qrc">:/pht/mdd/prim page.png</pixmap>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>layoutWidget</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="imigi.qrc"/>
+ </resources>
  <connections/>
 </ui>

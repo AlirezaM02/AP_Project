@@ -69,6 +69,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     data.qrc \
+    imigi.qrc \
     uimd.qrc
 
 DISTFILES += \

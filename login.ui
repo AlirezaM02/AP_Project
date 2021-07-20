@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>443</width>
-    <height>228</height>
+    <width>620</width>
+    <height>319</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>30</y>
+     <x>120</x>
+     <y>60</y>
      <width>383</width>
      <height>161</height>
     </rect>
@@ -125,7 +125,27 @@
     </item>
    </layout>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>621</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="imigi.qrc">:/pht/mdd/prim page.png</pixmap>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>layoutWidget</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="imigi.qrc"/>
+ </resources>
  <connections/>
 </ui>
