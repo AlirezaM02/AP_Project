@@ -17,6 +17,9 @@ public:
     void set_capacity();
     void levelup(Player& current_player);
 
+private slots:
+    void on_upgradebtn_clicked(Player &current_player);
+
 private:
     Ui::Silo *ui;
 };

@@ -4,7 +4,8 @@
 #include <QDate>
 #include <QMainWindow>
 #include "player.h"
-
+#include <QString>
+#include <QMessageBox>
 class Building
 {
 public:

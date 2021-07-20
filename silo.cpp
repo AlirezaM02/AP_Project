@@ -9,6 +9,13 @@ Silo::Silo(QWidget *parent, Player& current_player) :
     ui->setupUi(this);
     capacity=10;
     level=1;
+    QString lev=QString::number(level);
+    ui->levellbl->setText(lev);
+    QString wheatnum=QString::number(current_player.getWheat());
+    ui->wheatlbl->setText(wheatnum);
+    QString cap=QString::number(capacity);
+    ui->capacitlbl->setText(cap);
+
 }
 
 Silo::~Silo()
@@ -26,8 +33,7 @@ void Silo::levelup(Player &current_player)
 {
     int _coins= current_player.get_coins();
     int _nails= current_player.getNail();
-    if(( _coins >= 100*(2^(2*level)))&& (_nails >=(level*2)))
-    {
+
 
         _coins -= 100*(2^(2*level));
         _nails-= (level*2);
@@ -36,9 +42,24 @@ void Silo::levelup(Player &current_player)
         current_player.set_coins(_coins);
         current_player.setNail(_nails);
 
+
+}
+
+void Silo::on_upgradebtn_clicked(Player &current_player)
+{
+    int _coins= current_player.get_coins();
+    int _nails= current_player.getNail();
+    if(( _coins >= 100*(2^(2*level)))&& (_nails >=(level*2)))
+    {
+
+        levelup(current_player);
+
     }
     else
     {
-        //message!
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Inventory");
+        message->exec();
     }
 }
+

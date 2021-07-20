@@ -16,9 +16,14 @@ public:
     ~Warehouse();
     void set_capacity();
     void levelup(Player& current_player);
+    int get_inv();
+
+private slots:
+    void on_pushButton_clicked(Player &current_player);
 
 private:
     Ui::Warehouse *ui;
+    int inv;
 
 };
 
