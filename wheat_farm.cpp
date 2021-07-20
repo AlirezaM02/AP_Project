@@ -6,6 +6,7 @@ Wheat_Farm::Wheat_Farm(QWidget *parent,Player& current_player) :
     ui(new Ui::Wheat_Farm)
 {
     ui->setupUi(this);
+     this->setFixedSize(this->geometry().width(), this->geometry().height());
     area =5;
     planting_area=0;
 }

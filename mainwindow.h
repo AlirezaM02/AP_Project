@@ -20,11 +20,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow();
     ~MainWindow();
-    void showScoreboard();
     void showMap();
 
 private slots:
     void saveNewUserData(QString, QString, QString, QString);
+public slots:
+    void showScoreboard();
 
 private:
     Ui::MainWindow *ui;

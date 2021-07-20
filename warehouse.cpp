@@ -6,6 +6,7 @@ Warehouse::Warehouse(QWidget *parent,Player& current_player):
     ui(new Ui::Warehouse)
 {
     ui->setupUi(this);
+     this->setFixedSize(this->geometry().width(), this->geometry().height());
     level=1;
     capacity=5;
 

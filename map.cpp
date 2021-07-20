@@ -5,6 +5,7 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
     QDialog(parent), ui(new Ui::Map), current_player(_current_player)
 {
     ui->setupUi(this);
+
     current_player = _current_player;
 
     connect(this, SIGNAL(send_Player(Player&)), this , SLOT(on_nextdaybtn_clicked(Player&)));
@@ -80,6 +81,8 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
 
     ui->daylbl->setText(QString::number(current_player.getDay()));
     ui->userLbl->setText(current_player.get_username());
+    ui->xplbl->setText(QString::number(current_player.get_XP()));
+    ui->levellbl->setText(QString::number(current_player.get_level()));
 }
 
 Map::~Map()
@@ -100,5 +103,11 @@ void Map::on_nextdaybtn_clicked()
 void Map::on_exitBtn_clicked()
 {
     emit exitBtn_clicked();
+}
+
+
+void Map::on_scoreboardbtn_clicked()
+{
+
 }
 

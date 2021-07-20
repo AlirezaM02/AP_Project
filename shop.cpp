@@ -6,7 +6,7 @@ Shop::Shop(QWidget *parent ,Player& current_player) :
     ui(new Ui::Shop)
 {
     ui->setupUi(this);
-
+ this->setFixedSize(this->geometry().width(), this->geometry().height());
     QString scoin=QString::number(current_player.get_coins());
     ui->show_coinslbl->setText(scoin);
     QString sxp=QString::number(current_player.get_XP());

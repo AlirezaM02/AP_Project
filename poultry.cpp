@@ -6,6 +6,7 @@ Poultry::Poultry(QWidget *parent,Player &current_player) :
     ui(new Ui::Poultry)
 {
     ui->setupUi(this);
+     this->setFixedSize(this->geometry().width(), this->geometry().height());
     capacity=2;
     level=1;
     feed_check=false;

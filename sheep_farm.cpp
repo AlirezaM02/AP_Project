@@ -6,6 +6,7 @@ Sheep_Farm::Sheep_Farm(QWidget *parent,Player& current_player) :
     ui(new Ui::Sheep_Farm)
 {
     ui->setupUi(this);
+     this->setFixedSize(this->geometry().width(), this->geometry().height());
     capacity =2;
     level=1;
     feed_check=false;

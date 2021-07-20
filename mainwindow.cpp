@@ -14,6 +14,7 @@ MainWindow::MainWindow()
     login->show();
 
     int result = login->exec();
+    connect(login, SIGNAL(scoreboardclicked()), this , SLOT(showScoreboard()));
 }
 
 MainWindow::~MainWindow()

@@ -41,6 +41,7 @@ Scoreboard::Scoreboard(QWidget *parent, QVector<Player> &players, int ID) : QDia
         }
     }
     ui->setupUi(this);
+     this->setFixedSize(this->geometry().width(), this->geometry().height());
 }
 
 Scoreboard::~Scoreboard()

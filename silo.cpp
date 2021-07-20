@@ -7,6 +7,7 @@ Silo::Silo(QWidget *parent, Player& current_player) :
     ui(new Ui::Silo)
 {
     ui->setupUi(this);
+     this->setFixedSize(this->geometry().width(), this->geometry().height());
     capacity=10;
     level=1;
 }

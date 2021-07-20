@@ -13,6 +13,8 @@
 #include "wheat_farm.h"
 #include "hay_farm.h"
 #include "shop.h"
+#include "scoreboard.h"
+
 
 namespace Ui { class Map; }
 
@@ -31,6 +33,10 @@ public slots:
 signals:
     void send_Player(Player&);
     void exitBtn_clicked();
+    void scoreboardclicked();
+
+private slots:
+    void on_scoreboardbtn_clicked();
 
 private:
     Silo *silo;
@@ -41,8 +47,10 @@ private:
     Wheat_Farm *wheatfarm;
     Hay_Farm *hayfarm;
     Shop *shop;
+    Scoreboard *scoreboard;
     Ui::Map *ui;
     Player &current_player;
+
 };
 
 #endif // MAP_H
