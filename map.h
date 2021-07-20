@@ -35,8 +35,21 @@ signals:
     void exitBtn_clicked();
     void scoreboardclicked();
 
+
 private slots:
     void on_scoreboardbtn_clicked();
+
+    void on_cattlebtn_clicked();
+
+    void on_poulterybtn_clicked();
+
+    void on_silobtn_clicked();
+
+    void on_warehousebtn_clicked();
+
+    void on_shoptbn_clicked();
+
+    void on_hayfarmbtn_clicked();
 
 private:
     Silo *silo;

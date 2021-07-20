@@ -17,7 +17,7 @@ Login::Login(QWidget *parent) :
     connect(signup, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
     connect(signup, SIGNAL(exitBtn_clicked()), signup, SLOT(close_and_clear()));
     connect(signup, SIGNAL(sendNewUserData(QString, QString, QString, QString)), this, SLOT(saveNewUserData(QString, QString, QString, QString)));
-    connect(playerMap,SIGNAL(scoreboardclicked()),this, SLOT(show_score_board()));
+    //connect(playerMap,SIGNAL(scoreboardclicked()),this, SLOT(show_score_board()));
     //connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(mapClosed()));
     //connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
 
