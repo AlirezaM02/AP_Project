@@ -59,7 +59,6 @@ void Application::savePlayersData()
     byteArray = QJsonDocument(mainObj).toJson();
 
     QDir d;
-    qDebug() << d.currentPath() + "\\data.json";
     QFile file(d.currentPath() + "\\..\\AP_Project\\data.json");
     file.setFileName(d.currentPath() + "\\..\\AP_Project\\data.json");
     file.open(QIODevice::WriteOnly);

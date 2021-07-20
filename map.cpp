@@ -37,7 +37,8 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
         current_player.setNail(_nail);
     }
     ui->poulterybtn->setDisabled(true);
-    if (current_player.getNail() >= 2 && current_player.get_coins() >= 10 && current_player.get_level() >= 2){
+    if (current_player.getNail() >= 2 && current_player.get_coins() >= 10 && current_player.get_level() >= 2)
+    {
         poultry = new Poultry(this, current_player); // check first time
         ui->poulterybtn->setEnabled(true);
         int _xp = current_player.get_XP();
@@ -50,7 +51,7 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
         current_player.set_coins(_coins);
         current_player.setNail(_nail);
     }
-   ui->sheepfarmbtn->setDisabled(true);
+    ui->sheepfarmbtn->setDisabled(true);
     if (current_player.get_level() >= 6 && current_player.getNail() >= 4 && current_player.getShovel() >= 2 && current_player.get_coins() >= 50)
     {
         ui->sheepfarmbtn->setEnabled(true);
@@ -65,7 +66,7 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
         current_player.set_coins(_coins);
         current_player.setNail(_nail);
     }
-        ui->hayfarmbtn->setDisabled(true);
+    ui->hayfarmbtn->setDisabled(true);
     if (current_player.get_level() >= 3 && current_player.getNail() >= 1 && current_player.getShovel() >= 1 && current_player.get_coins() >= 15)
     {
         ui->hayfarmbtn->setEnabled(true);
