@@ -41,6 +41,7 @@ Scoreboard::Scoreboard(QWidget *parent, QVector<Player> &players, int ID) : QDia
         }
     }
     ui->setupUi(this);
+    setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
 }
 

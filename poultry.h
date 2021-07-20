@@ -25,6 +25,7 @@ private slots:
     void on_feedbtn_clicked(Player &current_player);
     void on_eggcollectbtn_clicked(Player &current_player);
     void on_upgradebtn_clicked(Player &current_player);
+    void on_pushButton_2_clicked();
 
 private:
     Ui::Poultry *ui;

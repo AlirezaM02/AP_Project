@@ -51,6 +51,8 @@ private slots:
 
     void on_hayfarmbtn_clicked();
 
+    void on_wheatfarmbtn_clicked();
+
 private:
     Silo *silo;
     Warehouse *warehouse;

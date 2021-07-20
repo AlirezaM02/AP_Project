@@ -22,6 +22,8 @@ public:
 private slots:
     void on_upgradebtn_clicked(Player &current_player);
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Silo *ui;
     QMessageBox *message;

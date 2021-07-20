@@ -18,6 +18,9 @@ public:
     void levelup(Player &current_player);
     void plow(Player &current_player);
 
+private slots:
+    void on_pushButton_4_clicked();
+
 private:
     Ui::Hay_Farm *ui;
     QMessageBox *message;

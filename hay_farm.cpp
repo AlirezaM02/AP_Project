@@ -8,7 +8,6 @@ Hay_Farm::Hay_Farm(QWidget *parent, Player& current_player) :
     ui->setupUi(this);
     area = 4;
     plow_check = false;
-    message = new QMessageBox(this);
 }
 
 Hay_Farm::~Hay_Farm()
@@ -51,3 +50,9 @@ void Hay_Farm::plow(Player& current_player)
         message->exec();
     }
 }
+
+void Hay_Farm::on_pushButton_4_clicked()
+{
+     this->close();
+}
+

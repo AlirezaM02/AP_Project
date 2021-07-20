@@ -5,12 +5,11 @@ Sheep_Farm::Sheep_Farm(QWidget *parent, Player &current_player) : QDialog(parent
                                                                   ui(new Ui::Sheep_Farm)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
-
     capacity = 2;
     level = 1;
     feed_check = false;
-    message = new QMessageBox(this);
 
     QString lev = QString::number(level);
     QString cap = QString::number(capacity);
@@ -86,4 +85,9 @@ void Sheep_Farm::on_feedbtn_clicked(Player &current_player)
         message->setText("Lack Of Hay!");
         message->exec();
     }
+}
+
+void Sheep_Farm::on_pushButton_4_clicked()
+{
+    this->close();
 }

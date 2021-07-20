@@ -5,12 +5,12 @@ Poultry::Poultry(QWidget *parent, Player &current_player) : QDialog(parent),
                                                             ui(new Ui::Poultry)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
 
     capacity = 2;
     level = 1;
     feed_check = false;
-    message = new QMessageBox(this);
 
     QString lev = QString::number(level);
     QString cap = QString::number(capacity);
@@ -90,4 +90,9 @@ void Poultry::on_upgradebtn_clicked(Player &current_player)
         message->setText("Lack Of Inventory !");
         message->exec();
     }
+}
+
+void Poultry::on_pushButton_2_clicked()
+{
+    this->close();
 }

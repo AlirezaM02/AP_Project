@@ -1,24 +1,21 @@
 #include "cattle.h"
 #include "ui_cattle.h"
 
-Cattle::Cattle(QWidget *parent,Player &current_player) :
-    QDialog(parent),
-    ui(new Ui::Cattle)
+Cattle::Cattle(QWidget *parent, Player &current_player) : QDialog(parent),
+                                                          ui(new Ui::Cattle)
 {
     ui->setupUi(this);
 
     capacity = 2;
     level = 1;
     feed_check = false;
-    message = new QMessageBox(this);
 
-    QString lev=QString::number(level);
+    QString lev = QString::number(level);
     ui->levellbl->setText(lev);
-    QString cownum=QString::number(current_player.getCow());
+    QString cownum = QString::number(current_player.getCow());
     ui->cowlbl->setText(cownum);
-    QString cap=QString::number(capacity);
+    QString cap = QString::number(capacity);
     ui->capacitylbl->setText(cap);
-
 }
 
 Cattle::~Cattle()
@@ -28,7 +25,6 @@ Cattle::~Cattle()
 
 void Cattle::set_capacity()
 {
-
 }
 
 void Cattle::levelup(Player &current_player)
@@ -46,7 +42,6 @@ void Cattle::levelup(Player &current_player)
     current_player.set_XP(_xp);
 }
 
-
 void Cattle::feed(Player &current_player)
 {
     int _hay = current_player.getHay();
@@ -61,16 +56,16 @@ void Cattle::feed(Player &current_player)
 
     else
     {
-
     }
 }
 
 void Cattle::on_pushButton_clicked(Player &current_player)
 {
-    int _coins=current_player.get_coins();
-    int _nail=current_player.getNail();
-    int _xp= current_player.get_XP();
-    if(current_player.getNail()>=2 && current_player.get_coins()>=15 && current_player.get_level()>=5){
+    int _coins = current_player.get_coins();
+    int _nail = current_player.getNail();
+    int _xp = current_player.get_XP();
+    if (current_player.getNail() >= 2 && current_player.get_coins() >= 15 && current_player.get_level() >= 5)
+    {
         levelup(current_player);
     }
     else
@@ -80,11 +75,10 @@ void Cattle::on_pushButton_clicked(Player &current_player)
     }
 }
 
-
 void Cattle::on_feedbtn_clicked(Player &current_player)
 {
     int _hay = current_player.getHay();
-    int needed_hay= 2 * current_player.getCow();
+    int needed_hay = 2 * current_player.getCow();
 
     if ((_hay >= needed_hay) && (!feed_check))
     {
@@ -98,3 +92,7 @@ void Cattle::on_feedbtn_clicked(Player &current_player)
     }
 }
 
+void Cattle::on_pushButton_4_clicked()
+{
+    this->close();
+}

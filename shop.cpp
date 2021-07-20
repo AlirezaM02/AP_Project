@@ -6,6 +6,7 @@ Shop::Shop(QWidget *parent, Player &current_player) : QDialog(parent),
                                                       ui(new Ui::Shop)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
     QString scoin = QString::number(current_player.get_coins());
     ui->show_coinslbl->setText(scoin);
@@ -36,6 +37,11 @@ void Shop::on_wheatsellbtn_clicked(Player &current_player)
 
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
 
     else
@@ -59,6 +65,11 @@ void Shop::on_haysellbtn_clicked(Player &current_player)
 
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
 
     else
@@ -80,6 +91,11 @@ void Shop::on_hensellbtn_clicked(Player &current_player)
         current_player.set_coins(_coins);
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
 
     else
@@ -103,6 +119,11 @@ void Shop::on_cowsellbtn_clicked(Player &current_player)
 
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
 
     else
@@ -126,6 +147,11 @@ void Shop::on_sheepsellbtn_clicked(Player &current_player)
 
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else
     {
@@ -148,6 +174,11 @@ void Shop::on_nailsellbtn_clicked(Player &current_player)
 
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
 
     else
@@ -171,6 +202,11 @@ void Shop::on_shovelsellbtn_clicked(Player &current_player)
 
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
 
     else
@@ -194,6 +230,11 @@ void Shop::on_milksellbtn_clicked(Player &current_player)
 
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
 
     else
@@ -217,6 +258,11 @@ void Shop::on_eggsellbtn_clicked(Player &current_player)
 
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
 
     else
@@ -240,6 +286,11 @@ void Shop::on_woolsellbtn_clicked(Player &current_player)
 
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
 
     else
@@ -266,6 +317,11 @@ void Shop::on_wheatbuybtn_clicked(Player &current_player)
         current_player.set_XP(_xp);
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
 
     else
@@ -290,6 +346,11 @@ void Shop::on_haybuybtn_clicked(Player &current_player)
         current_player.set_XP(_xp);
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else
     {
@@ -313,6 +374,11 @@ void Shop::on_henbuybtn_clicked(Player &current_player)
         current_player.set_XP(_xp);
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else
     {
@@ -336,6 +402,11 @@ void Shop::on_cowbuybtn_clicked(Player &current_player)
         current_player.set_XP(_xp);
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else
     {
@@ -359,6 +430,11 @@ void Shop::on_sheepbuybtn_clicked(Player &current_player)
         current_player.set_XP(_xp);
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else
     {
@@ -382,6 +458,11 @@ void Shop::on_nailbuybtn_clicked(Player &current_player)
         current_player.set_XP(_xp);
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else
     {
@@ -405,10 +486,20 @@ void Shop::on_shovelbuybtn_clicked(Player &current_player)
         current_player.set_XP(_xp);
         message->setText("Changes Were Applied");
         message->exec();
+        ui->infolbl->setText("Changes were applied");
+        QString scoin = QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp = QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else
     {
         message->setText("No Money");
         message->exec();
     }
+}
+
+void Shop::on_returnbtn_clicked()
+{
+    this->close();
 }

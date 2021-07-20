@@ -23,6 +23,7 @@ public:
 private slots:
     void on_upgradebtn_clicked(Player &current_player);
     void on_feedbtn_clicked(Player &current_player);
+    void on_pushButton_4_clicked();
 
 private:
     Ui::Sheep_Farm *ui;
