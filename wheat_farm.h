@@ -19,13 +19,9 @@ public:
     ~Wheat_Farm();
     void levelup(Player &current_player);
 
-<<<<<<< HEAD
-=======
-    void levelup(Player& current_player);
 private slots:
     void on_pushButton_4_clicked();
 
->>>>>>> e737126cad907471ad40eb01c6ee8faa69b0c418
 private:
     Ui::Wheat_Farm *ui;
     QMessageBox *message;
