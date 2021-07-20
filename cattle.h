@@ -22,6 +22,8 @@ private slots:
 
     void on_feedbtn_clicked(Player &current_player);
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::Cattle *ui;
 };

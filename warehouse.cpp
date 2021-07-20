@@ -6,6 +6,7 @@ Warehouse::Warehouse(QWidget *parent,Player& current_player):
     ui(new Ui::Warehouse)
 {
     ui->setupUi(this);
+        setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
      this->setFixedSize(this->geometry().width(), this->geometry().height());
     level=1;
     capacity=5;
@@ -85,5 +86,11 @@ void Warehouse::on_pushButton_clicked(Player &current_player)
         message->setText("No Inventory");
         message->exec();
     }
+}
+
+
+void Warehouse::on_pushButton_2_clicked()
+{
+     this->close();
 }
 

@@ -152,3 +152,9 @@ void Map::on_hayfarmbtn_clicked()
     hayfarm->show();
 }
 
+
+void Map::on_wheatfarmbtn_clicked()
+{
+    wheatfarm->show();
+}
+

@@ -6,6 +6,7 @@ Sheep_Farm::Sheep_Farm(QWidget *parent,Player& current_player) :
     ui(new Ui::Sheep_Farm)
 {
     ui->setupUi(this);
+        setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
      this->setFixedSize(this->geometry().width(), this->geometry().height());
     capacity =2;
     level=1;
@@ -60,3 +61,9 @@ void Sheep_Farm::feed(Player &current_player)
         //Message
     }
 }
+
+void Sheep_Farm::on_pushButton_4_clicked()
+{
+     this->close();
+}
+

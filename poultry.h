@@ -19,6 +19,9 @@ public:
     void feed(Player &current_player);
     bool feed_check;
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Poultry *ui;
 };

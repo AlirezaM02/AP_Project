@@ -6,6 +6,7 @@ Cattle::Cattle(QWidget *parent,Player &current_player) :
     ui(new Ui::Cattle)
 {
     ui->setupUi(this);
+        setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
     capacity=2;
     level=1;
     feed_check=false;
@@ -89,5 +90,11 @@ void Cattle::on_feedbtn_clicked(Player &current_player)
         message->setText("No Inventory");
         message->exec();
     }
+}
+
+
+void Cattle::on_pushButton_4_clicked()
+{
+     this->close();
 }
 

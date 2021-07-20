@@ -65,6 +65,8 @@ private slots:
 
     void on_shovelbuybtn_clicked(Player& current_player);
 
+    void on_returnbtn_clicked();
+
 private:
     Ui::Shop *ui;
 };

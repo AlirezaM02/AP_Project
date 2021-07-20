@@ -6,6 +6,7 @@ Hay_Farm::Hay_Farm(QWidget *parent, Player& current_player) :
     ui(new Ui::Hay_Farm)
 {
     ui->setupUi(this);
+        setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
     area=4;
     plow_check=false;
 }
@@ -42,3 +43,9 @@ void Hay_Farm::plow(Player& current_player)
     }
 
 }
+
+void Hay_Farm::on_pushButton_4_clicked()
+{
+     this->close();
+}
+

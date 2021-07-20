@@ -6,6 +6,7 @@ Shop::Shop(QWidget *parent ,Player& current_player) :
     ui(new Ui::Shop)
 {
     ui->setupUi(this);
+        setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
  this->setFixedSize(this->geometry().width(), this->geometry().height());
     QString scoin=QString::number(current_player.get_coins());
     ui->show_coinslbl->setText(scoin);
@@ -331,5 +332,11 @@ void Shop::on_shovelbuybtn_clicked(Player& current_player)
     else{
         ui->infolbl->setText("No Money");
     }
+}
+
+
+void Shop::on_returnbtn_clicked()
+{
+     this->close();
 }
 

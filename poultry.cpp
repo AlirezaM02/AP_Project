@@ -6,6 +6,7 @@ Poultry::Poultry(QWidget *parent,Player &current_player) :
     ui(new Ui::Poultry)
 {
     ui->setupUi(this);
+        setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
      this->setFixedSize(this->geometry().width(), this->geometry().height());
     capacity=2;
     level=1;
@@ -56,3 +57,9 @@ void Poultry::feed(Player &current_player)
         //Message
     }
 }
+
+void Poultry::on_pushButton_2_clicked()
+{
+     this->close();
+}
+

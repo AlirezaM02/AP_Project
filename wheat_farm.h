@@ -16,6 +16,9 @@ public:
     ~Wheat_Farm();
 
     void levelup(Player& current_player);
+private slots:
+    void on_pushButton_4_clicked();
+
 private:
     Ui::Wheat_Farm *ui;
 };

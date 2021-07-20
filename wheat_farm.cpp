@@ -6,6 +6,7 @@ Wheat_Farm::Wheat_Farm(QWidget *parent,Player& current_player) :
     ui(new Ui::Wheat_Farm)
 {
     ui->setupUi(this);
+        setWindowFlags(Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::BypassWindowManagerHint | Qt::WindowTitleHint);
      this->setFixedSize(this->geometry().width(), this->geometry().height());
     area =5;
     planting_area=0;
@@ -34,3 +35,9 @@ void Wheat_Farm::levelup(Player &current_player)
         //Message
     }
 }
+
+void Wheat_Farm::on_pushButton_4_clicked()
+{
+    this->close();
+}
+

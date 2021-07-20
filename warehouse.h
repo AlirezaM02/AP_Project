@@ -21,6 +21,8 @@ public:
 private slots:
     void on_pushButton_clicked(Player &current_player);
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Warehouse *ui;
     int inv;

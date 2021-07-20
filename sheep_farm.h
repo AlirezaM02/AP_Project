@@ -19,6 +19,9 @@ public:
     void feed(Player &current_player);
     bool feed_check;
 
+private slots:
+    void on_pushButton_4_clicked();
+
 private:
     Ui::Sheep_Farm *ui;
 };
