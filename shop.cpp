@@ -1,15 +1,16 @@
 #include "shop.h"
 #include "ui_shop.h"
 #include <QMessageBox>
-Shop::Shop(QWidget *parent ,Player& current_player) :
+
+Shop::Shop(QWidget *parent ,Player &current_player) :
     QDialog(parent),
     ui(new Ui::Shop)
 {
     ui->setupUi(this);
- this->setFixedSize(this->geometry().width(), this->geometry().height());
-    QString scoin=QString::number(current_player.get_coins());
+    this->setFixedSize(this->geometry().width(), this->geometry().height());
+    QString scoin = QString::number(current_player.get_coins());
     ui->show_coinslbl->setText(scoin);
-    QString sxp=QString::number(current_player.get_XP());
+    QString sxp = QString::number(current_player.get_XP());
     ui->show_xplbl->setText(sxp);
 }
 
@@ -23,70 +24,75 @@ void Shop::sell_wheat()
 
 }
 
-void Shop::on_wheatsellbtn_clicked(Player& current_player)
+void Shop::on_wheatsellbtn_clicked(Player &current_player)
 {
-    if(current_player.getWheat()>=ui->numberwheatlbl->text().toInt()){
+    if (current_player.getWheat() >= ui->numberwheatlbl->text().toInt())
+    {
         int _wheat=current_player.getWheat();
         _wheat-=ui->numberwheatlbl->text().toInt();
         current_player.setWheat(_wheat);
+        
         int _coins=current_player.get_coins();
         _coins+=ui->numberwheatlbl->text().toInt()*2;
         current_player.set_coins(_coins);
-        QMessageBox* message=new QMessageBox(this);
+        
         message->setText("Changes Were Applied");
         message->exec();
     }
-    else{
-        QMessageBox* message=new QMessageBox(this);
+
+    else
+    {
         message->setText("No Inventory");
         message->exec();
     }
 }
 
 
-void Shop::on_haysellbtn_clicked(Player& current_player)
+void Shop::on_haysellbtn_clicked(Player &current_player)
 {
-    if(current_player.getHay()>=ui->numberhaylbl->text().toInt()){
-        int _hay=current_player.getHay();
-        _hay-=ui->numberhaylbl->text().toInt();
+    if (current_player.getHay() >= ui->numberhaylbl->text().toInt())
+    {
+        int _hay = current_player.getHay();
+        _hay -= ui->numberhaylbl->text().toInt();
         current_player.setHay(_hay);
-        int _coins=current_player.get_coins();
-        _coins+=ui->numberhaylbl->text().toInt()*4;
+        
+        int _coins = current_player.get_coins();
+        _coins += ui->numberhaylbl->text().toInt()*4;
         current_player.set_coins(_coins);
-        QMessageBox* message=new QMessageBox(this);
+        
         message->setText("Changes Were Applied");
         message->exec();
     }
-    else{
-        QMessageBox* message=new QMessageBox(this);
+
+    else
+    {
         message->setText("No Inventory");
         message->exec();
     }
 }
 
 
-void Shop::on_hensellbtn_clicked(Player& current_player)
+void Shop::on_hensellbtn_clicked(Player &current_player)
 {
-    if(current_player.getHen()>=ui->hennumber->text().toInt()){
+    if (current_player.getHen() >= ui->hennumber->text().toInt())
+    {
         int _hen=current_player.getHen();
         _hen-=ui->hennumber->text().toInt();
         current_player.setHen(_hen);
         int _coins=current_player.get_coins();
         _coins+=ui->hennumber->text().toInt()*15;
         current_player.set_coins(_coins);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Inventory");
         message->exec();
     }
 }
 
 
-void Shop::on_cowsellbtn_clicked(Player& current_player)
+void Shop::on_cowsellbtn_clicked(Player &current_player)
 {
     if(current_player.getCow()>=ui->cownumber->text().toInt()){
         int _cow=current_player.getCow();
@@ -95,19 +101,17 @@ void Shop::on_cowsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->cownumber->text().toInt()*50;
         current_player.set_coins(_coins);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Inventory");
         message->exec();
     }
 }
 
 
-void Shop::on_sheepsellbtn_clicked(Player& current_player)
+void Shop::on_sheepsellbtn_clicked(Player &current_player)
 {
     if(current_player.getSheep()>=ui->sheepnumber->text().toInt()){
         int _sheep=current_player.getSheep();
@@ -116,12 +120,10 @@ void Shop::on_sheepsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->sheepnumber->text().toInt()*70;
         current_player.set_coins(_coins);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
@@ -129,7 +131,7 @@ void Shop::on_sheepsellbtn_clicked(Player& current_player)
 
 
 
-void Shop::on_nailsellbtn_clicked(Player& current_player)
+void Shop::on_nailsellbtn_clicked(Player &current_player)
 {
     if(current_player.getNail()>=ui->nailnumber->text().toInt()){
         int _nail=current_player.getNail();
@@ -138,19 +140,17 @@ void Shop::on_nailsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->nailnumber->text().toInt()*20;
         current_player.set_coins(_coins);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_shovelsellbtn_clicked(Player& current_player)
+void Shop::on_shovelsellbtn_clicked(Player &current_player)
 {
     if(current_player.getShovel()>=ui->shovelnumber->text().toInt()){
         int _shovel=current_player.getShovel();
@@ -159,19 +159,17 @@ void Shop::on_shovelsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->shovelnumber->text().toInt()*30;
         current_player.set_coins(_coins);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_milksellbtn_clicked(Player& current_player)
+void Shop::on_milksellbtn_clicked(Player &current_player)
 {
     if(current_player.getMilk()>=ui->milknum->text().toInt()){
         int _milk=current_player.getMilk();
@@ -180,19 +178,17 @@ void Shop::on_milksellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->milknum->text().toInt()*12;
         current_player.set_coins(_coins);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_eggsellbtn_clicked(Player& current_player)
+void Shop::on_eggsellbtn_clicked(Player &current_player)
 {
     if(current_player.getEgg()>=ui->eggnum->text().toInt()){
         int _egg=current_player.getEgg();
@@ -201,19 +197,17 @@ void Shop::on_eggsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->eggnum->text().toInt()*8;
         current_player.set_coins(_coins);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_woolsellbtn_clicked(Player& current_player)
+void Shop::on_woolsellbtn_clicked(Player &current_player)
 {
     if(current_player.getWool()>=ui->woolnum->text().toInt()){
         int _wool=current_player.getWool();
@@ -222,19 +216,17 @@ void Shop::on_woolsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->woolnum->text().toInt()*23;
         current_player.set_coins(_coins);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_wheatbuybtn_clicked(Player& current_player)
+void Shop::on_wheatbuybtn_clicked(Player &current_player)
 {
     if(current_player.get_coins()>=3*ui->wheatnumb->text().toInt()){
         int _coins=current_player.get_coins();
@@ -246,19 +238,17 @@ void Shop::on_wheatbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=1;
         current_player.set_XP(_xp);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_haybuybtn_clicked(Player& current_player)
+void Shop::on_haybuybtn_clicked(Player &current_player)
 {
     if(current_player.get_coins()>=6*ui->haynumb->text().toInt()){
         int _coins=current_player.get_coins();
@@ -270,19 +260,17 @@ void Shop::on_haybuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=2;
         current_player.set_XP(_xp);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_henbuybtn_clicked(Player& current_player)
+void Shop::on_henbuybtn_clicked(Player &current_player)
 {
     if(current_player.get_coins()>=20*ui->hennumb->text().toInt()){
         int _coins=current_player.get_coins();
@@ -294,19 +282,17 @@ void Shop::on_henbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=5;
         current_player.set_XP(_xp);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_cowbuybtn_clicked(Player& current_player)
+void Shop::on_cowbuybtn_clicked(Player &current_player)
 {
     if(current_player.get_coins()>=70*ui->cownumb->text().toInt()){
         int _coins=current_player.get_coins();
@@ -318,19 +304,17 @@ void Shop::on_cowbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=10;
         current_player.set_XP(_xp);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_sheepbuybtn_clicked(Player& current_player)
+void Shop::on_sheepbuybtn_clicked(Player &current_player)
 {
     if(current_player.get_coins()>=80*ui->sheepnumb->text().toInt()){
         int _coins=current_player.get_coins();
@@ -342,19 +326,17 @@ void Shop::on_sheepbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=15;
         current_player.set_XP(_xp);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_nailbuybtn_clicked(Player& current_player)
+void Shop::on_nailbuybtn_clicked(Player &current_player)
 {
     if(current_player.get_coins()>=30*ui->nailnumb->text().toInt()){
         int _coins=current_player.get_coins();
@@ -366,19 +348,17 @@ void Shop::on_nailbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=4;
         current_player.set_XP(_xp);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }
 }
 
 
-void Shop::on_shovelbuybtn_clicked(Player& current_player)
+void Shop::on_shovelbuybtn_clicked(Player &current_player)
 {
     if(current_player.get_coins()>=50*ui->shovelnumb->text().toInt()){
         int _coins=current_player.get_coins();
@@ -390,12 +370,10 @@ void Shop::on_shovelbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=8;
         current_player.set_XP(_xp);
-        QMessageBox* message=new QMessageBox(this);
         message->setText("Changes Were Applied");
         message->exec();
     }
     else{
-        QMessageBox* message=new QMessageBox(this);
         message->setText("No Money");
         message->exec();
     }

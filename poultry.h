@@ -3,9 +3,8 @@
 
 #include <QDialog>
 #include "building.h"
-namespace Ui {
-class Poultry;
-}
+
+namespace Ui { class Poultry; }
 
 class Poultry : public QDialog, public Building
 {
@@ -21,13 +20,12 @@ public:
 
 private slots:
     void on_feedbtn_clicked(Player &current_player);
-
-    void on_eggcollcentbtn_clicked(Player &current_player);
-
-    void on_upgardebtn_clicked(Player &current_player);
+    void on_eggcollectbtn_clicked(Player &current_player);
+    void on_upgradebtn_clicked(Player &current_player);
 
 private:
     Ui::Poultry *ui;
+    QMessageBox *message;
 };
 
 #endif // POULTRY_H

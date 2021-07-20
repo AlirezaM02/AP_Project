@@ -19,11 +19,11 @@ public:
 
 private slots:
     void on_pushButton_clicked(Player &current_player);
-
     void on_feedbtn_clicked(Player &current_player);
 
 private:
     Ui::Cattle *ui;
+    QMessageBox *message;
 };
 
 #endif // CATTLE_H

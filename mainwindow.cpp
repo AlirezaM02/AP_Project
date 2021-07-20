@@ -5,15 +5,15 @@ MainWindow::MainWindow()
     : ui(new Ui::MainWindow)
 {
 
-    ui->setupUi(this);
+//    ui->setupUi(this);
     setEnabled(false);
 
     application.fetchPlayersData();
 
     login = new Login();
     login->show();
+    login->exec();
 
-    int result = login->exec();
     connect(login, SIGNAL(scoreboardclicked()), this , SLOT(showScoreboard()));
 }
 

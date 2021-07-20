@@ -3,9 +3,8 @@
 
 #include <QDialog>
 #include "building.h"
-namespace Ui {
-class Warehouse;
-}
+
+namespace Ui { class Warehouse; }
 
 class Warehouse : public QDialog, public Building
 {
@@ -23,8 +22,8 @@ private slots:
 
 private:
     Ui::Warehouse *ui;
+    QMessageBox *message;
     int inv;
-
 };
 
 #endif // WAREHOUSE_H

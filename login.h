@@ -30,8 +30,10 @@ public slots:
     void on_buttonBox_rejected();
     void mapClosed();
     void show_score_board();
+
 signals:
     void scoreboardclicked();
+
 public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();

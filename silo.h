@@ -3,9 +3,8 @@
 
 #include <QDialog>
 #include "building.h"
-namespace Ui {
-class Silo;
-}
+
+namespace Ui { class Silo; }
 
 class Silo : public QDialog, public Building
 {
@@ -22,6 +21,7 @@ private slots:
 
 private:
     Ui::Silo *ui;
+    QMessageBox *message;
 };
 
 #endif // SILO_H

@@ -1,11 +1,12 @@
 #ifndef HAY_FARM_H
 #define HAY_FARM_H
+
 #include <QDialog>
-#include <player.h>
-#include"farm.h"
-namespace Ui {
-class Hay_Farm;
-}
+#include <QMessageBox>
+#include "player.h"
+#include "farm.h"
+
+namespace Ui { class Hay_Farm; }
 
 class Hay_Farm : public QDialog, public Farm
 {
@@ -19,6 +20,7 @@ public:
 
 private:
     Ui::Hay_Farm *ui;
+    QMessageBox *message;
     bool plow_check;
 };
 
