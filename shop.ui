@@ -826,7 +826,7 @@
     <string notr="true">font: 12pt &quot;MV Boli&quot;;</string>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>Shop</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="hennumber">

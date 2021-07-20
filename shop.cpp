@@ -34,6 +34,10 @@ void Shop::on_wheatsellbtn_clicked(Player& current_player)
         _coins+=ui->numberwheatlbl->text().toInt()*2;
         current_player.set_coins(_coins);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No inventory");
@@ -51,6 +55,10 @@ void Shop::on_haysellbtn_clicked(Player& current_player)
         _coins+=ui->numberhaylbl->text().toInt()*4;
         current_player.set_coins(_coins);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No inventory");
@@ -68,6 +76,10 @@ void Shop::on_hensellbtn_clicked(Player& current_player)
         _coins+=ui->hennumber->text().toInt()*15;
         current_player.set_coins(_coins);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No inventory");
@@ -85,6 +97,10 @@ void Shop::on_cowsellbtn_clicked(Player& current_player)
         _coins+=ui->cownumber->text().toInt()*50;
         current_player.set_coins(_coins);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No inventory");
@@ -102,6 +118,10 @@ void Shop::on_sheepsellbtn_clicked(Player& current_player)
         _coins+=ui->sheepnumber->text().toInt()*70;
         current_player.set_coins(_coins);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No inventory");
@@ -120,6 +140,10 @@ void Shop::on_nailsellbtn_clicked(Player& current_player)
         _coins+=ui->nailnumber->text().toInt()*20;
         current_player.set_coins(_coins);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No inventory");
@@ -137,6 +161,10 @@ void Shop::on_shovelsellbtn_clicked(Player& current_player)
         _coins+=ui->shovelnumber->text().toInt()*30;
         current_player.set_coins(_coins);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No inventory");
@@ -154,6 +182,10 @@ void Shop::on_milksellbtn_clicked(Player& current_player)
         _coins+=ui->milknum->text().toInt()*12;
         current_player.set_coins(_coins);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No inventory");
@@ -171,6 +203,10 @@ void Shop::on_eggsellbtn_clicked(Player& current_player)
         _coins+=ui->eggnum->text().toInt()*8;
         current_player.set_coins(_coins);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No inventory");
@@ -188,6 +224,10 @@ void Shop::on_woolsellbtn_clicked(Player& current_player)
         _coins+=ui->woolnum->text().toInt()*23;
         current_player.set_coins(_coins);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No inventory");
@@ -208,6 +248,10 @@ void Shop::on_wheatbuybtn_clicked(Player& current_player)
         _xp+=1;
         current_player.set_XP(_xp);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No Money");
@@ -228,6 +272,10 @@ void Shop::on_haybuybtn_clicked(Player& current_player)
         _xp+=2;
         current_player.set_XP(_xp);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No Money");
@@ -248,6 +296,10 @@ void Shop::on_henbuybtn_clicked(Player& current_player)
         _xp+=5;
         current_player.set_XP(_xp);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No Money");
@@ -268,6 +320,10 @@ void Shop::on_cowbuybtn_clicked(Player& current_player)
         _xp+=10;
         current_player.set_XP(_xp);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No Money");
@@ -288,6 +344,10 @@ void Shop::on_sheepbuybtn_clicked(Player& current_player)
         _xp+=15;
         current_player.set_XP(_xp);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No Money");
@@ -308,6 +368,10 @@ void Shop::on_nailbuybtn_clicked(Player& current_player)
         _xp+=4;
         current_player.set_XP(_xp);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No Money");
@@ -328,6 +392,10 @@ void Shop::on_shovelbuybtn_clicked(Player& current_player)
         _xp+=8;
         current_player.set_XP(_xp);
         ui->infolbl->setText("Changes were applied");
+        QString scoin=QString::number(current_player.get_coins());
+        ui->show_coinslbl->setText(scoin);
+        QString sxp=QString::number(current_player.get_XP());
+        ui->show_xplbl->setText(sxp);
     }
     else{
         ui->infolbl->setText("No Money");
