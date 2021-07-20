@@ -813,22 +813,6 @@
     <string>number</string>
    </property>
   </widget>
-  <widget class="QLabel" name="infolbl">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>30</y>
-     <width>131</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 12pt &quot;MV Boli&quot;;</string>
-   </property>
-   <property name="text">
-    <string>TextLabel</string>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="hennumber">
    <property name="geometry">
     <rect>

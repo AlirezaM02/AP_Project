@@ -1,6 +1,6 @@
 #include "shop.h"
 #include "ui_shop.h"
-
+#include <QMessageBox>
 Shop::Shop(QWidget *parent ,Player& current_player) :
     QDialog(parent),
     ui(new Ui::Shop)
@@ -32,10 +32,14 @@ void Shop::on_wheatsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->numberwheatlbl->text().toInt()*2;
         current_player.set_coins(_coins);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No inventory");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Inventory");
+        message->exec();
     }
 }
 
@@ -49,10 +53,14 @@ void Shop::on_haysellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->numberhaylbl->text().toInt()*4;
         current_player.set_coins(_coins);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No inventory");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Inventory");
+        message->exec();
     }
 }
 
@@ -66,10 +74,14 @@ void Shop::on_hensellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->hennumber->text().toInt()*15;
         current_player.set_coins(_coins);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No inventory");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Inventory");
+        message->exec();
     }
 }
 
@@ -83,10 +95,14 @@ void Shop::on_cowsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->cownumber->text().toInt()*50;
         current_player.set_coins(_coins);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No inventory");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Inventory");
+        message->exec();
     }
 }
 
@@ -100,10 +116,14 @@ void Shop::on_sheepsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->sheepnumber->text().toInt()*70;
         current_player.set_coins(_coins);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No inventory");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -118,10 +138,14 @@ void Shop::on_nailsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->nailnumber->text().toInt()*20;
         current_player.set_coins(_coins);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No inventory");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -135,10 +159,14 @@ void Shop::on_shovelsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->shovelnumber->text().toInt()*30;
         current_player.set_coins(_coins);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No inventory");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -152,10 +180,14 @@ void Shop::on_milksellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->milknum->text().toInt()*12;
         current_player.set_coins(_coins);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No inventory");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -169,10 +201,14 @@ void Shop::on_eggsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->eggnum->text().toInt()*8;
         current_player.set_coins(_coins);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No inventory");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -186,10 +222,14 @@ void Shop::on_woolsellbtn_clicked(Player& current_player)
         int _coins=current_player.get_coins();
         _coins+=ui->woolnum->text().toInt()*23;
         current_player.set_coins(_coins);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No inventory");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -206,10 +246,14 @@ void Shop::on_wheatbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=1;
         current_player.set_XP(_xp);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No Money");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -226,10 +270,14 @@ void Shop::on_haybuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=2;
         current_player.set_XP(_xp);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No Money");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -246,10 +294,14 @@ void Shop::on_henbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=5;
         current_player.set_XP(_xp);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No Money");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -266,10 +318,14 @@ void Shop::on_cowbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=10;
         current_player.set_XP(_xp);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No Money");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -286,10 +342,14 @@ void Shop::on_sheepbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=15;
         current_player.set_XP(_xp);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No Money");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -306,10 +366,14 @@ void Shop::on_nailbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=4;
         current_player.set_XP(_xp);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No Money");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 
@@ -326,10 +390,14 @@ void Shop::on_shovelbuybtn_clicked(Player& current_player)
         int _xp=current_player.get_XP();
         _xp+=8;
         current_player.set_XP(_xp);
-        ui->infolbl->setText("Changes were applied");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Changes Were Applied");
+        message->exec();
     }
     else{
-        ui->infolbl->setText("No Money");
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Money");
+        message->exec();
     }
 }
 

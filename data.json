@@ -1,7 +1,7 @@
 {
     "users": [
         {
-            "ID": 7,
+            "ID": 10,
             "XP": 0,
             "coins": 20,
             "cow": 0,
@@ -22,7 +22,7 @@
             "wool": 0
         },
         {
-            "ID": 8,
+            "ID": 11,
             "XP": 0,
             "coins": 20,
             "cow": 0,
@@ -39,6 +39,27 @@
             "sheep": 0,
             "shovel": 0,
             "username": "Kimia01",
+            "wheat": 0,
+            "wool": 0
+        },
+        {
+            "ID": 12,
+            "XP": 0,
+            "coins": 20,
+            "cow": 0,
+            "day": 0,
+            "egg": 0,
+            "email": "",
+            "hay": 0,
+            "hen": 0,
+            "level": 1,
+            "milk": 0,
+            "nails": 0,
+            "name": "meh",
+            "password": "123456Mm@",
+            "sheep": 0,
+            "shovel": 0,
+            "username": "mmd",
             "wheat": 0,
             "wool": 0
         }
