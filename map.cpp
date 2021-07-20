@@ -15,6 +15,7 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
     warehouse = new Warehouse(this, current_player);
     wheatfarm = new Wheat_Farm(this, current_player);
     shop = new Shop(this, current_player);
+
     ui->cattlebtn->setDisabled(true);
     if (current_player.get_level() >= 4 && current_player.getNail() >= 3 && current_player.getShovel() >= 1 && current_player.get_coins() >= 20 )
     {
