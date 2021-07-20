@@ -30,13 +30,12 @@ private:
     int hen;
     int day;
 
-
     // Map map;
 
 public:
-    Player(QString _name, QString _username, QString _password, QString _email, int  _coins = 20, int  _XP = 0,
-           int _level = 1,   int _nail = 1,   int _shovel = 0,   int _hay = 1,   int _egg = 0,   int _milk = 0,
-           int _wool = 0, int _wheat=0,int _cow=0, int _sheep=0, int _hen=0,  int _day=1);
+    Player(QString _name, QString _username, QString _password, QString _email, int _coins = 20, int _XP = 0,
+           int _level = 1, int _nail = 1, int _shovel = 0, int _hay = 1, int _egg = 0, int _milk = 0,
+           int _wool = 0, int _wheat = 0, int _cow = 0, int _sheep = 0, int _hen = 0, int _day = 1);
     Player();
     ~Player();
 
@@ -45,8 +44,8 @@ public:
     int get_ID();
 
     int get_coins();
-    const  int& getcoinsref() const {return coins;}
-    int& getcoinsref()       {return coins;}
+    const int &getcoinsref() const { return coins; }
+    int &getcoinsref() { return coins; }
     void set_coins(int newCoins);
 
     int get_XP();
@@ -70,59 +69,58 @@ public:
     //Map &get_map();
     //void set_map(Map &newMap);
 
-     int getNail() const;
-    const  int& getNailref() const {return nail;}
-     int& getNailref()       {return nail;}
-    void setNail( int newNail);
+    int getNail() const;
+    const int &getNailref() const { return nail; }
+    int &getNailref() { return nail; }
+    void setNail(int newNail);
 
     int getShovel() const;
-    const  int& getShovelref() const {return shovel;}
-    int& getShovelref()       {return shovel;}
-    void setShovel( int newShovel);
+    const int &getShovelref() const { return shovel; }
+    int &getShovelref() { return shovel; }
+    void setShovel(int newShovel);
 
     int getHay() const;
-    const  int& getHayref() const {return hay;}
-    int& getHayref()       {return hay;}
-    void setHay( int newHay);
+    const int &getHayref() const { return hay; }
+    int &getHayref() { return hay; }
+    void setHay(int newHay);
 
     int getEgg() const;
-    const  int& getEggref() const {return nail;}
-    int& getEggref()       {return nail;}
-    void setEgg( int newEgg);
+    const int &getEggref() const { return nail; }
+    int &getEggref() { return nail; }
+    void setEgg(int newEgg);
 
     int getMilk() const;
-    const  int& getMilkref() const {return milk;}
-    int& getMilkref()       {return milk;}
-    void setMilk( int newMilk);
+    const int &getMilkref() const { return milk; }
+    int &getMilkref() { return milk; }
+    void setMilk(int newMilk);
 
     int getWool() const;
-    const  int& getWoolref() const {return wool;}
-    int& getWoolref()       {return wool;}
-    void setWool( int newWool);
+    const int &getWoolref() const { return wool; }
+    int &getWoolref() { return wool; }
+    void setWool(int newWool);
 
     int getWheat() const;
-    const  int& getWheatref() const {return wheat;}
-    int& getWheatref()       {return wheat;}
-    void setWheat( int newWheat);
+    const int &getWheatref() const { return wheat; }
+    int &getWheatref() { return wheat; }
+    void setWheat(int newWheat);
 
     int getCow() const;
-    const int& getCowref() const {return cow;}
-    int& getCowref()       {return cow;}
+    const int &getCowref() const { return cow; }
+    int &getCowref() { return cow; }
     void setCow(int newCow);
 
     int getSheep() const;
-    const int& getSheepref() const {return sheep;}
-    int& getSheepref()       {return sheep;}
+    const int &getSheepref() const { return sheep; }
+    int &getSheepref() { return sheep; }
     void setSheep(int newSheep);
 
     bool check_email(QString _email);
     bool check_username(QString _username);
     bool check_password(QString _password); //for strength
 
-
     int getDay() const;
-    const int& getDayref() const {return day;}
-    int& getDayref()       {return day;}
+    const int &getDayref() const { return day; }
+    int &getDayref() { return day; }
     void setDay(int newDay);
     int getHen() const;
     void setHen(int newHen);

@@ -2,19 +2,19 @@
 #include "ui_scoreboard.h"
 
 Scoreboard::Scoreboard(QWidget *parent, QVector<Player> &players, int ID) : QDialog(parent),
-    ui(new Ui::Scoreboard)
+                                                                            ui(new Ui::Scoreboard)
 {
     //players.erase(players.begin(), players.end());
 
     std::sort(players.begin(), players.end(), [](Player p1, Player p2)
-    {
-        if (p1.get_level() > p2.get_level())
-            return true;
-        else if (p1.get_level() == p2.get_level())
-            if (p1.get_XP() > p2.get_XP())
-                return true;
-        return false;
-    });
+              {
+                  if (p1.get_level() > p2.get_level())
+                      return true;
+                  else if (p1.get_level() == p2.get_level())
+                      if (p1.get_XP() > p2.get_XP())
+                          return true;
+                  return false;
+              });
 
     int rowCount = players.size();
 
@@ -41,7 +41,7 @@ Scoreboard::Scoreboard(QWidget *parent, QVector<Player> &players, int ID) : QDia
         }
     }
     ui->setupUi(this);
-     this->setFixedSize(this->geometry().width(), this->geometry().height());
+    this->setFixedSize(this->geometry().width(), this->geometry().height());
 }
 
 Scoreboard::~Scoreboard()

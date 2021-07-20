@@ -1,9 +1,8 @@
 #include "sheep_farm.h"
 #include "ui_sheep_farm.h"
 
-Sheep_Farm::Sheep_Farm(QWidget *parent,Player& current_player) :
-    QDialog(parent),
-    ui(new Ui::Sheep_Farm)
+Sheep_Farm::Sheep_Farm(QWidget *parent, Player &current_player) : QDialog(parent),
+                                                                  ui(new Ui::Sheep_Farm)
 {
     ui->setupUi(this);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
@@ -28,15 +27,14 @@ Sheep_Farm::~Sheep_Farm()
 
 void Sheep_Farm::set_capacity()
 {
-
 }
 
 void Sheep_Farm::levelup(Player &current_player)
 {
-    int _nail=current_player.getNail();
-    int _shovel=current_player.getShovel();
-    int _coins=current_player.get_coins();
-    int _xp=current_player.get_XP();
+    int _nail = current_player.getNail();
+    int _shovel = current_player.getShovel();
+    int _coins = current_player.get_coins();
+    int _xp = current_player.get_XP();
 
     capacity *= 2;
     _nail -= 3;
@@ -59,9 +57,7 @@ void Sheep_Farm::feed(Player &current_player)
     current_player.setHay(_hay);
 }
 
-
-
-void Sheep_Farm::on_upgradebtn_clicked(Player& current_player)
+void Sheep_Farm::on_upgradebtn_clicked(Player &current_player)
 {
     int _nail = current_player.getNail();
     int _shovel = current_player.getShovel();
@@ -77,13 +73,12 @@ void Sheep_Farm::on_upgradebtn_clicked(Player& current_player)
     }
 }
 
-
-void Sheep_Farm::on_feedbtn_clicked(Player& current_player)
+void Sheep_Farm::on_feedbtn_clicked(Player &current_player)
 {
     int _hay = current_player.getHay();
     int needed_hay = current_player.getSheep();
 
-    if ((_hay>=needed_hay) && (!feed_check))
+    if ((_hay >= needed_hay) && (!feed_check))
         levelup(current_player);
 
     else
@@ -92,4 +87,3 @@ void Sheep_Farm::on_feedbtn_clicked(Player& current_player)
         message->exec();
     }
 }
-

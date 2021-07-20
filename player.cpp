@@ -43,7 +43,6 @@ void Player::setHen(int newHen)
     hen = newHen;
 }
 
-
 Player::Player(QString _name, QString _username, QString _password, QString _email, int _coins, int _XP, int _level, int _nail, int _shovel, int _hay, int _egg, int _milk, int _wool, int _wheat, int _cow, int _sheep, int _hen, int _day)
 {
     counter++;
@@ -52,8 +51,8 @@ Player::Player(QString _name, QString _username, QString _password, QString _ema
     XP = _XP;
     level = _level;
     name = _name;
-    username =_username;
-    password =_password;
+    username = _username;
+    password = _password;
     email = _email;
     nail = _nail;
     shovel = _shovel;
@@ -61,11 +60,11 @@ Player::Player(QString _name, QString _username, QString _password, QString _ema
     egg = _egg;
     milk = _milk;
     wool = _wool;
-    wheat= _wheat;
-    cow =_cow;
-    sheep= _sheep;
-    hen= _hen;
-    day=_day;
+    wheat = _wheat;
+    cow = _cow;
+    sheep = _sheep;
+    hen = _hen;
+    day = _day;
 }
 
 Player::Player()
@@ -77,14 +76,14 @@ Player::Player()
     username = "";
     password = "";
     email = "";
-    nail= 1;
-    shovel=0;
-    hay=1;
-    egg=0;
-    milk=0;
-    wool=0;
-    day=1;
-    counter ++;
+    nail = 1;
+    shovel = 0;
+    hay = 1;
+    egg = 0;
+    milk = 0;
+    wool = 0;
+    day = 1;
+    counter++;
 }
 
 Player::~Player() {}
@@ -174,7 +173,7 @@ int Player::getNail() const
     return nail;
 }
 
-void Player::setNail( int newNail)
+void Player::setNail(int newNail)
 {
     nail = newNail;
 }
@@ -184,27 +183,27 @@ int Player::getShovel() const
     return shovel;
 }
 
-void Player::setShovel( int newShovel)
+void Player::setShovel(int newShovel)
 {
     shovel = newShovel;
 }
 
- int Player::getHay() const
+int Player::getHay() const
 {
     return hay;
 }
 
-void Player::setHay( int newHay)
+void Player::setHay(int newHay)
 {
     hay = newHay;
 }
 
- int Player::getEgg() const
+int Player::getEgg() const
 {
     return egg;
 }
 
-void Player::setEgg( int newEgg)
+void Player::setEgg(int newEgg)
 {
     egg = newEgg;
 }
@@ -214,7 +213,7 @@ int Player::getMilk() const
     return milk;
 }
 
-void Player::setMilk( int newMilk)
+void Player::setMilk(int newMilk)
 {
     milk = newMilk;
 }
@@ -224,7 +223,7 @@ int Player::getWool() const
     return wool;
 }
 
-void Player::setWool( int newWool)
+void Player::setWool(int newWool)
 {
     wool = newWool;
 }
@@ -234,28 +233,28 @@ int Player::getWheat() const
     return wheat;
 }
 
-void Player::setWheat( int newWheat)
+void Player::setWheat(int newWheat)
 {
     wheat = newWheat;
 }
 
 bool Player::check_email(QString _email)
 {
-    QChar c= _email[0];
+    QChar c = _email[0];
     if (!c.isLetter())
     {
         return false;
     }
     int at = -1;
     int dot = -1;
-    for(int i = 0; i < _email.length(); i++)
+    for (int i = 0; i < _email.length(); i++)
     {
         if (_email[i] == '@')
             at = i;
         else if (_email[i] == '.')
             dot = i;
     }
-    if (at==-1 || dot==-1)
+    if (at == -1 || dot == -1)
         return false;
     if (dot < at)
         return false;
@@ -270,7 +269,7 @@ bool Player::check_username(QString _username)
 bool Player::check_password(QString _password)
 {
     int lower = 0, digit = 0, symbol = 0, upper = 0, passlen = _password.length();
-    for (const auto& character : _password)
+    for (const auto &character : _password)
     {
         if (character.isUpper())
             upper++;
@@ -281,7 +280,7 @@ bool Player::check_password(QString _password)
         else
             symbol++;
     }
-    if (upper >= 1 and lower >= 1 and digit >= 1 and symbol >= 1 and passlen >=6)
+    if (upper >= 1 and lower >= 1 and digit >= 1 and symbol >= 1 and passlen >= 6)
         return true;
     return false;
 }

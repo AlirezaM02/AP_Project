@@ -1,9 +1,8 @@
 #include "signup.h"
 #include "ui_signup.h"
 
-Signup::Signup(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Signup)
+Signup::Signup(QWidget *parent) : QDialog(parent),
+                                  ui(new Ui::Signup)
 {
     ui->setupUi(this);
 
@@ -12,11 +11,11 @@ Signup::Signup(QWidget *parent) :
 
     ui->signupbtn->setDisabled(true);
 
-    connect(ui->nameled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
-    connect(ui->usernameled,SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
-    connect(ui->passwordled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
-    connect(ui->rewriteled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
-    connect(ui->emailled, SIGNAL(textChanged(const QString&)), this, SLOT(check_line_edits(const QString&)));
+    connect(ui->nameled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits(const QString &)));
+    connect(ui->usernameled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits(const QString &)));
+    connect(ui->passwordled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits(const QString &)));
+    connect(ui->rewriteled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits(const QString &)));
+    connect(ui->emailled, SIGNAL(textChanged(const QString &)), this, SLOT(check_line_edits(const QString &)));
     connect(ui->signupbtn, SIGNAL(pressed()), this, SLOT(on_signupBtn_clicked()));
     connect(ui->exitBtn, SIGNAL(pressed()), this, SLOT(on_exitBtn_clicked()));
 }
@@ -38,12 +37,11 @@ void Signup::on_signupBtn_clicked()
     ui->signupbtn->setDisabled(true);
 }
 
-void Signup::check_line_edits(const QString& a_strString)
+void Signup::check_line_edits(const QString &a_strString)
 {
     QChar c;
     bool validName = false, validEmail = false, strongPassword = false, confirmPass = false;
     int username_counter = 0;
-
 
     if (!ui->emailled->text().isEmpty())
     {
@@ -63,9 +61,9 @@ void Signup::check_line_edits(const QString& a_strString)
         for (int i = 0; i < ui->emailled->text().length(); i++)
         {
             if (ui->emailled->text()[i] == '@')
-                at=i;
-            else if (ui->emailled->text()[i]=='.')
-                dot=i;
+                at = i;
+            else if (ui->emailled->text()[i] == '.')
+                dot = i;
         }
 
         if ((at == -1 || dot == -1) && !flag)
@@ -83,11 +81,10 @@ void Signup::check_line_edits(const QString& a_strString)
         }
 
         if (!flag)
-            validEmail = !(dot>=(ui->emailled->text().length() - 1));
+            validEmail = !(dot >= (ui->emailled->text().length() - 1));
 
         if (validEmail)
             ui->emailerrorlbl->clear();
-
     }
 
     if (!ui->passwordled->text().isEmpty())
@@ -107,7 +104,7 @@ void Signup::check_line_edits(const QString& a_strString)
             qDebug() << upper << lower << digit << symbol << passlen;
         }
 
-        if (upper >= 1 and lower >= 1 and digit >= 1 and symbol >= 1 and passlen >=6)
+        if (upper >= 1 and lower >= 1 and digit >= 1 and symbol >= 1 and passlen >= 6)
         {
             strongPassword = true;
             ui->passworderrorlbl->clear();
@@ -133,13 +130,13 @@ void Signup::check_line_edits(const QString& a_strString)
     {
         if (ui->passwordled->text().toUtf8() == ui->rewriteled->text().toUtf8())
         {
-            confirmPass=true;
+            confirmPass = true;
             ui->confirmpasserrorlbl->clear();
         }
 
         else
         {
-            confirmPass=false;
+            confirmPass = false;
             ui->confirmpasserrorlbl->setText("Passwords don't match");
         }
     }
@@ -193,7 +190,7 @@ void Signup::check_line_edits(const QString& a_strString)
         foreach (const QJsonValue &val, Arr)
         {
             if (val.toObject().value("username").toString().toStdString() == ui->usernameled->text().toStdString())
-                username_counter ++;
+                username_counter++;
         }
 
         if (username_counter)
@@ -201,7 +198,7 @@ void Signup::check_line_edits(const QString& a_strString)
         else
             ui->usererrorlbl->clear();
 
-        qDebug()<<"username counter is:"<<username_counter;
+        qDebug() << "username counter is:" << username_counter;
     }
     //all filled? [X]
     //pass==rewritepass? [X]
@@ -210,9 +207,7 @@ void Signup::check_line_edits(const QString& a_strString)
     //valid name? [X]
     //valid email? [X]
 
-    bool ok = !(ui->usernameled->text().isEmpty() || ui->passwordled->text().isEmpty()
-                || ui->rewriteled->text().isEmpty() || (!confirmPass) || (!validEmail)
-                || (!strongPassword) || (!validName) || (username_counter != 0));
+    bool ok = !(ui->usernameled->text().isEmpty() || ui->passwordled->text().isEmpty() || ui->rewriteled->text().isEmpty() || (!confirmPass) || (!validEmail) || (!strongPassword) || (!validName) || (username_counter != 0));
     ui->signupbtn->setEnabled(ok);
 }
 
@@ -225,7 +220,7 @@ void Signup::close_and_clear()
 {
     ui->signupStat->setText("Signup Successful, press exit button");
     ui->signupbtn->setDisabled(true);
-    qDebug()<<"on signupbtn clicked!";
+    qDebug() << "on signupbtn clicked!";
     QString name, username, password, email;
     name = ui->nameled->text();
     username = ui->usernameled->text();
@@ -241,4 +236,3 @@ void Signup::close_and_clear()
     ui->signupStat->setText("");
     this->close();
 }
-

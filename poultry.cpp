@@ -1,9 +1,8 @@
 #include "poultry.h"
 #include "ui_poultry.h"
 
-Poultry::Poultry(QWidget *parent,Player &current_player) :
-    QDialog(parent),
-    ui(new Ui::Poultry)
+Poultry::Poultry(QWidget *parent, Player &current_player) : QDialog(parent),
+                                                            ui(new Ui::Poultry)
 {
     ui->setupUi(this);
     this->setFixedSize(this->geometry().width(), this->geometry().height());
@@ -74,10 +73,8 @@ void Poultry::on_feedbtn_clicked(Player &current_player)
     }
 }
 
-
 void Poultry::on_eggcollectbtn_clicked(Player &current_player)
 {
-
 }
 
 void Poultry::on_upgradebtn_clicked(Player &current_player)
@@ -94,4 +91,3 @@ void Poultry::on_upgradebtn_clicked(Player &current_player)
         message->exec();
     }
 }
-

@@ -4,17 +4,20 @@
 #include <QDialog>
 #include "building.h"
 
-namespace Ui { class Warehouse; }
+namespace Ui
+{
+    class Warehouse;
+}
 
 class Warehouse : public QDialog, public Building
 {
     Q_OBJECT
 
 public:
-    explicit Warehouse(QWidget *parent , Player& current_player);
+    explicit Warehouse(QWidget *parent, Player &current_player);
     ~Warehouse();
     void set_capacity();
-    void levelup(Player& current_player);
+    void levelup(Player &current_player);
     int get_inv();
 
 private slots:

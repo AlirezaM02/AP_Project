@@ -6,14 +6,17 @@
 #include <QMessageBox>
 #include "player.h"
 
-namespace Ui { class Shop; }
+namespace Ui
+{
+    class Shop;
+}
 
 class Shop : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Shop(QWidget *parent ,Player &current_player);
+    explicit Shop(QWidget *parent, Player &current_player);
     ~Shop();
     void sell_wheat();
     void buy_wheat();

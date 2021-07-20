@@ -5,7 +5,10 @@
 #include "farm.h"
 #include "building.h"
 
-namespace Ui { class Wheat_Farm; }
+namespace Ui
+{
+    class Wheat_Farm;
+}
 
 class Wheat_Farm : public QDialog, public Farm
 {

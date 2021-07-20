@@ -10,7 +10,10 @@
 #include <QDir>
 #include "player.h"
 
-namespace Ui { class Signup; }
+namespace Ui
+{
+    class Signup;
+}
 
 class Signup : public QDialog
 {
@@ -20,7 +23,7 @@ private:
     Ui::Signup *ui;
 
 private slots:
-    void check_line_edits(const QString& a_strString);
+    void check_line_edits(const QString &a_strString);
 
 public slots:
     void on_signupBtn_clicked();

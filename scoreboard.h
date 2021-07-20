@@ -18,19 +18,22 @@
 
 using std::vector;
 
-namespace Ui { class Scoreboard; }
+namespace Ui
+{
+    class Scoreboard;
+}
 
 class Scoreboard : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Scoreboard(QWidget *parent, QVector<Player>&players, int ID);
+    explicit Scoreboard(QWidget *parent, QVector<Player> &players, int ID);
     ~Scoreboard();
 
 private:
     Ui::Scoreboard *ui;
-    QVector <Player> players;
+    QVector<Player> players;
 };
 
 #endif // SCOREBOARD_H
