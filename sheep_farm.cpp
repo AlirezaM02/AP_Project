@@ -9,7 +9,12 @@ Sheep_Farm::Sheep_Farm(QWidget *parent,Player& current_player) :
     capacity =2;
     level=1;
     feed_check=false;
-
+    QString lev=QString::number(level);
+    QString cap=QString::number(capacity);
+    QString sheepnum=QString::number(current_player.getSheep());
+    ui->sheeplbl->setText(sheepnum);
+    ui->levellbl->setText(lev);
+    ui->capacitylbl->setText(cap);
 }
 
 Sheep_Farm::~Sheep_Farm()
@@ -28,7 +33,7 @@ void Sheep_Farm::levelup(Player &current_player)
     int _shovel=current_player.getShovel();
     int _coins=current_player.get_coins();
     int _xp=current_player.get_XP();
-    if(_nail>=3 && _shovel>=1 && _coins>=50 && current_player.get_level()>=7){
+
         capacity*=2;
         _nail-=3;
         _coins-=50;
@@ -38,24 +43,54 @@ void Sheep_Farm::levelup(Player &current_player)
         current_player.set_coins(_coins);
         current_player.setShovel(_shovel);
         current_player.set_XP(_xp);
-    }
-    else{
-        //Message
 
-    }
 }
 
 void Sheep_Farm::feed(Player &current_player)
 {
     int _hay=current_player.getHay();
     int needed_hay= current_player.getSheep();
-    if((_hay>=needed_hay) && (!feed_check))
-    {
+
         feed_check = true;
         _hay -= needed_hay;
         current_player.setHay(_hay);
+
+}
+
+
+
+void Sheep_Farm::on_upgradebtn_clicked(Player& current_player)
+{
+    int _nail=current_player.getNail();
+    int _shovel=current_player.getShovel();
+    int _coins=current_player.get_coins();
+    int _xp=current_player.get_XP();
+    if(_nail>=3 && _shovel>=1 && _coins>=50 && current_player.get_level()>=7){
+       levelup(current_player);
+
     }
     else{
-        //Message
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("No Inventory");
+        message->exec();
+
     }
 }
+
+
+void Sheep_Farm::on_feedbtn_clicked(Player& current_player)
+{
+    int _hay=current_player.getHay();
+    int needed_hay= current_player.getSheep();
+    if((_hay>=needed_hay) && (!feed_check))
+    {
+        levelup(current_player);
+    }
+    else{
+        QMessageBox* message=new QMessageBox(this);
+        message->setText("Lack Of Hay !");
+        message->exec();
+
+    }
+}
+
