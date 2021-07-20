@@ -24,6 +24,7 @@ public:
 
 private slots:
     void saveNewUserData(QString, QString, QString, QString);
+
 public slots:
     void showScoreboard();
 

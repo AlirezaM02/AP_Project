@@ -5,16 +5,13 @@ MainWindow::MainWindow()
     : ui(new Ui::MainWindow)
 {
 
-//    ui->setupUi(this);
-    setEnabled(false);
-
+    //    ui->setupUi(this);
+    setEnabled(true);
     application.fetchPlayersData();
 
     login = new Login();
     login->show();
     login->exec();
-
-    connect(login, SIGNAL(scoreboardclicked()), this , SLOT(showScoreboard()));
 }
 
 MainWindow::~MainWindow()
@@ -44,6 +41,7 @@ void MainWindow::showScoreboard()
             break;
         }
     }
+    connect(login, SIGNAL(scoreboardclicked()), this , SLOT(showScoreboard()));
 }
 
 void MainWindow::showMap()

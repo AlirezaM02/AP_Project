@@ -226,7 +226,6 @@ void Signup::close_and_clear()
     username = ui->usernameled->text();
     password = ui->passwordled->text();
     email = ui->emailled->text();
-    //emit sendNewUserData(name, username, password, email);
     ui->nameled->clear();
     ui->usernameled->clear();
     ui->passwordled->clear();

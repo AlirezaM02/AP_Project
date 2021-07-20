@@ -91,7 +91,7 @@ void Application::fetchPlayersData()
     QJsonArray Arr = Obj.value("users").toArray();
     foreach (const QJsonValue &val, Arr)
     {
-        int ID= val.toObject().value("ID").toInteger();
+        int ID = val.toObject().value("ID").toInteger();
         QString name = val.toObject().value("name").toString();
         QString username = val.toObject().value("username").toString();
         QString password = val.toObject().value("password").toString();

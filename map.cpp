@@ -10,6 +10,7 @@ Map::Map(QWidget *parent, Player& _current_player, int ID , QVector<Player> &pla
 
     connect(this, SIGNAL(send_Player(Player&)), this , SLOT(on_nextdaybtn_clicked(Player&)));
     connect(ui->exitBtn, SIGNAL(pressed()), this, SLOT(on_exitBtn_clicked()));
+    connect(ui->scoreboardbtn, SIGNAL(pressed()), this, SLOT(on_scoreboardbtn_clicked()));
 
     silo = new Silo(this, current_player);
     warehouse = new Warehouse(this, current_player);
@@ -107,6 +108,7 @@ void Map::on_nextdaybtn_clicked()
 
 void Map::on_exitBtn_clicked()
 {
+    this->close();
     emit exitBtn_clicked();
 }
 

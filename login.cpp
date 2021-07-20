@@ -21,8 +21,8 @@ Login::Login(QWidget *parent) :
     connect(signup, SIGNAL(exitBtn_clicked()), signup, SLOT(close_and_clear()));
     connect(signup, SIGNAL(sendNewUserData(QString, QString, QString, QString)), this, SLOT(saveNewUserData(QString, QString, QString, QString)));
     connect(playerMap, SIGNAL(scoreboardclicked()), this, SLOT(show_score_board()));
-    connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(mapClosed()));
     connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(show()));
+    connect(playerMap, SIGNAL(exitBtn_clicked()), this, SLOT(mapClosed()));
 
     this->setFixedSize(this->geometry().width(),this->geometry().height());
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
@@ -51,14 +51,29 @@ Login::Login(QWidget *parent) :
     QJsonArray Arr = Obj.value("users").toArray();
     foreach (const QJsonValue &val, Arr)
     {
-        long int coins = val.toObject().value("coins").toInteger(), XP = val.toObject().value("XP").toInteger();
+        int ID = val.toObject().value("ID").toInteger();
+        QString name = val.toObject().value("name").toString();
+        QString username = val.toObject().value("username").toString();
+        QString password = val.toObject().value("password").toString();
+        QString email = val.toObject().value("email").toString();
         int level = val.toObject().value("level").toInteger();
-        QString name = val.toObject().value("name").toString(), username = val.toObject().value("username").toString(),
-                password = val.toObject().value("password").toString(), email = val.toObject().value("email").toString();
-        //Map _map;
-        players.push_back(Player(name, username, password, email, coins, XP, level));
-    }
+        int XP = val.toObject().value("XP").toInteger();
+        int coins = val.toObject().value("coins").toInteger();
+        int nails = val.toObject().value("nails").toInteger();
+        int shovel = val.toObject().value("shovel").toInteger();
+        int hay = val.toObject().value("hay").toInteger();
+        int egg = val.toObject().value("egg").toInteger();
+        int milk = val.toObject().value("milk").toInteger();
+        int wool = val.toObject().value("wool").toInteger();
+        int wheat = val.toObject().value("wheat").toInteger();
+        int cow = val.toObject().value("cow").toInteger();
+        int sheep = val.toObject().value("sheep").toInteger();
+        int hen = val.toObject().value("hen").toInteger();
+        int day = val.toObject().value("day").toInteger();
 
+        players.push_back(Player(name, username, password, email, coins, XP, level,
+                                    nails , shovel, hay , egg , milk, wool, wheat , cow , sheep,  hen , day));
+    }
 }
 
 Login::~Login()
@@ -69,6 +84,11 @@ Login::~Login()
 void Login::addPlayer(Player p)
 {
     players.push_back(p);
+    saveUsersData();
+}
+
+void Login::saveUsersData()
+{
     QJsonObject mainObj;
     QJsonArray mainArray;
     for (int i = 0; i < players.size(); i++)
@@ -78,10 +98,22 @@ void Login::addPlayer(Player p)
         playerObj["name"] = players[i].get_name();
         playerObj["username"] = players[i].get_username();
         playerObj["password"] = players[i].get_password();
+        playerObj["email"] = players[i].get_email();
         playerObj["level"] = players[i].get_level();
         playerObj["XP"] = players[i].get_XP();
         playerObj["coins"] = players[i].get_coins();
-        //playerObj["map"]=players[i].getMap();
+        playerObj["nails"] = players[i].getNail();
+        playerObj["shovel"] = players[i].getShovel();
+        playerObj["hay"] = players[i].getHay();
+        playerObj["egg"] = players[i].getEgg();
+        playerObj["milk"] = players[i].getMilk();
+        playerObj["wool"] = players[i].getWool();
+        playerObj["wheat"] = players[i].getWheat();
+        playerObj["cow"] = players[i].getCow();
+        playerObj["sheep"] = players[i].getSheep();
+        playerObj["hen"] = players[i].getHen();
+        playerObj["day"] = players[i].getDay();
+
         mainArray.append(playerObj);
     }
     mainObj["users"] = mainArray;
@@ -90,7 +122,6 @@ void Login::addPlayer(Player p)
     byteArray = QJsonDocument(mainObj).toJson();
 
     QDir d;
-    qDebug() << d.currentPath() + "\\data.json";
     QFile file(d.currentPath() + "\\..\\AP_Project\\data.json");
     file.setFileName(d.currentPath() + "\\..\\AP_Project\\data.json");
     file.open(QIODevice::WriteOnly);
@@ -155,6 +186,7 @@ void Login::saveNewUserData(QString name, QString username, QString password, QS
 
 void Login::mapClosed()
 {
+    this->show();
     playerMap->close();
     saveUsersData();
 }
@@ -164,33 +196,3 @@ void Login::show_score_board()
     emit(scoreboardclicked());
 }
 
-void Login::saveUsersData()
-{
-    QJsonObject mainObj;
-    QJsonArray mainArray;
-    for (int i = 0; i < players.size(); i++)
-    {
-        QJsonObject playerObj;
-        playerObj["ID"] = players[i].get_ID();
-        playerObj["name"] = players[i].get_name();
-        playerObj["username"] = players[i].get_username();
-        playerObj["password"] = players[i].get_password();
-        playerObj["level"] = players[i].get_level();
-        playerObj["XP"] = players[i].get_XP();
-        playerObj["coins"] = players[i].get_coins();
-        //playerObj["map"]=players[i].getMap();
-        mainArray.append(playerObj);
-    }
-    mainObj["users"] = mainArray;
-
-    QByteArray byteArray;
-    byteArray = QJsonDocument(mainObj).toJson();
-
-    QDir d;
-    qDebug() << d.currentPath() + "\\data.json";
-    QFile file(d.currentPath() + "\\..\\AP_Project\\data.json");
-    file.setFileName(d.currentPath() + "\\..\\AP_Project\\data.json");
-    file.open(QIODevice::WriteOnly);
-    file.write(byteArray);
-    file.close();
-}
