@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/pht">
+        <file>mdd/024-tractor.png</file>
+        <file>mdd/031-scarecrow.png</file>
+        <file>mdd/036-rake.png</file>
+        <file>mdd/038-shears.png</file>
+        <file>mdd/042-planting.png</file>
+        <file>mdd/043-hay.png</file>
+        <file>mdd/063-hay bale.png</file>
+        <file>mdd/099-milking.png</file>
+        <file>mdd/100-hay bale.png</file>
+        <file>mdd/aghol.png</file>
+        <file>mdd/apple tree page.png</file>
+        <file>mdd/cattle.png</file>
+        <file>mdd/farmerx.png</file>
+        <file>mdd/gandom khone.png</file>
+        <file>mdd/gandom.png</file>
+        <file>mdd/gandom22.png</file>
+        <file>mdd/havij page.png</file>
+        <file>mdd/levelup.png</file>
+        <file>mdd/main page.png</file>
+        <file>mdd/map.png</file>
+        <file>mdd/morgh.png</file>
+        <file>mdd/morghi page.png</file>
+        <file>mdd/page pig.png</file>
+        <file>mdd/prim page.png</file>
+        <file>mdd/ye page.png</file>
+        <file>mdd/sheep page.png</file>
+    </qresource>
+</RCC>

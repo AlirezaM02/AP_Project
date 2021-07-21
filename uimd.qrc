@@ -1,0 +1,66 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pngg/029-spade (1).png</file>
+        <file>pngg/board.png</file>
+        <file>pngg/book.png</file>
+        <file>pngg/buy.png</file>
+        <file>pngg/calendet.png</file>
+        <file>pngg/capacity.png</file>
+        <file>pngg/coin.png</file>
+        <file>pngg/eggcollect.png</file>
+        <file>pngg/experience.png</file>
+        <file>pngg/feeding.png</file>
+        <file>pngg/goback.png</file>
+        <file>pngg/hen.png</file>
+        <file>pngg/level.png</file>
+        <file>pngg/levelup.png</file>
+        <file>pngg/levelup2.png</file>
+        <file>pngg/mikh.png</file>
+        <file>pngg/next.png</file>
+        <file>pngg/005-farm.png</file>
+        <file>pngg/006-farmer.png</file>
+        <file>pngg/008-warehouse.png</file>
+        <file>pngg/012-barn.png</file>
+        <file>pngg/016-sheep.png</file>
+        <file>pngg/017-silo.png</file>
+        <file>pngg/023-eggs.png</file>
+        <file>pngg/029-spade.png</file>
+        <file>pngg/043-hay.png</file>
+        <file>pngg/099-milking.png</file>
+        <file>pngg/100-hay bale.png</file>
+        <file>pngg/mikh.jpg</file>
+        <file>pngg/milk.jpg</file>
+        <file>pngg/apple tree page.png</file>
+        <file>pngg/gandom khone.png</file>
+        <file>pngg/gandom.png</file>
+        <file>pngg/gandom22.png</file>
+        <file>pngg/havij page.png</file>
+        <file>pngg/main page.png</file>
+        <file>pngg/morgh.png</file>
+        <file>pngg/morghi page.png</file>
+        <file>pngg/page pig.png</file>
+        <file>pngg/prim page.png</file>
+        <file>pngg/sheep page.png</file>
+        <file>pngg/shop page.png</file>
+        <file>pngg/ye page.png</file>
+        <file>pngg/002-corn.png</file>
+        <file>pngg/map (1).png</file>
+        <file>pngg/aghol1 (6).png</file>
+        <file>pngg/aghol1 (7).png</file>
+        <file>pngg/aghol1 (8).png</file>
+        <file>pngg/aghol1 (5).png</file>
+        <file>pngg/aghol1 (3).png</file>
+        <file>pngg/aghol1 (4).png</file>
+        <file>pngg/aghol1 (13).png</file>
+        <file>pngg/aghol1 (9).png</file>
+        <file>pngg/aghol1 (1).png</file>
+        <file>pngg/aghol1 (2).png</file>
+        <file>pngg/aghol1 (12).png</file>
+        <file>pngg/aghol1 (10).png</file>
+        <file>pngg/aghol1 (14).png</file>
+        <file>pngg/aghol1 (11).png</file>
+        <file>pngg/cattle.png</file>
+        <file>pngg/038-shears.png</file>
+        <file>pngg/kkk.png</file>
+    </qresource>
+</RCC>
