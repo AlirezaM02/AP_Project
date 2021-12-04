@@ -123,7 +123,7 @@ public:
     int &getDayref() { return day; }
     void setDay(int newDay);
     int getHen() const;
-    void setHen(int newHen);
+    void setHen(int newHenn);
 };
 
 #endif // PLAYER_H
